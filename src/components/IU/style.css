@@ -22,8 +22,9 @@ button:hover {
      -moz-border-radius: 50%;
      -webkit-border-radius: 50%;
      border-radius: 50%;
-     margin-right: 35px;
-     margin-left: 27px;
+     margin-right: 57.5px;
+     margin-left: 25px;
+     background: red;
 }
 .Switch{
     display: flex;

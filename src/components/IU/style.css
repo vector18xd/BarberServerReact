@@ -1,0 +1,31 @@
+button{
+    border: 2px  solid #c7c7c7;
+    border-radius: 40px;
+    padding: .45rem .75rem; 
+    justify-content: center;
+    font-size: 1rem;
+    transition: all .25s cubic-bezier(.175, .885, .32, 1.275);
+    filter: grayscale(100%);
+}
+button:hover {
+    border-color: currentColor;
+}
+.NavLink{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.OnOff{
+    border: 2px  solid #c7c7c7;
+    width: 10px;
+     height: 10px;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     border-radius: 50%;
+     margin-right: 35px;
+     margin-left: 27px;
+}
+.Switch{
+    display: flex;
+    justify-content: flex-end;
+}

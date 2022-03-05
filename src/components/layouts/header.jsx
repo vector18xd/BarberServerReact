@@ -18,7 +18,7 @@ import { Switch } from "../IU/Switch";
                 <NavLink to="/"><Button name="Home" text="Home"/></NavLink>
                 <NavLink to="/Contact"><Button name="Contact" text="Contact"/></NavLink>
                 <NavLink to="/About"><Button name="About" text="About"/></NavLink>  
-                <NavLink to="/About"><Button name="Baber Server" text="Barber Server"/></NavLink>  
+                <NavLink to="/Login"><Button name="Baber Server" text="Login"/></NavLink>  
             </nav>
             <nav className="Switch">
                 <Switch name="OnOff"  number='cero'/>
@@ -26,6 +26,7 @@ import { Switch } from "../IU/Switch";
                 <Switch name="OnOff"  number='second'/>
                 <Switch name="OnOff"  number='tertius'/>
             </nav>
+            <hr></hr>
         </header>
      )
  }

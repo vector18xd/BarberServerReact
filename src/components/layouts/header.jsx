@@ -10,7 +10,7 @@ import { Switch } from "../IU/Switch";
         color();
     })
     const color = () =>{
-        document.getElementById('0').style.background = "green";
+        document.getElementById('cero').style.background = "green";
     }
      return(
         <header className="header">
@@ -21,10 +21,10 @@ import { Switch } from "../IU/Switch";
                 <NavLink to="/About"><Button name="Baber Server" text="Barber Server"/></NavLink>  
             </nav>
             <nav className="Switch">
-                <Switch name="OnOff"  number='0'/>
-                <Switch name="OnOff"  number='1'/>
-                <Switch name="OnOff"  number='2'/>
-                <Switch name="OnOff"  number='3'/>
+                <Switch name="OnOff"  number='cero'/>
+                <Switch name="OnOff"  number='first'/>
+                <Switch name="OnOff"  number='second'/>
+                <Switch name="OnOff"  number='tertius'/>
             </nav>
         </header>
      )

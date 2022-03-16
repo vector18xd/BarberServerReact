@@ -4,7 +4,7 @@ import { Header} from "../../layouts/header"
 export const Home = () => {
     return(
         <div className="main">
-        <Header />
-    </div>
+            <Header />
+        </div>
     )
 }

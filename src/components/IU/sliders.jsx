@@ -1,12 +1,8 @@
 import  React from "react";
-import { Button } from "./buttons";
-export const Sliders =({classMain, url})=>{
+export const Sliders =({Title, ClassN, ClassH})=>{
     return (
-        <div class="cont">
-            <div class="slider"></div>
-                <ul class="nav"></ul>
-                <div data-target='right' class="side-nav side-nav--right"></div>
-                <div data-target='left' class="side-nav side-nav--left"></div>
+        <div className={ClassN}>
+            <h1 className={ClassH}>{Title}</h1>
         </div>
     )
 }

@@ -55,8 +55,6 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
 .imagenLogo{
     width: 250px;
@@ -74,6 +72,7 @@ header{
 
 body {
     font-family: 'Alegreya Sans', sans-serif;
+    background: rgba(0,0,0,0.9);
 }
 
 /* Sticky footer position and size
@@ -126,4 +125,9 @@ a:not([href]):not([tabindex]) {
 }
 .logoF{
     width: 60px;
+}
+@media screen and (min-width: 1350px) {
+    .imagenLogo{
+        width: 180px;
+    }
 }

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');/* Pertenece a los estilos del login y register */
+
 a{
     margin-top: 17px;
     text-decoration: none;
@@ -46,6 +48,7 @@ header{
     height:95px;
     background: transparent;
     justify-content: space-between;
+    z-index: 1000;
 }
 .slider{
     background: url(../img/srb.jpeg) no-repeat center center;
@@ -55,9 +58,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    
 }
+
 .imagenLogo{
     width: 250px;
 }

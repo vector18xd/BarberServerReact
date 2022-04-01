@@ -4,7 +4,7 @@ import {Header} from "../../layouts/header"
 export const Contact = () =>{
     return(
         <div>
-                <Header/>
+            <Header/>
         </div>
     )
 }

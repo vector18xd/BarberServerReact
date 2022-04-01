@@ -1,5 +1,5 @@
-import React, {useEffect} from "react";
-import { Button } from "../IU/buttons"
+import React from "react";
+// import { Button } from "../IU/buttons"
 import { NavLink} from "react-router-dom";
 import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
  export const Header = () =>{
@@ -9,10 +9,12 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                 <img className="imagenLogo" src={logo} alt="Logo"/>
             </div>
             <nav className="NavLink">
-                <NavLink to="/"><a className="link">HOME</a></NavLink>
-                <NavLink to="/Contact"><a className="link">CONTACT</a></NavLink>
-                <NavLink to="/About"><a className="link">ABOUT</a></NavLink>  
-                <NavLink to="/Login"><a className="link">LOGIN</a></NavLink> 
+                <NavLink to="/"><a className="link">INICIO</a></NavLink>
+                <NavLink to="/Contact"><a className="link">REGISTRARSE</a></NavLink>
+                <NavLink to="/Login"><a className="link">INICIAR SESION</a></NavLink>
+                <NavLink to="/About"><a className="link">SOBRE NOSOTROS</a></NavLink>
+                <NavLink to="/ConsultBarber"><a className="link">BARBEROS</a></NavLink>
+                <NavLink to="/Contact"><a className="link">CONTACTENOS</a></NavLink>
             </nav>
         </header>
      )

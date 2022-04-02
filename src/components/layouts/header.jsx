@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
-import { Button } from "../IU/buttons"
-import { NavLink} from "react-router-dom";
+import React from "react"
+import { NavLink} from "react-router-dom"
 import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
+
+
  export const Header = () =>{
      return(
         <header className="header">
@@ -12,7 +13,7 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                 <NavLink to="/"><a className="link">CASA</a></NavLink>
                 <NavLink to="/Contact"><a className="link">CONTACTO</a></NavLink>
                 <NavLink to="/About"><a className="link">ACERCA DE NOSOTROS</a></NavLink>  
-                <NavLink to="/Login"><a className="link">INICIAR SESION</a></NavLink> 
+                <NavLink to="/Loginregister"><a className="link">INICIAR SESION</a></NavLink> 
             </nav>
         </header>
      )

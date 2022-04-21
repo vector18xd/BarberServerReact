@@ -125,9 +125,6 @@ footer .form-control {
     resize: none;
     color: #d1d2d2;
 }
-a:not([href]):not([tabindex]) {
-    color: #ccc;;
-}
 .logoF{
     width: 60px;
 }
@@ -135,6 +132,17 @@ a:not([href]):not([tabindex]) {
     .imagenLogo{
         width: 180px;
     }
+    .slider{
+        height: 1100px;
+    }
+}
+a:not([href]):not([tabindex]) {
+    color: #fefd9f;;
+}
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: #fefd9f; 
+    text-decoration: none;
+    list-style-type:none;
 }
 #page-content-wrapper{
     padding-top: 30px;

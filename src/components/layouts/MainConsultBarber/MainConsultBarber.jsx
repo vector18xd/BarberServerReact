@@ -7,12 +7,13 @@ import imgPedro from '../../img/Pedro.jpg'
 export const MainConsultBarber = () => {
   return (
     <main className="mainConsultBarber">
+        <section class="webdesigntuts-workshop">
+            <form action="" method="">		    
+                <input type="search" placeholder="What are you looking for?"/>		    	
+                <button>Search</button>
+            </form>
+        </section>
         <div id="cuadroCard">
-            <section className="sec-busqueda">
-                <div id="divBusqueda">
-                    <input placeholder="Buscar Barberos" id="input-ConsultBarber"></input>
-                </div>
-            </section>
             <section className="sec-cardBarberos">
                 <article className="cardBarberos">
                     <img src={imgVanessa} alt="imagen de fondo de barberos" className="img-Barbero" />

@@ -137,7 +137,7 @@ footer .form-control {
     }
 }
 a:not([href]):not([tabindex]) {
-    color: #fefd9f;;
+    color: #ccc;;
 }
 a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     color: #fefd9f; 
@@ -170,12 +170,6 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 }
 .textAbout{
     color: #fefd9f;
-}
-.lineas{
-    background: transparent;
-    color: white;
-    border: white solid 2px;
-    padding: 2px 20px 2px 20px;
 }
 .nav-item :hover{
     color: white;

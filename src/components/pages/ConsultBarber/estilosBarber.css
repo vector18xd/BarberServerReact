@@ -25,7 +25,7 @@
 }
 
 #cuadroCard{
-    width: 70rem;
+    width: 24rem;
     height: 40rem;
     background-color: rgba(14, 13, 13, 0.9);
     border-radius: 20px;
@@ -53,6 +53,7 @@
     position:relative;
     z-index: 10;
     top: 3rem;
+    border-radius: 30px;
     box-shadow: 0 0 10px 4px #ffd17b;
 }
 
@@ -72,7 +73,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    border: 2px solid #F5F5F5;
     position: relative;
     bottom: 8rem;
     z-index: 1;

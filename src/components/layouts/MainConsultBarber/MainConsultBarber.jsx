@@ -26,6 +26,7 @@ export const MainConsultBarber = () => {
         <div class="cards">
             <div class="card card1">
                 <div class="containerB">
+                    <button className='btnShowB'>Mostrar Boton</button> 
                     <img src={imgVanessa} alt="las vegas"/>
                 </div>
                 <div class="details">

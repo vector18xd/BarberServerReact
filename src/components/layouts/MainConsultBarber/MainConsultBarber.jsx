@@ -26,11 +26,11 @@ export const MainConsultBarber = () => {
         <div class="cards">
             <div class="card card1">
                 <div class="containerB">
-                    <img src="las vegas.jpg" alt="las vegas"/>
+                    <img src={imgVanessa} alt="las vegas"/>
                 </div>
                 <div class="details">
-                    <h3>Las Vegas</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
+                    <h3>Vannesa Perez</h3>
+                    <p>Rol: Estilista </p>
                 </div>
             </div>
             <div class="card card2">

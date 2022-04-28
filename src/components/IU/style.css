@@ -130,7 +130,7 @@ footer .form-control {
 }
 @media screen and (min-width: 1350px) {
     .imagenLogo{
-        width: 180px;
+        width: 100px;
     }
     .slider{
         height: 1100px;

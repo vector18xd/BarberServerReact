@@ -56,6 +56,7 @@
 }
 .imgP{
     margin-top: 0px;
+    padding-bottom: 24px;
 }
 .progress{
     height: 5px;
@@ -68,4 +69,7 @@
 }
 .btnM{
     margin-left: 10px;
+}
+.iconsM{
+    margin-right: 5px;
 }

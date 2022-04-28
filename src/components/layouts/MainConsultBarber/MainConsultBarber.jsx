@@ -23,18 +23,22 @@ export const MainConsultBarber = () => {
                 </article>
             </section>
         </div> */}
-        <div class="cards">
-            <div class="card card1">
-                <div class="containerB">
-                    <button className='btnShowB'>Mostrar Boton</button> 
-                    <img src={imgVanessa} alt="las vegas"/>
+        <section className="cards-barberos">
+            <article className="cards">
+                <figure className="figura">
+                    <img src={imgGustavo} alt="las vegas" className="img_cards"/>
+                </figure>
+                <div className="info">
+                    <h3>Nombre: Gustavo Quintana</h3>
+                    <h3>Ubicación: </h3>
+                    <h3>Horarios: 06:00am a 11:30am y 02:00pm a 8:00pm</h3>
+                    <h3>Estado: Activo</h3>
+                    <div className="botones">
+                        <Button text="Ver Más"/>
+                    </div>
                 </div>
-                <div class="details">
-                    <h3>Vannesa Perez</h3>
-                    <p>Rol: Estilista </p>
-                </div>
-            </div>
-            <div class="card card2">
+            </article>
+            {/* <div class="card card2">
                 <div class="containerB">
                     <img src="newyork.jpg" alt="New York"/>
                 </div>
@@ -51,8 +55,8 @@ export const MainConsultBarber = () => {
                     <h3>Singapore</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium dignissimos, minus aperiam adipisci exercitationem.</p>
                 </div>
-            </div>
-        </div>
+            </div> */}
+        </section>
     </main>
   )
 }

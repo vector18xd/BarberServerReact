@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../../IU/buttons'
+// import { ButtonsC } from '../../IU/ButtonsC'
 import { Search } from '../../IU/seacrh'
 import imgVanessa from '../../img/Vanessa.jpg'
 import imgGustavo from '../../img/Gustavo.jpg'
@@ -23,19 +23,18 @@ export const MainConsultBarber = () => {
                 </article>
             </section>
         </div> */}
+        <Search firstClass="busqueda" placeText="What are you looking for?" btnText="Search"/>
         <section className="cards-barberos">
-            <article className="cards">
+            <article className="cards card1">
                 <figure className="figura">
                     <img src={imgGustavo} alt="las vegas" className="img_cards"/>
                 </figure>
-                <div className="info">
-                    <h3>Nombre: Gustavo Quintana</h3>
-                    <h3>Ubicación: </h3>
-                    <h3>Horarios: 06:00am a 11:30am y 02:00pm a 8:00pm</h3>
-                    <h3>Estado: Activo</h3>
-                    <div className="botones">
-                        <Button text="Ver Más"/>
-                    </div>
+                <div className="infoBasica">
+                    <h3 id="nombre">Gustavo Quintana</h3>
+                    <h4 className='info'>Barrio: Limonar</h4>
+                    <h4 className='info'>Horario Mañana: 06:00 a 11:30 am</h4>
+                    <h4 className='info'>Horario Tarde: 02:00 a 8:00 pm</h4>
+                    <h4 className='info'>Estado: Activo</h4>
                 </div>
             </article>
             {/* <div class="card card2">

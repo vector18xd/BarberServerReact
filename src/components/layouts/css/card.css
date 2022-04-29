@@ -16,28 +16,76 @@
 }
 
 .cards{
-  height: 22rem;
-  width: 40em;
+  height: 38rem;
+  width: 25em;
   border-radius: 20px;
-  background-color: #976e5a;
+  background-color: #1c1b29;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.18);
   display: flex;
+  flex-direction: column;
+  border: 1px solid #1c1b29;
 }
 
 .figura{
-  height: 100%;
-  width: 40%;
+  height: 60%;
+  width: 100%;
+  clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
 }
 
 .img_cards{
   height: 100%;
   width: 100%;
-  border-radius: 20px 0 0 20px;
+  border-radius: 20px 20px 0 0;
+}
+
+.infoBasica{
+  height: 42%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .info{
-  height: 100%;
-  width: 60%;
+  width: 95%;
+  color: white;
 }
+
+/*identificadores*/
+
+#btn-VerMas{
+  width: 5rem;
+  height: 3rem;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+#nombre{
+  color: #fefd9f;
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* .figura:after{
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0 ;
+  opacity: 0.6;
+}
+
+.card1>.figura:after{
+  background-image: linear-gradient(
+      135deg,
+      #0100ec,
+      #fb36f4
+  );
+} */
 
 /* .card{
   background-color: #1c1b29;

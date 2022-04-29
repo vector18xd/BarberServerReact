@@ -14,13 +14,11 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                 <NavLink to="/About"><a className="link">SOBRE NOSOTROS</a></NavLink>
                 <NavLink to="/ConsultBarber"><a className="link">BARBEROS</a></NavLink>
                 <NavLink to="/Contact"><a className="link">CONTACTENOS</a></NavLink>
-                <li>
+                <li className="submenus">
                     <NavLink className="imgP" to="/Perfil"><img className="linkPerfil" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"/></NavLink>
-                    <ul>
-                            <li><a href="#">Submenu 1</a></li>
-                            <li><a href="#">Submenu 2</a></li>
-                            <li><a href="#">Submenu 3</a></li>
-                            <li><a href="#">Submenu 4</a></li>
+                    <ul className="children">
+                            <li><a href="#">CITAS</a></li>
+                            <li><a href="#">MENSAJE</a></li>
                     </ul>
                 </li>
             </nav>

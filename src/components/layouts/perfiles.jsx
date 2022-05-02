@@ -102,69 +102,52 @@ export const Perfiles = () =>{
                         </div>
                     </div>
 
-                    <div className="row gutters-sm">
-                        <div className="col-sm-6 mb-3">
-                        <div className="card h-100">
-                            <div className="card-body">
-                            <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                            <small>Web Design</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Website Markup</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>One Page</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Mobile Template</small>
-                            <div className="progress mb-3">
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Backend API</small>
-                            <div className="progress mb-3">
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div className="col-sm-6 mb-3">
-                        <div className="card h-100">
-                            <div className="card-body">
-                            <h6 className="d-flex align-items-center mb-3"><i className="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                            <small>Web Design</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Website Markup</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>One Page</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Mobile Template</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <small>Backend API</small>
-                            <div className="progress mb-3" >
-                                <div className="progress-bar bg-primary" role="progressbar"  aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            </div>
-                        </div>
+                    <div class="tab-content">
+                        
+                        <div class="tab-pane show active" id="about-me">
+
+                            <h5 class="mb-4 text-uppercase"><i class="mdi mdi-briefcase mr-1"></i>
+                                Experience</h5>
+
+                            <ul class="list-unstyled timeline-sm">
+                                <li class="timeline-sm-item">
+                                    <span class="timeline-sm-date">2015 - 19</span>
+                                    <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                                    <p>websitename.com</p>
+                                    <p class="text-muted mt-2">Everyone realizes why a new common language
+                                        would be desirable: one could refuse to pay expensive translators.
+                                        To achieve this, it would be necessary to have uniform grammar,
+                                        pronunciation and more common words.</p>
+
+                                </li>
+                                <li class="timeline-sm-item">
+                                    <span class="timeline-sm-date">2012 - 15</span>
+                                    <h5 class="mt-0 mb-1">Senior Graphic Designer</h5>
+                                    <p>Software Inc.</p>
+                                    <p class="text-muted mt-2">If several languages coalesce, the grammar
+                                        of the resulting language is more simple and regular than that of
+                                        the individual languages. The new common language will be more
+                                        simple and regular than the existing European languages.</p>
+                                </li>
+                                <li class="timeline-sm-item">
+                                    <span class="timeline-sm-date">2010 - 12</span>
+                                    <h5 class="mt-0 mb-1">Graphic Designer</h5>
+                                    <p>Coderthemes LLP</p>
+                                    <p class="text-muted mt-2 mb-0">The European languages are members of
+                                        the same family. Their separate existence is a myth. For science
+                                        music sport etc, Europe uses the same vocabulary. The languages
+                                        only differ in their grammar their pronunciation.</p>
+                                </li>
+                            </ul>
+
+                            <h5 class="mb-3 mt-4 text-uppercase"><i class="mdi mdi-cards-variant mr-1"></i>
+                                Projects</h5>
+                            
                         </div>
                     </div>
-
-
-
-                    </div>
-                </div>
-
                 </div>
             </div>
+        </div>
+    </div>
     )
 }

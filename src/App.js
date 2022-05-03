@@ -4,6 +4,7 @@ import { About } from "./components/pages/about/about";
 import { ConsultBarber } from "./components/pages/ConsultBarber/ConsultBarber";
 import { Loginregister } from "./components/pages/loginregister/loginregister.jsx";
 import { Perfil } from "./components/pages/perfil/perfil";
+import { Agendamientos } from "./components/layouts/agendamientos";
 import './App.css';
 import {Routes, BrowserRouter, Route} from "react-router-dom"; 
 
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/ConsultBarber" element={<ConsultBarber/>}/>
                 <Route path="/Loginregister" element={<Loginregister/>}/>
                 <Route path="/Perfil" element={<Perfil/>}/>
+                <Route path="/Agendar" element={<Agendamientos/>}/>
             </Routes>
         </BrowserRouter>
     </div>

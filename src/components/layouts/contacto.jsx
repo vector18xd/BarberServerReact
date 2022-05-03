@@ -12,7 +12,7 @@ export const Contacto = () => {
 						<input type="email" placeholder="E-mail" id='Email' className='inputform'/>
 						<input typem="text" id="phone" placeholder="Numero Celular" className='inputform'/>
 						<textarea name="text" id="phone" placeholder='Danos más detalles..' cols="30" rows="10" className='inputform'></textarea>
-						<button className='buttonform'>Iniciar Sesion</button>
+						<button className='buttonform'>Contactar</button>
 					</form>
 				</div>
 			</div>

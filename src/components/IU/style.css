@@ -130,7 +130,7 @@ footer .form-control {
 }
 @media screen and (min-width: 1350px) {
     .imagenLogo{
-        width: 180px;
+        width: 100px;
     }
     .slider{
         height: 1100px;
@@ -211,4 +211,65 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 }
 .aboutU{
     padding-top: 90px;
+}.submenus{
+    text-decoration: none;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+}
+.submenus a:hover{
+    font-weight: bold;
+}
+.children{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+	padding: 0px;
+	width: 150px;
+	height: 0;
+	float:  right;
+	position: absolute;
+    right: 0px;
+	top: 95px;
+	border: 0;
+	opacity: 0;
+	filter: alpha(opacity=0); /* Internet Explorer*/
+	overflow: hidden;
+	background: rgba(0,0,0,0.9);    
+	z-index: -1;
+	border-radius: 0px 0px 5px 5px;
+	-moz-border-radius: 0px 0px 5px 5px;
+	-webkit-border-radius: 0px 0px 5px 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+.children li{
+    margin: 0;
+}
+.submenus:hover ul.children{height:150px;opacity:1;}
+.submenus ul.children li a{
+	color: #fefefe !important;
+	padding: 13px 0 13px 20px;
+	width: 130px;
+	border-bottom: 1px solid #2f2f2f;
+	font-size: 12px;
+	
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: flex-end;
+}
+.submenus ul li a:hover{
+	color: #fefd9f !important;
+	font-weight: bold;
+	padding-right:28px;
 }

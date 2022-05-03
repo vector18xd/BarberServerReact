@@ -170,8 +170,6 @@ export const Perfiles = () => {
 
                   <div class="tab-pane show active" id="about-me">  
                     <ul class="list-unstyled timeline-sm">
-                    <scroll-container>
-                      <scroll-page>
                       <li class="timeline-sm-item">
                         <span class="timeline-sm-date">2015 - 19</span>
                         <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
@@ -180,31 +178,7 @@ export const Perfiles = () => {
                           would be desirable: one could refuse to pay expensive translators.
                           To achieve this, it would be necessary to have uniform grammar,
                           pronunciation and more common words.</p>
-                      </li>
-                      </scroll-page>
-                      <scroll-page>
-                      <li class="timeline-sm-item">
-                        <span class="timeline-sm-date">2012 - 15</span>
-                        <h5 class="mt-0 mb-1">Senior Graphic Designer</h5>
-                        <p>Software Inc.</p>
-                        <p class="text-muted mt-2">If several languages coalesce, the grammar
-                          of the resulting language is more simple and regular than that of
-                          the individual languages. The new common language will be more
-                          simple and regular than the existing European languages.</p>
-                      </li>
-                      </scroll-page>
-                      <scroll-page>
-                        <li class="timeline-sm-item">
-                          <span class="timeline-sm-date">2010 - 12</span>
-                          <h5 class="mt-0 mb-1">Graphic Designer</h5>
-                          <p>Coderthemes LLP</p>
-                          <p class="text-muted mt-2 mb-0">The European languages are members of
-                            the same family. Their separate existence is a myth. For science
-                            music sport etc, Europe uses the same vocabulary. The languages
-                            only differ in their grammar their pronunciation.</p>
-                        </li>
-                      </scroll-page>
-                      </scroll-container>
+                      </li> 
                     </ul>
                   </div>
                 </div>

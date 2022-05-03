@@ -88,20 +88,12 @@
 .rounded-circle {
     border-radius: 50%!important;
 }
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #1abc9c;
-}
 .nav-pills .nav-link {
     border-radius: .25rem;
 }
 .navtab-bg li>a {
     background-color: #f7f7f7;
     margin: 0 5px;
-}
-.nav-pills>li>a, .nav-tabs>li>a {
-    color: #6c757d;
-    font-weight: 600;
 }
 .mb-4, .my-4 {
     margin-bottom: 2.25rem!important;
@@ -279,6 +271,14 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
+.scroll-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 5em;
+  }
+  
 .timeline-sm .timeline-sm-item {
     position: relative;
     padding-bottom: 20px;

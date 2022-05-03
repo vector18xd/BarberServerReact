@@ -55,6 +55,8 @@ option{ background-color: #222; }
   border: 1px solid #1c1b29;
   background: linear-gradient(#333, #222);
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .figura{
@@ -62,12 +64,18 @@ option{ background-color: #222; }
   width: 100%;
   clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
   margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: all 500ms ease-out;
 }
 
 .img_cards{
   height: 100%;
   width: 100%;
   border-radius: 20px 20px 0 0;
+  transition: all 500ms ease-out;
 }
 
 .infoBasica{
@@ -76,6 +84,7 @@ option{ background-color: #222; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 500ms ease-out;
 }
 
 .info{
@@ -134,11 +143,15 @@ option{ background-color: #222; }
   transform: all 500ms ease-out;
   visibility: hidden;
   opacity: 0;
+  top: 17rem;
 }
 
-.cards:hover{
-  transition: ease-in-out 1s;
-  filter: blur(5px);
+.cards:hover > .btn-VerMas {
   opacity: 1;
   visibility: visible;
+  filter: none;
+}
+
+.figura:hover, .infoBasica:hover{
+  filter: blur(5px);
 }

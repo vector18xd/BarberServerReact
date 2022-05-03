@@ -16,9 +16,7 @@ export const MainConsultBarber = () => {
                     <figure className="figura">
                         <img src={imgGustavo} alt="las vegas" className="img_cards"/>
                     </figure>
-                    <div className="elBoton">
-                        <button className="btn-VerMas">Ver Más</button>
-                    </div>                    
+                    <button className="btn-VerMas">Ver Más</button>
                     <div className="infoBasica">
                         <h3 id="nombre">Gustavo Quintana</h3>
                         <h4 className='info'><b>Barrio:</b> Limonar</h4>

@@ -1,5 +1,4 @@
 import React from 'react'
-// import { ButtonsC } from '../../IU/ButtonsC'
 import { Search } from '../../IU/Search'
 // import imgVanessa from '../../img/Vanessa.jpg'
 import imgGustavo from '../../img/Gustavo.jpg'
@@ -17,6 +16,9 @@ export const MainConsultBarber = () => {
                     <figure className="figura">
                         <img src={imgGustavo} alt="las vegas" className="img_cards"/>
                     </figure>
+                    <div className="elBoton">
+                        <button className="btn-VerMas">Ver Más</button>
+                    </div>                    
                     <div className="infoBasica">
                         <h3 id="nombre">Gustavo Quintana</h3>
                         <h4 className='info'><b>Barrio:</b> Limonar</h4>

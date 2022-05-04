@@ -6,7 +6,6 @@ export const Agendar = () =>{
   return(
     <div className="Agendar">
       <Header/>
-      <Agendamientos/>
       <Footer/>
     </div>
   )

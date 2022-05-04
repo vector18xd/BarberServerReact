@@ -20,13 +20,13 @@ option{ background-color: #222; }
 }
 
 .nom-categoria{
-  height: 4rem;
-  width: 90%;
+  height: 4.5rem;
+  width: 50%;
+  text-align: center;
   color: white;
   font-size: 4rem;
   font-weight: bold;
   margin-top: 1.5rem;
-  margin-left: 1.5rem;
   border-bottom: 5px solid white;
 }
 
@@ -113,45 +113,48 @@ option{ background-color: #222; }
   margin-top: 22em;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-evenly; */
-  flex-direction: row;
-  background: #111;
-	/* background: linear-gradient(#1b1b1b, #111); */
-  /* border: 2px solid #000; */
+  justify-content: center;
+  background: linear-gradient(rgb(17, 17, 17), #333);
   border-radius: 30px;
 }
 
 /*boton ver mas*/
-.elBoton{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  bottom: 6rem;
+.blur{
+  position: absolute;
+  z-index: 5;
+  height: 38rem;
+  width: 25em;
+  background-color: rgba(0,0,0,0.65);
+  opacity: 0;
+  border-radius: 20px;
   display: flex;
-  overflow:hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-VerMas{
   position: absolute;
   width: 8rem;
   height: auto;
-  border: 1px solid black;
-  border-radius: 30px;
+  border: 1px solid white;
+  background-color: rgba(0,0,0,0.65);
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
-  transform: all 500ms ease-out;
   visibility: hidden;
   opacity: 0;
   top: 17rem;
+  z-index: 10;
+  color: white;
 }
 
-.cards:hover > .btn-VerMas {
+/* .cards:hover > .btn-VerMas {
   opacity: 1;
   visibility: visible;
   filter: none;
-}
+} */
 
-.figura:hover, .infoBasica:hover{
-  filter: blur(5px);
+.blur:hover, .btn-VerMas{
+  opacity: 1;
+  visibility: visible;
 }

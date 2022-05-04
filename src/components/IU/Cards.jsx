@@ -1,11 +1,12 @@
 import React from 'react'
 import imgGustavo from '../img/Gustavo.jpg'
 import './css/card.css'
+import { Modal } from './Modal'
 
 export const Cards = () => {
   return (
     <article className="cards card1">
-        <div className="modal"></div>
+        <Modal />
         <div className="blur">
             <button className="btn-VerMas">Ver Más</button>
         </div>

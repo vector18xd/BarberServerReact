@@ -3,7 +3,6 @@
   padding: 0;
 }
 /*clases*/
-
 .cards{
   height: 38rem;
   width: 25em;
@@ -46,7 +45,6 @@
 }
 
 /*identificadores*/
-
 #nombre{
   color: #fefd9f;
   font-weight: bold;
@@ -98,4 +96,36 @@
   background-color: white;
   border: 1px solid black;
   color: black
+}
+
+/*Ventana Modal*/
+.fondo{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorModal{
+  width: 50em;
+  min-height: 10em;
+  background-color: #fff;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+}
+
+.encabezadoModal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }

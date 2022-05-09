@@ -22,7 +22,7 @@ export const Cards = () => {
         </div>
         <Modal estado={estadoModal} cambiarEstado={cambiarEstadoModal} titulo="Perfil">
           
-          <button onClick={() => cambiarEstadoModal(!estadoModal)}>Pedir Cita</button>
+          <button onClick={() => cambiarEstadoModal(!estadoModal)} className="btn-cita">Pedir Cita</button>
         </Modal>
     </article>
   )

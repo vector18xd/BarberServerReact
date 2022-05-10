@@ -1,5 +1,5 @@
 import  React from "react";
-import "./styleB.css";
+import "./css/styleB.css";
 
 export const Button = ({text, event, types}) =>{
     return (

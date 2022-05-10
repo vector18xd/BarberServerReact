@@ -1,5 +1,5 @@
 import React from "react"
-import '../../IU/style.css'
+import '../../IU//css/style.css'
 import { Header} from "../../layouts/header"
 import { Slider} from "../../layouts/slider"
 import { Footer } from "../../layouts/footer";

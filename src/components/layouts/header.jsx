@@ -10,10 +10,10 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
             </div>
             <nav className="NavLink">
                 <NavLink to="/"><a className="link">INICIO</a></NavLink>
-                <NavLink to="/Loginregister"><a className="link">ENTRAR</a></NavLink>
                 <NavLink to="/About"><a className="link">SOBRE NOSOTROS</a></NavLink>
                 <NavLink to="/ConsultBarber"><a className="link">BARBEROS</a></NavLink>
                 <NavLink to="/Contact"><a className="link">CONTACTENOS</a></NavLink>
+                <NavLink to="/Loginregister"><a className="link">INGRESAR</a></NavLink>
                 <li className="submenus">
                     <NavLink className="imgP" to="/Perfil"><img className="linkPerfil" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"/></NavLink>
                     <ul className="children">

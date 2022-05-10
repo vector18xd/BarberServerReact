@@ -52,7 +52,7 @@
   text-align: center;
 }
 
-/*boton ver mas*/
+/*--------------boton ver mas------------*/
 .blur{
   position: absolute;
   z-index: 5;
@@ -92,90 +92,31 @@
   color: black
 }
 
-/*Ventana Modal*/
-.fondo{
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, .5);
-  position: absolute;
-  padding: 40px;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-}
-
-.contenedorModal{
-  width: 90em;
-  height: 50em;
-  top: 7em;
-  background-color: #fff;
-  position: fixed;
-  border-radius: 5px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding: 20px;
-}
-
-.encabezadoModal{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #E8E8E8;
-}
-
-.encabezadoModal h3{
-  font-weight: bold;
-  font-size: 2rem;
-  color: #1766DC;
-}
-
-.btn-cerrar{
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  cursor:pointer;
-  transition: .3 ease all;
-  border-radius: 5px;
-  color: #1766DC;
-}
-.btn-cerrar:hover {
-  background-color: #F2F2F2;
-}
-
-svg{
-  width: 100%;
-  height: 100%;
-}
+/*------------Ventana Modal------------*/
 
 .informacion-modal{
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: space-between;
 }
 
 .infoBasica-modal{
-  width: 75%;
+  width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .campoimg-modal{
-  width: 25%;
-  height: 80%;
+  width: 30%;
+  height: auto;
 }
 
 .btn-cita{
   position: absolute;
   right: 20px;
-  bottom: 15px;
+  bottom: 20px;
   width: 6rem;
   height: 3rem;
   border-radius: 5px;
@@ -185,7 +126,22 @@ svg{
 
 .img-vtn{
   width: 20rem;
-  height: 30rem;
+  height: 22.5rem;
+}
+
+.detalles{
+  width: 100%;
+  height: auto;
+}
+
+.imgLocal{
+  width: 22rem;
+  height: 16;
+}
+
+.calendario{
+  width: 30%;
+  height: 100%;
 }
 
 #nombre-modal{

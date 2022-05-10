@@ -6,7 +6,7 @@ export const Modal = ({children, estado, cambiarEstado, titulo}) => {
         {estado && 
           <section className="fondo">
               <article className="contenedorModal">
-                  <div className='encabezadoModal'>
+                  <div className="encabezadoModal">
                       <h3>{titulo}</h3> 
                   </div>
                   <div className="btn-cerrar" onClick={() => cambiarEstado(false)}>

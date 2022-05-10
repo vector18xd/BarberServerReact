@@ -27,7 +27,7 @@ export const Cards = () => {
               </figure>
               <div className="infoBasica-modal">
                 <h3 id="nombre-modal">Gustavo Quintana</h3>
-                <h4 className='info-modal'><b>Barrio:</b> Limonar</h4>
+                <h4 className='info-modal'><b>Dirección:</b> B/Limonar 3era etapa manzana 6 casa #3</h4>
                 <h4 className='info-modal'><b>Horarios:</b> 06:00 a 11:30 am y 02:00 a 8:00 pm</h4>
                 <h4 className='info-modal'><b>Estado:</b> Activo</h4>
                 <p>Descripción</p>

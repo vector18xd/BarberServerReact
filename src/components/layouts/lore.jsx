@@ -24,6 +24,10 @@ export const Lore = () => {
                 <input type="text" placeholder="Apellidos" id='rapellido' className='inputform'/>
                 <input type="text" placeholder="Cedula" id='ruser' className='inputform'/>
                 <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
+                <div className="rBtn">
+                    <input type="radio" name="gestion" id="trabajador" value="trabajador"/><label for="trabajador">Trabjador</label>
+                    <input type="radio" name="gestion" id="usuario" value="usuario"/><label for="usuario">Usuario</label>
+                </div>
                 <button className='buttonform'>Crear Cuenta</button>
             </form>
         </div>

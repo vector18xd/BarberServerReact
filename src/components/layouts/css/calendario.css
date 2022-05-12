@@ -1,0 +1,8 @@
+.calendario{
+  display: flex;
+  justify-content: center;
+}
+.react-calendar {
+  margin-top: 120px;
+  border-radius: 25px;
+}

@@ -6,7 +6,7 @@ import { Modal } from './ModalPerfil'
 // import imgLocal from "../img/local.jpg"
 
 export const Cards = () => {
-  const [estadoModal, cambiarEstadoModal]= useState(true);
+  const [estadoModal, cambiarEstadoModal]= useState(false );
 
   return (
     <article className="cards card1">

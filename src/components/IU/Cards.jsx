@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import imgGustavo from '../img/Gustavo.jpg'
 import './css/card.css'
 import "./css/modal.css"
-import { Modal } from './Modal'
+import { Modal } from './ModalPerfil'
 // import imgLocal from "../img/local.jpg"
 
 export const Cards = () => {

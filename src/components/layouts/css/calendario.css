@@ -1,0 +1,10 @@
+.calendario{
+  display: flex;
+  justify-content: center;
+  height: 18rem;
+  width: 40%;
+  
+}
+.react-calendar {
+  border-radius: 25px;
+}

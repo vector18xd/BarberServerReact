@@ -67,19 +67,54 @@
 }
 
 .btn-VerMas{
+  --color: #ffd17b;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  background: linear-gradient(#1b1b1b, #111);
+ }
+ 
+ .btn-VerMas:before {
+  content: "";
   position: absolute;
-  width: 8rem;
-  height: auto;
-  border: 1px solid white;
-  background-color: rgba(0,0,0,0.65);
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 10;
-  color: white;
-}
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .btn-VerMas:hover {
+  color: #fff;
+ }
+ 
+ .btn-VerMas:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .btn-VerMas:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .btn-VerMas:active:before {
+  border-color: #ffd17b;
+  transition: background 0s;
+ }
 
 .blur:hover, .btn-VerMas{
   opacity: 1;
@@ -87,7 +122,7 @@
 }
 
 .btn-VerMas:hover{
-  background-color: white;
+  background:linear-gradient(#1b1b1b, #111) ;
   border: 1px solid black;
   color: black
 }

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./css/lore.css"
-
+import axios from 'axios'
 export const Lore = () => {
 
     const change1 = () =>{

@@ -14,11 +14,11 @@
   font-size: 20px;
 }
 
-input[type="radio"] {
+.clasificacion input[type="radio"] {
   display: none;
 }
 
-label {
+.clasificacion label {
   color: grey;
 }
 
@@ -27,11 +27,11 @@ label {
   unicode-bidi: bidi-override;
 }
 
-label:hover,
-label:hover ~ label {
+.clasificacion label:hover,
+.clasificacion label:hover ~ label {
   color: orange;
 }
 
-input[type="radio"]:checked ~ label {
+.clasificacion input[type="radio"]:checked ~ label {
   color: orange;
 }

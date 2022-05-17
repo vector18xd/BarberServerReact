@@ -5,12 +5,6 @@ import { ModalCita } from './ModalCita'
 
 export const ModalPerfil = ({estado, cambiarEstado}) => {
   const [estadoModalCita, cambiarEstadoModalCita]= useState(false);
-  // const tin= document.getElementById("btn-cita")
-  // tin.addEventListener('click', AbrirModal)
-
-  // function AbrirModal(){
-  //   cambiarEstadoModal2(!estadoModal2)
-  // }
   
   return (
     <Fragment>

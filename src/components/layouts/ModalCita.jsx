@@ -1,7 +1,18 @@
 import React, { Fragment } from 'react'
-// import { Calendario } from '../IU/Calendario'
+import { Calendario } from '../IU/Calendario'
+import Swal from 'sweetalert2';
 
-export const ModalCita = ({estadoCita, cambiarEstadoCita}) => {
+
+export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
+  function agendar(){
+    Swal.fire({
+      title: '¡¡¡CITA AGENDADA!!!',
+      text: 'Tu Cita a Sido Agendada',
+      icon: 'success',
+      confirmButtonText: 'Cool'
+    })
+    cambiarEstadoCita(!estadoCita)
+  }
   return (
     <Fragment>
       {estadoCita && 
@@ -21,7 +32,7 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita}) => {
                       <input typem="tel" id="phone" placeholder="Numero Celular" className='inputform'/>
                       <input type="email" placeholder="E-mail" id='Email' className='inputform'/>
                       <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='inputform'></textarea>
-                      <button className='buttonform'>Contactar</button>
+                      <button className='buttonform' id="agendar" onClick={agendar}>Contactar</button>
                     </form>
                     <article className="contenedor_calendario">
                       <Calendario className="calendario" />
@@ -29,6 +40,7 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita}) => {
                   </div>
                   <article className=""></article>
                 </section>
+                {children}
                 {/* <button onClick={() => cambiarEstadoCita(false)} className="btn-cita">Pedir Cita</button> */}
             </article>
         </section>

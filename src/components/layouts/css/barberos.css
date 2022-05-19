@@ -32,6 +32,7 @@ text-shadow: 0 0 10px yellow;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
 } 
 

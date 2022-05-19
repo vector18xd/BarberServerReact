@@ -67,18 +67,23 @@
 }
 
 .btn-VerMas{
-  position: absolute;
-  width: 8rem;
-  height: auto;
-  border: 1px solid white;
-  background-color: rgba(0,0,0,0.65);
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 10;
-  color: white;
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  
+ 
+}
+.btn-VerMas:hover,
+.btn-VerMas:focus {
+  border-color: white;
+  color: #fff;
+  /* box-shadow: 
+  inset -3.5em 0 white;  */
+  box-shadow: inset 5em 1em gold;
+
 }
 
 .blur:hover, .btn-VerMas{

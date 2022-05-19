@@ -36,6 +36,27 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                     </form>
                     <article className="contenedor_calendario">
                       <Calendario className="calendario" />
+                      {/*lucidChart: https://lucid.app/lucidchart/d93bc671-38ea-402b-9519-7aa036b69f20/edit?invitationId=inv_2cfb317a-5326-43f4-ad55-d002ad8df133 */}
+                      <section className="contenedor_horarios">
+                        <article className="horarios">
+                          <h4 >Mañana</h4>
+                          <select name="horarioMañana" id="">
+                            <option value="08:20" className="hora">08:20</option>
+                          </select>
+                        </article>
+                        <article className="horarios">
+                          <h4>Tarde</h4>
+                          <select name="horarioTarde" id="">
+                            <option value=""></option>
+                          </select>
+                        </article>
+                        <article className="horarios">
+                          <h4>Noche</h4>
+                          <select name="horarioNoche" id="">
+                            <option value=""></option>
+                          </select>
+                        </article>
+                      </section>
                     </article>
                   </div>
                   <article className=""></article>

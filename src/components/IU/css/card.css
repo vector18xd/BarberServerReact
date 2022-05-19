@@ -84,9 +84,6 @@
   font-weight: 500;
   color: var(--color);
   background: linear-gradient(#1b1b1b, #111);
-<<<<<<< HEAD
-}
-=======
  }
  
  .btn-VerMas:before {
@@ -118,7 +115,6 @@
   border-color: #ffd17b;
   transition: background 0s;
  }
->>>>>>> refs/remotes/origin/main
 
 .blur:hover, .btn-VerMas{
   opacity: 1;

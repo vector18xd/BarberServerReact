@@ -53,7 +53,7 @@
     color: #f44336;
   }
   .btn-cerrar:hover {
-    background-color: #232323;
+    background-color: #1c1c1c;
   }
   
   svg{
@@ -118,6 +118,10 @@
   .btn-cita:hover{
     border: 1px solid black;
     color: #ffd17b;
+  }
+
+  .btn-cita:active{
+    border: 1px solid #ffd17b;
   }
   
   .img-vtn{

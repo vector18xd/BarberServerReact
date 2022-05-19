@@ -9,7 +9,11 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
       title: '¡¡¡CITA AGENDADA!!!',
       text: 'Tu Cita a Sido Agendada',
       icon: 'success',
-      confirmButtonText: 'Cool'
+      confirmButtonText: 'Cool',
+      confirmButtonColor: '#333',
+      background: '#292929',
+      color: '#fff',
+      reverseButtons: true
     })
     cambiarEstadoCita(!estadoCita)
   }

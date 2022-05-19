@@ -1,12 +1,18 @@
 import React, {useState} from 'react'
 import imgGustavo from '../img/Gustavo.jpg'
 import './css/card.css'
-import "./css/modal.css"
-import { Modal } from './Modal'
-// import imgLocal from "../img/local.jpg"
+import "../layouts/css/modal.css"
+import { Modal } from "../layouts/Modal"
+import { ModalCita } from '../layouts/ModalCita'
 
 export const Cards = () => {
-  const [estadoModal, cambiarEstadoModal]= useState(true);
+  const [estadoModal, cambiarEstadoModal]= useState(false);
+  const [estadoModalCita, cambiarEstadoModalCita]= useState(false);
+  
+  function modales(){
+    cambiarEstadoModal(!estadoModal)
+    cambiarEstadoModalCita(!estadoModalCita)
+  }
 
   return (
     <article className="cards card1">
@@ -22,7 +28,12 @@ export const Cards = () => {
             <h4 className='info'><b>Horarios:</b> 06:00 a 11:30 am y 02:00 a 8:00 pm</h4>
             <h4 className='info'><b>Estado:</b> Activo</h4>
         </div>
-        <Modal estado={estadoModal} cambiarEstado={cambiarEstadoModal} titulo="Perfil"></Modal>
+        <Modal estado={estadoModal} cambiarEstado={cambiarEstadoModal}>
+          <button onClick={modales} className="btn-cita">AGENDAR</button>
+        </Modal>
+        <ModalCita estadoCita={estadoModalCita} cambiarEstadoCita={cambiarEstadoModalCita}>
+          <button onClick={modales} className="agendar">Volver</button>
+        </ModalCita> 
     </article>
   )
 }

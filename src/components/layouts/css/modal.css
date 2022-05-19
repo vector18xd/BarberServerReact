@@ -1,0 +1,216 @@
+/*PERFIL*/
+.fondo{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contenedorModalPerfil{
+    width: 72em;
+    height: 36em;
+    top: 7.2em;
+    background: linear-gradient(#292c2f, rgb(34, 34, 34));
+    /* background-color: #292c2f; */
+    position: fixed;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    box-shadow: rgba(230, 222, 222, 0.2) 0 0 29px 7px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .encabezadoModal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+  
+  .encabezadoModal h3{
+    font-weight: bold;
+    font-size: 2rem;
+    color: #1766DC;
+  }
+  
+  .btn-cerrar{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    transition: .3 ease all;
+    border-radius: 5px;
+    color: #f44336;
+  }
+  .btn-cerrar:hover {
+    background-color: #1c1c1c;
+  }
+  
+  svg{
+    width: 100%;
+    height: 100%;
+  }
+
+  .contenedor-modal{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .infoBasica-modal{
+    width: 63%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campoimg-modal{
+    width: 35%;
+    height: 100%;
+    box-shadow: 0 0 10px 5px black;
+    border-radius: 20px;
+  }
+
+  .texto{
+    width: 100%;
+    height: auto;
+  }
+
+  .local-calendario{
+    width: 100%;
+    height: auto;
+    display: flex;
+  }
+
+  .local{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .btn-cita{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 5px;
+    /* background-color: #1766DC; */
+    background: linear-gradient(#333, #222);
+    /* border: 1px solid #1654b2; */
+    box-sizing: border-box;
+	  border: 1px solid #444;
+    font-weight: bold;
+    color: white;
+    /* rgb(26, 67, 250) */
+  }
+
+  .btn-cita:hover{
+    border: 1px solid black;
+    color: #ffd17b;
+  }
+
+  .btn-cita:active{
+    border: 1px solid #ffd17b;
+  }
+  
+  .img-vtn{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  
+  .imgLocal{
+    width: 19rem;
+    height: 83.5%;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 8px;
+  }
+  
+  #nombre-modal{
+    width: 100%;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+/*CITA*/
+.contenedorModalCita{
+  width: 62em;
+  height: 38em;
+  top: 7.2em;
+  background-color: #fff;
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 20px;
+}
+
+.info_Cita{
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+.contenedor_calendario{
+  width: 35%;
+  height: 100%;
+  text-align: center;
+}
+
+#form_Cita{
+  width: 60%;
+  height: 100%;
+}
+
+.calendario{
+  width: 100%;
+  height: 100%;
+}
+
+.agendar{
+  position: absolute;
+  bottom: 1rem;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #eee;
+  border: 1px solid black;
+  font-weight: bold;
+}
+
+.agendar:hover{
+  background-color: rgb(222, 222, 222);
+}
+
+#agendar{
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.contenedor_horarios{
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.horarios{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}

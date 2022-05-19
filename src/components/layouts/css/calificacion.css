@@ -14,11 +14,11 @@
   font-size: 20px;
 }
 
-.clasificacionF input[type="radio"] {
+.clasificacion input[type="radio"] {
   display: none;
 }
 
-.clasificacionF label {
+.clasificacion label {
   color: grey;
 }
 
@@ -27,11 +27,11 @@
   unicode-bidi: bidi-override;
 }
 
-.clasificacionF label:hover,
-.clasificacionF label:hover ~ label {
+.clasificacion label:hover,
+.clasificacion label:hover ~ label {
   color: orange;
 }
 
-.clasificacionF input[type="radio"]:checked ~ label {
+.clasificacion input[type="radio"]:checked ~ label {
   color: orange;
 }

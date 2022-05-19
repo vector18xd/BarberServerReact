@@ -84,7 +84,41 @@
   font-weight: 500;
   color: var(--color);
   background: linear-gradient(#1b1b1b, #111);
+<<<<<<< HEAD
 }
+=======
+ }
+ 
+ .btn-VerMas:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .btn-VerMas:hover {
+  color: #fff;
+ }
+ 
+ .btn-VerMas:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .btn-VerMas:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .btn-VerMas:active:before {
+  border-color: #ffd17b;
+  transition: background 0s;
+ }
+>>>>>>> refs/remotes/origin/main
 
 .blur:hover, .btn-VerMas{
   opacity: 1;
@@ -92,7 +126,7 @@
 }
 
 .btn-VerMas:hover{
-  background-color: white;
+  background:linear-gradient(#1b1b1b, #111) ;
   border: 1px solid black;
   color: black
 }

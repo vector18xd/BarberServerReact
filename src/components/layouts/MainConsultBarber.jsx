@@ -11,6 +11,8 @@ export const MainConsultBarber = () => {
             <h2 className="nom-categoria">Barberos</h2>
             <div className="cards-barberos">
                 <Cards />
+                <Cards />
+                <Cards />
             </div>
         </section>
     </main>

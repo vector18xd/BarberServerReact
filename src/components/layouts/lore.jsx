@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "./css/lore.css"
-
+import axios from 'axios'
 export const Lore = () => {
 
     const change1 = () =>{
@@ -12,7 +12,38 @@ export const Lore = () => {
         container.classList.add("right-panel-active");
       }
     
-
+      const [datas, setData]=useState({
+        form:{
+            "Nombres":"",
+            "Apellido":"",
+            "Telefono":"",
+            "Email":"",
+            "Password":""
+        },
+        error:false,
+        errorMsg:""
+    })
+    const login = (e) =>{
+        e.preventDefault()
+        const user = document.getElementById("userName").value
+        const password = document.getElementById("password").value
+        setData(
+            datas.form.username=user,
+            datas.form.password=password
+        )
+        console.log(datas.form)
+        post()
+    }
+    
+    const post = () =>{
+        axios.post('https://backend-edw.herokuapp.com/login',datas.form )
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    } 
   return (
     <div className='sliderlore'>
         <div className="containerform" id="container">
@@ -24,9 +55,9 @@ export const Lore = () => {
                 <input type="text" placeholder="Apellidos" id='rapellido' className='inputform'/>
                 <input type="text" placeholder="Cedula" id='ruser' className='inputform'/>
                 <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
-                <div className="rBtn">
-                    <input type="radio" name="gestion" id="trabajador" value="trabajador"/><label for="trabajador">Trabjador</label>
-                    <input type="radio" name="gestion" id="usuario" value="usuario"/><label for="usuario">Usuario</label>
+                <div className="radiusB">
+                    <input type="radio" name='decision' value="trabajador" id='Trabajador' /><label for="trabajador">Trabajador</label>
+                    <input type="radio" name='decision' value="cliente" id='Cliente' /><label for="cliente">Cliente</label>
                 </div>
                 <button className='buttonform'>Crear Cuenta</button>
             </form>

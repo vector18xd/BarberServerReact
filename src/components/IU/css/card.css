@@ -92,7 +92,7 @@
 }
 
 .btn-VerMas:hover{
-  background-color: white;
+  background:linear-gradient(#1b1b1b, #111) ;
   border: 1px solid black;
   color: black
 }

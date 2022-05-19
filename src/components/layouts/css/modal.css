@@ -53,7 +53,7 @@
     color: #f44336;
   }
   .btn-cerrar:hover {
-    background-color: #F2F2F2;
+    background-color: #232323;
   }
   
   svg{
@@ -79,6 +79,7 @@
     width: 35%;
     height: 100%;
     box-shadow: 0 0 10px 5px black;
+    border-radius: 20px;
   }
 
   .texto{
@@ -122,12 +123,14 @@
   .img-vtn{
     width: 100%;
     height: 100%;
+    border-radius: 20px;
   }
   
   .imgLocal{
     width: 19rem;
     height: 83.5%;
     box-shadow: 0 0 10px 2px black;
+    border-radius: 8px;
   }
   
   #nombre-modal{

@@ -16,10 +16,12 @@
     width: 72em;
     height: 36em;
     top: 7.2em;
-    background-color: #000;
+    background: linear-gradient(#292c2f, rgb(34, 34, 34));
+    /* background-color: #292c2f; */
     position: fixed;
     border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    box-shadow: rgba(230, 222, 222, 0.2) 0 0 29px 7px;
     padding: 20px;
     color: white;
   }
@@ -48,7 +50,7 @@
     cursor:pointer;
     transition: .3 ease all;
     border-radius: 5px;
-    color: #1766DC;
+    color: #f44336;
   }
   .btn-cerrar:hover {
     background-color: #F2F2F2;
@@ -76,6 +78,7 @@
   .campoimg-modal{
     width: 35%;
     height: 100%;
+    box-shadow: 0 0 10px 5px black;
   }
 
   .texto{
@@ -101,16 +104,19 @@
     width: 6rem;
     height: 3rem;
     border-radius: 5px;
-    background-color: #1766DC;
-    border: 1px solid #1654b2;
+    /* background-color: #1766DC; */
+    background: linear-gradient(#333, #222);
+    /* border: 1px solid #1654b2; */
+    box-sizing: border-box;
+	  border: 1px solid #444;
     font-weight: bold;
     color: white;
     /* rgb(26, 67, 250) */
   }
 
   .btn-cita:hover{
-    background-color: #144ea5;
-    border: 1px solid #1766DC;
+    border: 1px solid black;
+    color: #ffd17b;
   }
   
   .img-vtn{
@@ -121,6 +127,7 @@
   .imgLocal{
     width: 19rem;
     height: 83.5%;
+    box-shadow: 0 0 10px 2px black;
   }
   
   #nombre-modal{

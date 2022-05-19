@@ -53,7 +53,7 @@
     color: #f44336;
   }
   .btn-cerrar:hover {
-    background-color: #232323;
+    background-color: #1c1c1c;
   }
   
   svg{
@@ -122,6 +122,7 @@
     background: white;
     margin-left: 1em;
     position: absolute;
+<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,6 +147,32 @@
   .btn-cita:active .icon {
     transform: scale(0.95);
    }
+=======
+    right: 20px;
+    bottom: 20px;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 5px;
+    /* background-color: #1766DC; */
+    background: linear-gradient(#333, #222);
+    /* border: 1px solid #1654b2; */
+    box-sizing: border-box;
+	  border: 1px solid #444;
+    font-weight: bold;
+    color: white;
+    /* rgb(26, 67, 250) */
+  }
+
+  .btn-cita:hover{
+    border: 1px solid black;
+    color: #ffd17b;
+  }
+
+  .btn-cita:active{
+    border: 1px solid #ffd17b;
+  }
+  
+>>>>>>> 6783220f5f77c8a1637e5ae8c74079e9d76b3092
   .img-vtn{
     width: 100%;
     height: 100%;
@@ -235,4 +262,8 @@
   display: flex;
   align-items: center;
   gap: 5%;
+}
+
+.btn-confirmar{
+  background-color: red;
 }

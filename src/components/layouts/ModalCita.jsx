@@ -7,9 +7,14 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
   function agendar(){
     Swal.fire({
       title: '¡¡¡CITA AGENDADA!!!',
-      text: 'Tu Cita a Sido Agendada',
+      text: 'Tu Cita a Sido Agendada Con Exito!',
       icon: 'success',
-      confirmButtonText: 'Cool'
+      confirmButtonColor: '#333',
+      background: '#292929',
+      color: '#fff',
+      customClass: {
+        confirmButton: 'btn-confirmar'
+      }
     })
     cambiarEstadoCita(!estadoCita)
   }

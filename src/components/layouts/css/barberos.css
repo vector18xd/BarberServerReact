@@ -33,6 +33,7 @@ text-shadow: 0 0 10px yellow;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin-top: 0.5rem;
 } 
 

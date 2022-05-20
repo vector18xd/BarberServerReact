@@ -12,6 +12,7 @@ export const MainConsultBarber = () => {
             <div className="cards-barberos">
                 <Cards />
                 <Cards />
+                <Cards />
             </div>
         </section>
     </main>

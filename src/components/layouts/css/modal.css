@@ -16,12 +16,12 @@
     width: 72em;
     height: 36em;
     top: 7.2em;
-    background: linear-gradient(#292c2f, rgb(34, 34, 34));
+    background: linear-gradient(#1b1b1b, #111);
     /* background-color: #292c2f; */
     position: fixed;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.35);
-    box-shadow: rgba(230, 222, 222, 0.2) 0 0 29px 7px;
+    box-shadow: rgba(230, 222, 222, 0.2) 0 0 29px 3px;
     padding: 20px;
     color: white;
   }
@@ -99,7 +99,55 @@
   }
   
   .btn-cita{
+  background: linear-gradient(#1b1b1b, #111);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  height: 2.8em;
+  padding-right: 3.3em;
+  right: 15px;
+  bottom: 15px;
+  }
+  .btn-cita .icon {
+    background: white;
+    margin-left: 1em;
     position: absolute;
+<<<<<<< HEAD
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #111;
+    right: 0.3em;
+    transition: all 0.3s;
+   }
+   .btn-cita:hover .icon {
+    width: calc(100% - 0.6em);
+   }
+   .btn-cita .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: black;
+   }
+  .btn-cita:hover  .icon svg{
+    transform: translateX(0.1em);
+  }
+  .btn-cita:active .icon {
+    transform: scale(0.95);
+   }
+=======
     right: 20px;
     bottom: 20px;
     width: 6rem;
@@ -124,6 +172,7 @@
     border: 1px solid #ffd17b;
   }
   
+>>>>>>> 6783220f5f77c8a1637e5ae8c74079e9d76b3092
   .img-vtn{
     width: 100%;
     height: 100%;

@@ -30,15 +30,7 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                 </section>
                 <section className="contenedor-modal">
                   <div className="info_Cita">
-                    <form action="#" className='formlr' id="form_Cita">
-                      <h1 className='h1form'>Contactenos</h1>
-                      <input type="username" placeholder="Nombre" id='firstname' className='inputform'/>
-                      <input type="text" placeholder="Apellidos" id='firstname' className='inputform'/>
-                      <input typem="tel" id="phone" placeholder="Numero Celular" className='inputform'/>
-                      <input type="email" placeholder="E-mail" id='Email' className='inputform'/>
-                      <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='inputform'></textarea>
-                      <button className='buttonform' id="agendar" onClick={agendar}>Contactar</button>
-                    </form>
+                    <h1 className='h1form'>AGENDAR MI CITA</h1>
                     <article className="contenedor_calendario">
                       <Calendario className="calendario" />
                       {/*lucidChart: https://lucid.app/lucidchart/d93bc671-38ea-402b-9519-7aa036b69f20/edit?invitationId=inv_2cfb317a-5326-43f4-ad55-d002ad8df133 */}
@@ -63,6 +55,10 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                         </article>
                       </section>
                     </article>
+                    <form action="#" className='formlr' id="form_Cita">
+                      <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='inputform'></textarea>
+                      <button className='buttonform' id="agendar" onClick={agendar}>Contactar</button>
+                    </form>
                   </div>
                   <article className=""></article>
                 </section>

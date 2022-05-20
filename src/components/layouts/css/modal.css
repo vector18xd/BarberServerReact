@@ -14,7 +14,7 @@
   
   .contenedorModalPerfil{
     width: 72em;
-    height: 36em;
+    height: 35em;
     top: 7.2em;
     background: linear-gradient(#1b1b1b, #111);
     /* background-color: #292c2f; */
@@ -84,7 +84,7 @@
 
   .texto{
     width: 100%;
-    height: auto;
+    height: 54%;
   }
 
   .local-calendario{
@@ -95,7 +95,7 @@
 
   .local{
     width: 100%;
-    height: 100%;
+    height: 40%;
   }
   
   .btn-cita{
@@ -122,7 +122,6 @@
     background: white;
     margin-left: 1em;
     position: absolute;
-<<<<<<< HEAD
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,32 +146,6 @@
   .btn-cita:active .icon {
     transform: scale(0.95);
    }
-=======
-    right: 20px;
-    bottom: 20px;
-    width: 6rem;
-    height: 3rem;
-    border-radius: 5px;
-    /* background-color: #1766DC; */
-    background: linear-gradient(#333, #222);
-    /* border: 1px solid #1654b2; */
-    box-sizing: border-box;
-	  border: 1px solid #444;
-    font-weight: bold;
-    color: white;
-    /* rgb(26, 67, 250) */
-  }
-
-  .btn-cita:hover{
-    border: 1px solid black;
-    color: #ffd17b;
-  }
-
-  .btn-cita:active{
-    border: 1px solid #ffd17b;
-  }
-  
->>>>>>> 6783220f5f77c8a1637e5ae8c74079e9d76b3092
   .img-vtn{
     width: 100%;
     height: 100%;
@@ -181,7 +154,7 @@
   
   .imgLocal{
     width: 19rem;
-    height: 83.5%;
+    height: 100%;
     box-shadow: 0 0 10px 2px black;
     border-radius: 8px;
   }
@@ -207,13 +180,13 @@
 .info_Cita{
   width: 100%;
   height: 90%;
-  display: flex;
 }
 
 .contenedor_calendario{
   width: 35%;
   height: 100%;
   text-align: center;
+  display: flex;
 }
 
 #form_Cita{

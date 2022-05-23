@@ -66,6 +66,11 @@
 }
 .mb-0{
     color: #17a2b8!important;
+    display: flex;
+    align-items: center;    
+}
+.wh{
+    margin-right:5px; 
 }
 .btnM{
     margin-left: 10px;
@@ -74,9 +79,9 @@
     margin-right: 5px;
 }
 .cardP-box {
-    background-color: #fff;
+    background:linear-gradient(#333, #222);;
     background-clip: border-box;
-    border: 1px solid #e7eaed;
+    border: 1px solid #222;
     padding: 1.5rem;
     margin-bottom: 24px;
     border-radius: .25rem;

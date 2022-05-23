@@ -180,7 +180,7 @@
 /*CITA*/
 .contenedorModalCita{
   width: 45em;
-  height: 45em;
+  height: 40em;
   top: 7.2em;
   background: linear-gradient(#1b1b1b, #111);
   position: fixed;
@@ -196,7 +196,7 @@
 
 .contenedor_calendario{
   width: 100%;
-  height: 50%;
+  height: 60%;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -204,7 +204,7 @@
 
 .form_Cita{
   width: 100%;
-  height: 50%;
+  height: 35%;
 }
 
 .mdl_inputform {
@@ -250,8 +250,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   font-size: 1.5rem;
-  color: black;
-  background-color: #fff;
+  color: #fff;
   border-radius: 10px;
 }
 
@@ -264,15 +263,15 @@
 }
 
 #mañana{
-  background-color: #050505;
+  background-color: #1a1a1a;
 }
 
 #tarde{
-  background-color: #0f0f0f;
+  background-color: #111111;
 }
 
 #noche{
-  background-color: #1f1e1e;
+  background-color: #050505;
 }
 
 .btn-confirmar{

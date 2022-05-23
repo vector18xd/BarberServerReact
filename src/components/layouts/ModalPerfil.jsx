@@ -1,11 +1,9 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment } from 'react'
+import imgLocal from "../img/local.jpg"
 import imgGustavo from '../img/Gustavo.jpg'
-import imgLocal from '../img/local.jpg'
-import { ModalCita } from './ModalCita'
 
-export const ModalPerfil = ({estado, cambiarEstado}) => {
-  const [estadoModalCita, cambiarEstadoModalCita]= useState(false);
-  
+export const Modal = ({estado, cambiarEstado, children}) => {
+
   return (
     <Fragment>
         {estado && 
@@ -29,26 +27,17 @@ export const ModalPerfil = ({estado, cambiarEstado}) => {
                         <h4 className="info-modal"><b>Descripción:</b> Activo Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, rerum fugiat! Temporibus officiis magni molestias repellat reprehenderit. Aperiam recusandae labore aspernatur distinctio consectetur aut placeat laudantium. Ex quod fugit eligendi.</h4>
                       </section>
                       <section className="local">
-                        <h4 className="info-modal"><b>Dirección:</b> B/Limonar 3era etapa manzana 6 casa #3</h4>
-                        <img src={imgLocal} alt="imagen Del local" className="imgLocal"/>
+                        <h4 className="info-modal" id="direccion"><b>Dirección:</b> B/Limonar 3era etapa manzana 6 casa #3</h4>
+                        <figure className="mdl_campoImgLocal">
+                          <img src={imgLocal} alt="imagen Del local" className="imgLocal"/>
+                        </figure>
                       </section>
                     </article>
                   </section>
-                  <button onClick={() => cambiarEstadoModalCita(!estadoModalCita)} className="btn-cita">Pedir Cita</button>
+                  {children}
               </article>
-              <ModalCita estadoCita={estadoModalCita} cambiarEstadoCita={cambiarEstadoModalCita} />
           </section>
         }
     </Fragment>
   )
 }
-
-// import React, { Fragment, useState } from 'react'
-// import imgGustavo from '../img/Gustavo.jpg'
-// import imgLocal from '../img/local.jpg'
-// import Calendar from 'react-calendar'
-// import 'react-calendar/dist/Calendar.css';
-// // import { Agendamientos } from "../layouts/agendamientos"
-
-// export const Modal = ({estado, cambiarEstado}) => {
-//   const [value, onChange] = useState(new Date());

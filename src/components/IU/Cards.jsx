@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import imgGustavo from "../img/Gustavo.jpg";
 import "./css/card.css";
 import "../layouts/css/modal.css";
-import { Modal } from "../layouts/Modal";
+import { Modal } from "../layouts/ModalPerfil";
 import { ModalCita } from "../layouts/ModalCita";
 
 export const Cards = () => {

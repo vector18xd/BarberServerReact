@@ -30,24 +30,24 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                 </section>
                 <section className="contenedor-modal">
                   <div className="info_Cita">
-                    <h1 className='h1form'>AGENDAR MI CITA</h1>
+                    <h2 className="mdl_Citatitulo">AGENDAR MI CITA</h2>
                     <article className="contenedor_calendario">
                       <Calendario className="calendario" />
                       {/*lucidChart: https://lucid.app/lucidchart/d93bc671-38ea-402b-9519-7aa036b69f20/edit?invitationId=inv_2cfb317a-5326-43f4-ad55-d002ad8df133 */}
                       <section className="contenedor_horarios">
-                        <article className="horarios">
+                        <article className="horarios" id="mañana">
                           <h4 >Mañana</h4>
                           <select name="horarioMañana" id="">
                             <option value="08:20" className="hora">08:20</option>
                           </select>
                         </article>
-                        <article className="horarios">
+                        <article className="horarios" id="tarde">
                           <h4>Tarde</h4>
                           <select name="horarioTarde" id="">
                             <option value=""></option>
                           </select>
                         </article>
-                        <article className="horarios">
+                        <article className="horarios" id="noche">
                           <h4>Noche</h4>
                           <select name="horarioNoche" id="">
                             <option value=""></option>
@@ -55,8 +55,8 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                         </article>
                       </section>
                     </article>
-                    <form action="#" className='formlr' id="form_Cita">
-                      <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='inputform'></textarea>
+                    <form action="#" className="form_Cita">
+                      <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='mdl_inputform'></textarea>
                       <button className='buttonform' id="agendar" onClick={agendar}>Contactar</button>
                     </form>
                   </div>

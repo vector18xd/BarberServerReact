@@ -57,13 +57,12 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                     </article>
                     <form action="#" className="form_Cita">
                       <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='mdl_inputform'></textarea>
-                      <button className='buttonform' id="agendar" onClick={agendar}>Contactar</button>
+                      <button className="agendar" onClick={agendar}>Contactar</button>
                     </form>
                   </div>
                   <article className=""></article>
                 </section>
                 {children}
-                {/* <button onClick={() => cambiarEstadoCita(false)} className="btn-cita">Pedir Cita</button> */}
             </article>
         </section>
       }

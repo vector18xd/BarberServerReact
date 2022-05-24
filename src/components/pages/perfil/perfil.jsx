@@ -7,7 +7,9 @@ export const Perfil = () => {
   return (
       <div>
         <Header/>
-        <Perfiles/>
+        <div className="containerNegro">
+          <Perfiles/>
+        </div>
         <Footer/>
       </div>
   )

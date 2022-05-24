@@ -1,9 +1,12 @@
+.containerNegro{
+    background-color: #050505;
+}
 
 .main-body {
-    padding: 15px;
+    padding: 1em;
 }
 .cardsP{
-    margin-top: 100px;
+    margin-top: 7em;
 }
 .cardP {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
@@ -44,6 +47,10 @@
     background: linear-gradient(#1b1b1b, #111);
 }
 
+.bibi-whatsapp{
+    color: limegreen;
+}
+
 .timeline-sm-item, .mt-3{
     color: #fff
 }
@@ -73,7 +80,8 @@
     width: 66%;
 }
 .mb-0{
-    color: #17a2b8!important;
+    color: #ffd17b;
+    /* color: #17a2b8!important; */
     display: flex;
     align-items: center;    
 }
@@ -84,7 +92,7 @@
     margin-left: 10px;
 }
 .iconsM{
-    margin-right: 5px;
+    margin-right: 8px;
 }
 .cardP-box {
     background: linear-gradient(#1b1b1b, #111);

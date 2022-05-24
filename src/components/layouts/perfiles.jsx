@@ -22,13 +22,15 @@ export const Perfiles = () => {
                     <p className="text-muted font-size-sm">
                       Bay Area, San Francisco, CA
                     </p>
-                    <label class="switch">
-                      <input type="checkbox"/>
-                      <span class="sliderP"></span>
-                  </label>
-                    <button className="btn btnM btn-outline-primary">
-                      Mensaje
-                    </button>
+                    <div className="btnActivateM">
+                      <label class="switch">
+                        <input type="checkbox"/>
+                        <span class="sliderP"></span>
+                      </label>
+                      <button className="btn btnM btn-outline-primary">
+                        Mensaje
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -93,7 +95,7 @@ export const Perfiles = () => {
                   </h6>
                   <span className="text-secondary">bootdey</span>
                 </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                {/* <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <form className="clasificacionF">
                     <p className="clasificacion">
                       <input id="radio1" type="radio" name="estrellas" value="5" />
@@ -109,7 +111,7 @@ export const Perfiles = () => {
                     </p>
                     <h6 className="mb-0">4.5</h6>
                   </form>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

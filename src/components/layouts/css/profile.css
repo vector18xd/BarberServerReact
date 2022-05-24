@@ -1,5 +1,5 @@
 .containerNegro{
-    background-color: #050505;
+    background: url(../../img/fondo/luna.jpg) no-repeat  center;
 }
 
 .main-body {
@@ -377,3 +377,10 @@
   .switch input[type="checkbox"] {
     display: none;
   }
+.btnActivateM{
+    display: flex;
+    align-items: center;
+}
+.btnActivateM label {
+    display: flex;
+}

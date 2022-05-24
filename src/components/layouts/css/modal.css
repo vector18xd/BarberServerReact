@@ -221,7 +221,7 @@
   height: 100%;
 }
 
-.agendar{
+.volver{
   background: linear-gradient(#1b1b1b, #111);
   color: white;
   font-family: inherit;
@@ -242,7 +242,7 @@
   bottom: 15px;
 }
 
-.agendar .icon {
+.volver .icon {
   background: white;
   margin-left: 1em;
   position: absolute;
@@ -256,18 +256,18 @@
   right: 0.3em;
   transition: all 0.3s;
  }
- .agendar:hover .icon {
+ .volver:hover .icon {
   width: calc(100% - 0.6em);
  }
- .agendar .icon svg {
+ .volver .icon svg {
   width: 1.1em;
   transition: transform 0.3s;
   color: black;
  }
-.agendar:hover  .icon svg{
+.volver:hover  .icon svg{
   transform: translateX(0.1em);
 }
-.agendar:active .icon {
+.volver:active .icon {
   transform: scale(0.95);
  }
 
@@ -315,3 +315,4 @@
   margin-bottom: 1rem;
   color: #fff;
 }
+

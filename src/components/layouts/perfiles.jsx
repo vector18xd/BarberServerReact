@@ -34,7 +34,7 @@ export const Perfiles = () => {
               </div>
             </div>
             <div className="card mt-3">
-              <ul className="list-group list-group-flush">
+              <ul className="list-group list-group-flush" id="cambioCard">
                 <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0 wh">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">

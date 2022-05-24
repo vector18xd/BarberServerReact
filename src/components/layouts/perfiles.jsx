@@ -24,7 +24,7 @@ export const Perfiles = () => {
                     </p>
                     <label class="switch">
                       <input type="checkbox"/>
-                      <span class="slider"></span>
+                      <span class="sliderP"></span>
                   </label>
                     <button className="btn btnM btn-outline-primary">
                       Mensaje

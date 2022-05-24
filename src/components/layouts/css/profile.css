@@ -66,6 +66,7 @@
 }
 .mb-0{
     color: #17a2b8!important;
+    display: flex;
 }
 .btnM{
     margin-left: 10px;

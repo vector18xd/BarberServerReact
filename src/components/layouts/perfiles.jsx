@@ -22,7 +22,10 @@ export const Perfiles = () => {
                     <p className="text-muted font-size-sm">
                       Bay Area, San Francisco, CA
                     </p>
-                    <button className="btn btnF btn-primary">Activo</button>
+                    <label class="switch">
+                      <input type="checkbox"/>
+                      <span class="slider"></span>
+                  </label>
                     <button className="btn btnM btn-outline-primary">
                       Mensaje
                     </button>

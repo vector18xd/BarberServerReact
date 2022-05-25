@@ -7,14 +7,14 @@ export const Footer = ()=>{
             <div className="container">
                 <div className="row">
                     <div className="col-md-5">
-                        <h5><img className="logoF" src={logo} alt="logo" /> ACME CO INC.</h5>
+                        <h5><img className="logoF" src={logo} alt="logo" /> BARBERSERVER CO.</h5>
                         <div className="row">
                             <div className="col-6">
                                 <ul className="list-unstyled">
-                                    <NavLink to="/"><li><a>Casa</a></li></NavLink>
+                                    <NavLink to="/"><li><a>Inicio</a></li></NavLink>
                                     <NavLink to="/Contact"><li><a>Contacto</a></li></NavLink>
-                                    <NavLink to="/About"><li><a>Acerca De Nosotros</a></li></NavLink>
-                                    <NavLink to="/Login"><li><a>Iniciar Sesion</a></li></NavLink>
+                                    <NavLink to="/About"><li><a>Sobre Nosotros</a></li></NavLink>
+                                    <NavLink to="/Login"><li><a>Ingresar</a></li></NavLink>
                                 </ul>
                             </div>
                             <div className="col-6">
@@ -34,7 +34,7 @@ export const Footer = ()=>{
                         <br/>
                     </div>
                     <div className="col-md-2">
-                        <h5 className="text-md-right">Contacto de Nostros</h5>
+                        <h5 className="text-md-right">¡Envianos un comentario!</h5>
                         <hr/>
                     </div>
                     <div className="col-md-5">

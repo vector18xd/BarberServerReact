@@ -38,13 +38,13 @@ a{
     transition: 3.S;
     border: 2px  solid #c7c7c7;
     width: 10px;
-     height: 10px;
-     -moz-border-radius: 50%;
-     -webkit-border-radius: 50%;
-     border-radius: 50%;
-     margin-right: 26px;
-     margin-left: 29px;
-     background: red;
+    height: 10px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 26px;
+    margin-left: 29px;
+    background: red;
 } */
 .Switch{
     display: flex;

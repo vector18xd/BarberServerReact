@@ -280,3 +280,16 @@
 .rBtn label{
 	margin-right: 10px;
 }
+#Trabajador{
+	padding-right: 10px;
+}
+#Cliente{
+	padding-left: 10%;
+}
+.radiusB{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 60%;
+	height: auto;
+	color: whitesmoke;
+}

@@ -3,7 +3,7 @@ import { NavLink} from "react-router-dom"
 import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
 
  export const Header = () =>{
-     return(
+    return(
         <header className="header">
             <div className="imgSlider">
                 <img className="imagenLogo" src={logo} alt="Logo"/>
@@ -30,5 +30,5 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                 </label>
             </nav>
         </header>
-     )
+    )
  }

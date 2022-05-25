@@ -8,7 +8,7 @@ export const Home = () => {
     return(
         <div className="main">
             <Header/>
-            <Slider className="md=w-16 justify-center" classT="slider" text="EL SITIO WEB DE LAS BARBERIAS"/>
+            <Slider className="md=w-16 justify-center" classT="slider" text="EL SITIO WEB DE LOS BARBEROS"/>
             <Footer/>
             <Aboutus/>
         </div>

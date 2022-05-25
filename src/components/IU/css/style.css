@@ -320,11 +320,19 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
         display: block;
     }
 
+    .mostrar-menu{
+        width: 1.4em;
+        height: 1.4em;
+        margin-right: 40px;
+        color: #fff;
+        text-align: center;
+    }
+
     .NavLink{
         position: fixed;
-        width: 40%;
-        height: 100vh;
-        background: #4D4D5C;
+        width: 30%;
+        height: 50vh;
+        background: rgba(0,0,0,1);
         right: 0;
         /* right: -100%; */
         top: 0;
@@ -343,9 +351,24 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
         display: block;
     }
     .esconder-menu{
+        width: 45px;
+        height: 45px;
         position: absolute;
-        top:40px;
-        right: 40px;
+        top: 15px;
+        right: 20px;
+        color: #fff;
+        margin: 0;
+        text-align: center;
+        transition: .3 ease all;
+    }
+    .esconder-menu:hover{
+        background-color: #1c1c1c;
+        color:#f44336;
+    }
+
+    .mostrar-menu:hover{
+        background-color: #1c1c1c;
+        color:#ffd17b;
     }
     #check:checked ~ .NavLink{
         right: -100%;
@@ -354,6 +377,7 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
         width: 100%;
         height: auto;
         text-align: center;
+        margin-top: 17px;
     }
     .imgP{
         width: auto;
@@ -362,6 +386,10 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
         text-align: center;
         display: flex;
         justify-content: center;
+    }
+    .children{
+        right: 0;
+        top: 25.5em;
     }
 }
 

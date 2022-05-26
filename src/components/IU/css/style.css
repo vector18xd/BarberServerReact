@@ -359,7 +359,7 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
         color: #fff;
         margin: 0;
         text-align: center;
-        transition: .3 ease all;
+        transition: 0.4s;
     }
     .esconder-menu:hover{
         background-color: #1c1c1c;

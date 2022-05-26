@@ -6,12 +6,13 @@ import Swal from 'sweetalert2';
 export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
   function agendar(){
     Swal.fire({
-      title: '¡¡¡CITA AGENDADA!!!',
-      text: 'Tu Cita a Sido Agendada Con Exito!',
+      title: '¡¡¡Cita Agendada!!!',
+      text: '¡Tu cita a sido agendada con exito!',
       icon: 'success',
       confirmButtonColor: '#333',
       background: '#292929',
       color: '#fff',
+      confirmButtonAriaLabel: 'Ok',
       customClass: {
         confirmButton: 'btn-confirmar'
       }
@@ -57,7 +58,7 @@ export const ModalCita = ({estadoCita, cambiarEstadoCita, children}) => {
                     </article>
                     <form action="#" className="form_Cita">
                       <textarea name="text" placeholder='Describe el servicio que quieres' cols="30" rows="10" className='mdl_inputform'></textarea>
-                      <button className="agendar" onClick={agendar}>Contactar</button>
+                      <button className="agendar" onClick={agendar}>Agendar</button>
                     </form>
                   </div>
                   <article className=""></article>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from '../IU/buttons'
 import imgc from "../../../src/components/img/fondo/motilar.jpg"
 export const Aboutus = () => {
   return (
@@ -13,7 +12,6 @@ export const Aboutus = () => {
                                 <h2 className='textH2'>Bienvenidos a BARBERSERVER</h2>
                                 <p className="lead">Desde la niñez muchos hombres y mujeres han asistido a un barbero o peluquero, de hecho, es algo que ya tiene mucho tiempo, la metodología de asignar una hora para una cita y tener una relación cliente-barbero siempre ha sido la misma, por un cuaderno o una agenda, o ya en la actualidad por medio de las redes sociales.</p>
                                 <p className='textAbout'> BarberSever es un software encargado de darle un orden a las citas y horarios de los cortes, ya sea en una barbería o en una peluquería, también se encarga de mejorar el servicio con los clientes de las barberías ya que este sistema es necesario para muchos emprendedores dueños de barberías y peluquerías que quieren tener una nueva metodología de pedido y asignación de citas para un corte de cabello.</p>
-                                <a href='#'><Button text="Aprende más"/></a>
                             </div>
 					    </div>
 					<div className="col-md-6 text-center">

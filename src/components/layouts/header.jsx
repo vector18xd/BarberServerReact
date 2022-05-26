@@ -8,6 +8,10 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
             <div className="imgSlider">
                 <img className="imagenLogo" src={logo} alt="Logo"/>
             </div>
+            <input type="checkbox" id="check" />
+            <label htmlFor="check" className="mostrar-menu">
+                &#8801;
+            </label>
             <nav className="NavLink">
                 <NavLink to="/"><a className="link">INICIO</a></NavLink>
                 <NavLink to="/About"><a className="link">SOBRE NOSOTROS</a></NavLink>
@@ -18,9 +22,12 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                     <NavLink className="imgP" to="/Perfil"><img className="linkPerfil" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"/></NavLink>
                     <ul className="children">
                             <li><a href="#">CITAS</a></li>
-                            <li><a href="#">MENSAJE</a></li>
+                            <li><a href="#">CHAT</a></li>
                     </ul>
                 </li>
+                <label htmlFor="check" className="esconder-menu">
+                    &#215;
+                </label>
             </nav>
         </header>
      )

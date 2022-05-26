@@ -8,27 +8,26 @@ a{
     color: #fefd9f;
 }
 .link{
-    margin-left: 30px;
-    margin-right: 30px;
     color: #ccc;
     font-size: 15px;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    transition: 0.4s;
 }
 .NavLink .active{
-    
     border-bottom: 2px solid #fff;
 }
 .NavLink{
-    margin-top: 35px;
+    width:40%;
+    height: 4rem;
     display: flex;
     font-family: 'Open Sans', sans-serif;
-    margin-right: 15px;
     text-decoration: none;
+    justify-content: space-evenly;
 }
 .NavLink a:hover{
     text-decoration: none;
 }
-.OnOff{
+/* .OnOff{
     transition: 3.S;
     border: 2px  solid #c7c7c7;
     width: 10px;
@@ -39,7 +38,7 @@ a{
      margin-right: 26px;
      margin-left: 29px;
      background: red;
-}
+} */
 .Switch{
     display: flex;
     justify-content: flex-end;
@@ -48,8 +47,9 @@ header{
     position: fixed;
     display: flex;
     width: 100%;
-    height:95px;
+    height:7em;
     background: transparent;
+    align-items: center;
     justify-content: space-between;
     background: rgba(0,0,0,0.9);
     z-index: 1000;
@@ -64,17 +64,31 @@ header{
     align-items: center;
 }
 
+.imgSlider{
+    width: 10em;
+    height: 8em;
+}
+
 .imagenLogo{
-    width: 100px;
+    width: 100%!important;
+    height: 100%!important;
 }
 .sliders{
-    height: 100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem; 
+    align-items: center;
 }
 .text{
+    width: auto;
+    height: auto;
     font-family: 'Rye', cursive;
     color: white;
     font-size: 4rem;
     text-shadow: 0 0 10px yellow;
+    text-align: center;
 }
 @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
 
@@ -90,7 +104,7 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 240px;
+  margin-bottom: 15em;
   background-color: #292c2f;
 }
 .footer {
@@ -276,3 +290,58 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
 	font-weight: bold;
 	padding-right:28px;
 }
+
+/*modificar barra de navegación*/
+.mostrar-menu, .esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+#check{
+    display: none;
+}
+
+@media(max-width: 800px){
+    /*HEADER*/
+    .mostrar-menu, .esconder-menu{
+        display: block;
+    }
+
+    .NavLink{
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+        background: #4D4D5C;
+        right: 0;
+        /* right: -100%; */
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 50;
+        transition: 0.8s;
+        display: flex;
+        flex-direction: column;
+        margin:0;
+    }
+    .NavLink .active{
+        border-bottom: 0px;
+    }
+    .link{
+        display: block;
+    }
+    .esconder-menu{
+        position: absolute;
+        top:40px;
+        right: 40px;
+    }
+    #check:checked ~ .NavLink{
+        right: -100%;
+    }
+}
+

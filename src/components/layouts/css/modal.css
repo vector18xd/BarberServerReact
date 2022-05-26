@@ -13,14 +13,17 @@
   }
   
   .contenedorModalPerfil{
-    width: 72em;
-    height: 36em;
+    width: 66em;
+    height: 38em;
     top: 7.2em;
-    background-color: #fff;
+    background: linear-gradient(#1b1b1b, #111);
+    /* background-color: #292c2f; */
     position: fixed;
-    border-radius: 5px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    box-shadow: rgba(230, 222, 222, 0.2) 0 0 29px 3px;
     padding: 20px;
+    color: white;
   }
   
   .encabezadoModal{
@@ -47,10 +50,10 @@
     cursor:pointer;
     transition: .3 ease all;
     border-radius: 5px;
-    color: #1766DC;
+    color: #f44336;
   }
   .btn-cerrar:hover {
-    background-color: #F2F2F2;
+    background-color: #1c1c1c;
   }
   
   svg{
@@ -75,11 +78,13 @@
   .campoimg-modal{
     width: 35%;
     height: 100%;
+    box-shadow: 0 0 10px 5px black;
+    border-radius: 20px;
   }
 
   .texto{
     width: 100%;
-    height: auto;
+    height: 45%;
   }
 
   .local-calendario{
@@ -90,36 +95,76 @@
 
   .local{
     width: 100%;
-    height: 100%;
+    height: 55%;
   }
   
   .btn-cita{
+  background: linear-gradient(#1b1b1b, #111);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  height: 2.8em;
+  padding-right: 3.3em;
+  right: 15px;
+  bottom: 15px;
+  }
+  .btn-cita .icon {
+    background: white;
+    margin-left: 1em;
     position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 6rem;
-    height: 3rem;
-    border-radius: 5px;
-    background-color: #1766DC;
-    border: 1px solid #1654b2;
-    font-weight: bold;
-    color: white;
-    /* rgb(26, 67, 250) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.2em;
+    width: 2.2em;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #111;
+    right: 0.3em;
+    transition: all 0.3s;
+   }
+   .btn-cita:hover .icon {
+    width: calc(100% - 0.6em);
+   }
+   .btn-cita .icon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: black;
+   }
+  .btn-cita:hover  .icon svg{
+    transform: translateX(0.1em);
   }
-
-  .btn-cita:hover{
-    background-color: #144ea5;
-    border: 1px solid #1766DC;
-  }
-  
+  .btn-cita:active .icon {
+    transform: scale(0.95);
+   }
   .img-vtn{
     width: 100%;
     height: 100%;
+    border-radius: 20px;
+  }
+
+  .mdl_campoImgLocal{
+    width: 75%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .imgLocal{
-    width: 19rem;
-    height: 83.5%;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 8px;
   }
   
   #nombre-modal{
@@ -128,12 +173,16 @@
     font-size: 3rem;
   }
 
+  #direccion{
+    height: 10%;
+  }
+
 /*CITA*/
 .contenedorModalCita{
-  width: 65em;
-  height: 35em;
+  width: 45em;
+  height: 40em;
   top: 7.2em;
-  background-color: #fff;
+  background: linear-gradient(#1b1b1b, #111);
   position: fixed;
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -143,42 +192,127 @@
 .info_Cita{
   width: 100%;
   height: 90%;
-  display: flex;
 }
 
 .contenedor_calendario{
-  width: 30%;
-  height: 100%;
+  width: 100%;
+  height: 60%;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-#form_Cita{
-  width: 60%;
-  height: 100%;
+.form_Cita{
+  width: 100%;
+  height: 35%;
 }
 
+.mdl_inputform {
+  background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+  height: 80%;
+  border-radius: 10px;
+}
 .calendario{
   width: 100%;
   height: 100%;
 }
 
-.agendar{
+.volver{
+  background: linear-gradient(#1b1b1b, #111);
+  color: white;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   position: absolute;
-  bottom: 1rem;
-  width: 6rem;
-  height: 3rem;
-  border-radius: 5px;
-  background-color: #eee;
-  border: 1px solid black;
-  font-weight: bold;
+  height: 2.8em;
+  padding-right: 3.3em;
+  left: 15px;
+  bottom: 15px;
 }
 
-.agendar:hover{
-  background-color: rgb(222, 222, 222);
+.volver .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #111;
+  right: 0.3em;
+  transition: all 0.3s;
+ }
+ .volver:hover .icon {
+  width: calc(100% - 0.6em);
+ }
+ .volver .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: black;
+ }
+.volver:hover  .icon svg{
+  transform: translateX(0.1em);
+}
+.volver:active .icon {
+  transform: scale(0.95);
+ }
+
+.contenedor_horarios{
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  color: #fff;
+  border-radius: 10px;
 }
 
-#agendar{
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+.horarios{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5%;
 }
+
+#mañana{
+  background-color: #1a1a1a;
+}
+
+#tarde{
+  background-color: #111111;
+}
+
+#noche{
+  background-color: #050505;
+}
+
+.btn-confirmar{
+  background-color: red;
+}
+
+.mdl_Citatitulo{
+  width: 95%;
+  height: auto;
+  font-size: 2rem;
+  border-bottom: 1px solid #E8E8E8;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+

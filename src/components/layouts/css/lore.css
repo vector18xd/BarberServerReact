@@ -449,12 +449,12 @@
 	transform: translateX(0);
 	position: relative;
 	display: block;
-	animation-direction: reverse;
 	border: 1px solid red;
 	animation-name: regresarFormulario;
 	animation-duration: 6s;
 	transition-property: translateX;
 	transition-duration: 4s;
+	z-index: 2;
 }
 
 @keyframes nuevoFormulario {

@@ -44,15 +44,18 @@ export const Lore = () => {
             console.log(error);
         });
     }
-
     function Mover(){
-        const containerForm=document.querySelector(".containerform")
+        // const containerForm=document.querySelector(".containerform")
         // containerForm.style.left= "-10em"
-        containerForm.style.transition= "0.4s"
         const nuevoForm= document.querySelector(".nuevoForm")
-        nuevoForm.style.transform= "translateX(100%)"
-        nuevoForm.style.display= "block"
-        nuevoForm.style.position= "relative"
+        nuevoForm.classList.add("mostrarFormulario");
+        nuevoForm.classList.remove("regresarFormulario");
+    }
+
+    function Regresar(){
+        const nuevoForm= document.querySelector(".nuevoForm")
+        nuevoForm.classList.remove("mostrarFormulario");
+        nuevoForm.classList.add("regresarFormulario");
     }
     
   return (
@@ -67,8 +70,9 @@ export const Lore = () => {
                     <input type="text" placeholder="Cedula" id='ruser' className='inputform'/>
                     <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
                     <div className="radiusB">
-                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover}/><label for="trabajador" className="labelRadio">Trabajador</label>
-                        <input type="radio" name='decision' value="cliente" id='cliente' />
+                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover}/>
+                        <label for="trabajador" className="labelRadio">Trabajador</label>
+                        <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} />
                         <label for="cliente" className="labelRadio">Cliente</label>
                     </div>
                     <button className='buttonform'>Crear Cuenta</button>

@@ -423,27 +423,38 @@
 .nuevoForm{
 	height: 30em;
 	width: 20em;
-	position: absolute;
+	position: relative;
 	display: none;
-	transition: 0.4s;
 	padding-right: 40px;
 	padding-left: 5px;
-	right: 31rem;
-	transform: translateX(0);
-	animation-name: nuevoFormulario;
-	animation-duration: 4s;
-	z-index: 0;
+	right: 23rem;
+	z-index: 200;
+	opacity: 0;
 }
 
-/* #mostrar:checked ~ .nuevoForm{
-	top:0;
+.mostrarFormulario{
 	transform: translateX(100%);
 	display: block;
-} */
+	position: relative;
+	opacity: 1;
+	animation-name: nuevoFormulario;
+	animation-duration: 4s;
+	transition-property: translateX;
+	transition-duration: 6s;
+}
 
-#cliente:checked ~ .nuevoForm{
+
+
+.regresarFormulario{
+	transform: translateX(0);
+	position: relative;
+	display: block;
 	animation-direction: reverse;
 	border: 1px solid red;
+	animation-name: regresarFormulario;
+	animation-duration: 6s;
+	transition-property: translateX;
+	transition-duration: 4s;
 }
 
 @keyframes nuevoFormulario {
@@ -456,5 +467,17 @@
 		opacity: 1;
 		z-index: 0;
 		transform: translateX(100%);
+	}
+}
+@keyframes regresarFormulario {
+	0% {
+		opacity: 1;
+		z-index: 0;
+		transform: translateX(100%);
+	}
+	50%, 100% {
+		opacity: 0;
+		z-index: 0;
+		transform: translateX(0%);
 	}
 }

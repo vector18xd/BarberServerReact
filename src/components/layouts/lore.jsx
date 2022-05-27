@@ -90,6 +90,7 @@ export const Lore = () => {
         const nuevoForm= document.querySelector(".nuevoForm")
         nuevoForm.classList.remove("mostrarFormulario");
         nuevoForm.classList.add("regresarFormulario");
+        // nuevoForm.style.backgroundColor= "red";
     }
     
   return (

@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import "./css/lore.css"
 import axios from 'axios'
+import Swal from 'sweetalert2';
 export const Lore = () => {
 
     const change1 = () =>{
@@ -52,6 +53,15 @@ export const Lore = () => {
         errorMsg:""
     })
     const RegisterCliente = (e) =>{
+        Swal.fire({
+            title: '¡¡¡Usuario Creado!!!',
+            text: '¡Tu cuenta ha sido creada con exito!',
+            icon: 'success',
+            confirmButtonColor: '#333',
+            background: '#292929',
+            color: '#fff',
+            confirmButtonAriaLabel: 'Ok',
+          })
         e.preventDefault()
         const user = document.getElementById("rname").value
         const password = document.getElementById("rpassword").value
@@ -79,8 +89,6 @@ export const Lore = () => {
         });
     }
     function Mover(){
-        // const containerForm=document.querySelector(".containerform")
-        // containerForm.style.left= "-10em"
         const nuevoForm= document.querySelector(".nuevoForm")
         nuevoForm.classList.add("mostrarFormulario");
         nuevoForm.classList.remove("regresarFormulario");
@@ -90,7 +98,6 @@ export const Lore = () => {
         const nuevoForm= document.querySelector(".nuevoForm")
         nuevoForm.classList.remove("mostrarFormulario");
         nuevoForm.classList.add("regresarFormulario");
-        // nuevoForm.style.backgroundColor= "red";
     }
     
   return (

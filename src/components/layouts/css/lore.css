@@ -133,6 +133,7 @@
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	color:wheat;
 }
 
 .containerform {
@@ -449,12 +450,13 @@
 	transform: translateX(0);
 	position: relative;
 	display: block;
-	border: 1px solid red;
+	overflow: hidden;
 	animation-name: regresarFormulario;
 	animation-duration: 6s;
 	transition-property: translateX;
 	transition-duration: 4s;
 	z-index: 2;
+	animation-fill-mode: forwards;
 }
 
 @keyframes nuevoFormulario {
@@ -479,5 +481,7 @@
 		opacity: 0;
 		z-index: 0;
 		transform: translateX(0%);
+		width: 0;
+		height: 0;
 	}
 }

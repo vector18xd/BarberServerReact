@@ -1,15 +1,15 @@
 import React from 'react'
 import { Header } from '../../layouts/header'
 import { Footer } from '../../layouts/footer'
-import { Perfiles } from '../../layouts/perfiles'
+import { PerfilTrabajador } from '../../layouts/PerfilTrabajador'
 
 export const Perfil = () => {
   return (
       <div>
         <Header/>
-        <div className="containerNegro">
-          <Perfiles/>
-        </div>
+        <main className="containerNegro">
+          <PerfilTrabajador/>
+        </main>
         <Footer/>
       </div>
   )

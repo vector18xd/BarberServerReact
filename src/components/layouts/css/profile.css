@@ -83,8 +83,9 @@
     color: #ffd17b;
     /* color: #17a2b8!important; */
     display: flex;
-    align-items: center;    
+    align-items: center;
 }
+
 .wh{
     margin-right:5px; 
 }
@@ -102,6 +103,13 @@
     margin-bottom: 24px;
     border-radius: .25rem;
 }
+
+.form-control{
+    background: linear-gradient(#333, #222);
+    border: 0;
+    margin: 4px 0;
+}
+
 .avatar-xl {
     height: 6rem;
     width: 6rem;

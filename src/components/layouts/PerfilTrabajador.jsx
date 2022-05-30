@@ -139,15 +139,15 @@ export const PerfilTrabajador = () => {
                   {/* <input type="text" className="form-control col-sm-9" placeholder="Bay Area, San Francisco, CA" /> */}
                 </div>
                 <hr />
-                <div className="row">
-                  <div className="col-sm-12">
-                    <a
-                      className="btn btn-info "
-                      target="__blank"
-                      href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills"
-                    >
-                      Edit
-                    </a>
+                <div className="row-2">
+                  {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
+                    Edit
+                  </a> */}
+                  <div className="col">
+                    <div className="form-check form-switch">
+                      <input type="checkbox" className="form-check-input" value="" id="check1" />
+                      <label htmlFor="check1" class="form-check-label">Acepta los terminos</label>
+                    </div>
                   </div>
                 </div>
               </div>

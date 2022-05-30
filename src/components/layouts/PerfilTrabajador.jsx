@@ -143,32 +143,37 @@ export const PerfilTrabajador = () => {
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
-                  <div className="col">
                     <div className="form-check form-switch">
                       <input type="checkbox" className="form-check-input" value="" id="check1" />
                       <label htmlFor="check1" class="form-check-label">Acepta los terminos</label>
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-14 col-xl-14">
               <div class="cardP-box">
-                <div class="tab-content"> {/*Puede no importar*/}
                   <div class="tab-pane show active" id="about-me">  
                     <ul class="list-unstyled timeline-sm">
                       <li class="timeline-sm-item">
                         <span class="timeline-sm-date">2015 - 19</span>
-                        <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                        <h5 class="mt-0">Lead designer / Developer</h5>
                         <p>websitename.com</p>
                         <p class="text-muted mt-2">Everyone realizes why a new common language
                           would be desirable: one could refuse to pay expensive translators.
                           To achieve this, it would be necessary to have uniform grammar,
                           pronunciation and more common words.</p>
-                      </li> 
+                      </li>
+                      <li class="timeline-sm-item">
+                        <span class="timeline-sm-date">2015 - 19</span>
+                        <h5 class="mt-0">Lead designer / Developer</h5>
+                        <p>websitename.com</p>
+                        <p class="text-muted mt-2">Everyone realizes why a new common language
+                          would be desirable: one could refuse to pay expensive translators.
+                          To achieve this, it would be necessary to have uniform grammar,
+                          pronunciation and more common words.</p>
+                      </li>
                     </ul>
                   </div>
-                </div>
               </div>
             </div>
           </div>

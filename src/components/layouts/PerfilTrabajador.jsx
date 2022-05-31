@@ -1,8 +1,8 @@
 import React,{useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
-import { PerfilCliente } from "./PerfilCliente"
 import "../IU/css/btnEdit.css"
+import { Categoria} from "../IU/Categoria";
 
 
 export const PerfilTrabajador = () => {
@@ -15,12 +15,14 @@ export const PerfilTrabajador = () => {
     const info4=document.getElementById("info4")
     const info5=document.getElementById("info5")
     const info6=document.getElementById("info6")
+    const info7=document.getElementById("info7")
     const infoInput1=document.getElementById("infoInput1")
     const infoInput2=document.getElementById("infoInput2")
     const infoInput3=document.getElementById("infoInput3")
     const infoInput4=document.getElementById("infoInput4")
     const infoInput5=document.getElementById("infoInput5")
     const infoInput6=document.getElementById("infoInput6")
+    const infoInput7=document.getElementById("infoInput7")
 
     if(chequear){
       info1.style.display="none"
@@ -29,12 +31,14 @@ export const PerfilTrabajador = () => {
       info4.style.display="none"
       info5.style.display="none"
       info6.style.display="none"
+      info7.style.display="none"
       infoInput1.style.display="block"
       infoInput2.style.display="block"
       infoInput3.style.display="block"
       infoInput4.style.display="block"
       infoInput5.style.display="block"
       infoInput6.style.display="block"
+      infoInput7.style.display="block"
       setEdit(true)
     }else{
       info1.style.display="block"
@@ -43,12 +47,14 @@ export const PerfilTrabajador = () => {
       info4.style.display="block"
       info5.style.display="block"
       info6.style.display="block"
+      info7.style.display="block"
       infoInput1.style.display="none"
       infoInput2.style.display="none"
       infoInput3.style.display="none"
       infoInput4.style.display="none"
       infoInput5.style.display="none"
       infoInput6.style.display="none"
+      infoInput7.style.display="none"
       setEdit(false)
     }
   }
@@ -164,7 +170,7 @@ export const PerfilTrabajador = () => {
                   <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
                   <div  className="col-sm-9">
                     <p className="col-sm-9 text-secondary alturaTamano" id="info1">Jhon Doe</p>
-                    <input type="text" className="form-control" id="infoInput1" placeholder="Jhon Doe" />
+                    <input type="text" className="form-control" id="infoInput1" placeholder="Jhon Doe" text="tin" />
                   </div>
                 </div>
                 <hr />
@@ -208,22 +214,31 @@ export const PerfilTrabajador = () => {
                   </div>
                 </div>
                 <hr />
-                <div className="row-2" id="row-2">
+                <div className="row">
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Categorias</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info7">Barbero</p>
+                    <Categoria id="infoInput7" />
+                  </div>
+                </div>
+                <hr />
+                <div className="row-2 filaEditar" id="row-2">
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
+                  <div className="col-10 form-check form-switch ">
+                      <input className="col-2 form-check-input align-self-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
+                      <label className="col-10 form-check-label align-self-center pt-2" forHtml="flexSwitchCheckDefault">Editar</label>
+                  </div>
                   {edit &&(
-                     <button className="cssbuttons-io-button">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-                      <span>Edit</span>
+                     <button className="col-2 cssbuttons-io-button align-self-end">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>
+                      Guardar
                      </button> 
                   )}
-                  <div className="col">
-                    <div className="form-check form-switch">
-                      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
-                      <label className="form-check-label" forHtml="flexSwitchCheckDefault">Editar Informacion</label>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -103,7 +103,16 @@
     padding: 1.5rem;
     margin-bottom: 24px;
     border-radius: .25rem;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
+
+.form-control{
+    background: linear-gradient(#333, #222);
+    border: 0;
+    margin: 4px 0;
+}
+
 .avatar-xl {
     height: 6rem;
     width: 6rem;
@@ -291,8 +300,6 @@
 }
 .timeline-sm {
     padding-left: 110px;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
 }
 .scroll-page {
     display: flex;
@@ -384,5 +391,8 @@
     align-items: center;
 }
 .btnActivateM label {
+    display: flex;
+}
+.day-2{
     display: flex;
 }

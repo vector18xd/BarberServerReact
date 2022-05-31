@@ -23,40 +23,31 @@ export const Perfiles = () => {
    
  }
   return (
-    <div className="container containerNegro">
+    <div className="container">
       <div className="main-body">
         <div className="row cardsP gutters-sm">
           <div className="col-md-4 mb-3">
-            <div className="cardP">
-              <div className="cardP-body">
+            <div className="cardP cardP-body">
                 <div className="d-flex flex-column align-items-center text-center">
-                  <img
-                    src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                    alt="Admin"
-                    className="rounded-circle"
-                    width="150"
-                  />
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                   <div className="mt-3">
                     <h4>{NombreC}</h4>
                     <p className="text-secondary mb-1">Estilista</p>
-                    <p className="text-muted font-size-sm">
-                      Bay Area, San Francisco, CA
-                    </p>
-                    {/* <div className="btnActivateM">
-                      <label className="switch">
+                    <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                    <div className="btnActivateM">
+                      <label class="switch">
                         <input type="checkbox"/>
                         <span className="sliderP"></span>
                       </label>
                       <button className="btn btnM btn-outline-primary">
                         Mensaje
                       </button>
-                    </div> */}
+                    </div> 
                   </div>
-                </div>
               </div>
             </div>
             <div className="card mt-3">
-              <ul className="list-group list-group-flush" id="cambioCard">
+              <ul className="list-group list-group-flush" id="cambioCard">{/*Aqui hay algo innecesario   wh*/}
                 <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0 wh">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bibi-whatsapp iconsM" viewBox="0 0 16 16">
@@ -141,19 +132,15 @@ export const Perfiles = () => {
                 <hr />
                 {}
                 <div className="row">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Nombre de local</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">Barber Server</div>
+                  <h6 className="col-sm-3 mb-0">Nombre de local</h6>
+                  <p className="col-sm-9 text-secondary">Barber Server</p>
+                  {/* <input type="text" className="form-control col-sm-9" placeholder="Barber Server" /> */}
                 </div>
                 <hr />
                 <div className="row">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Dirección</h6>
-                  </div>
-                  <div className="col-sm-9 text-secondary">
-                    Bay Area, San Francisco, CA
-                  </div>
+                  <h4 className="col-sm-3 mb-0">Dirección</h4>
+                  <p className="col-sm-9 text-secondary">Bay Area, San Francisco, CA</p>
+                  {/* <input type="text" className="form-control col-sm-9" placeholder="Bay Area, San Francisco, CA" /> */}
                 </div>
                 <hr />
                 <div className="row">
@@ -169,16 +156,40 @@ export const Perfiles = () => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-14 col-xl-14">
-              <div className="cardP-box">
-
-                <div className="tab-content">
-
-                  <div className="tab-pane show active" id="about-me">  
-                    <ul className="list-unstyled timeline-sm">
-                      <li className="timeline-sm-item">
-                        <span className="timeline-sm-date">2015 - 19</span>
-                        <h5 className="mt-0 mb-1">Lead designer / Developer</h5>
+            <div class="col-lg-14 col-xl-14">
+              <div class="cardP-box">
+                <div class="tab-content"> {/*Puede no importar*/}
+                  <div class="tab-pane show active" id="about-me">  
+                    <ul class="list-unstyled timeline-sm">
+                      <li class="timeline-sm-item">
+                        <span class="timeline-sm-date">2015 - 19</span>
+                        <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                        <p>websitename.com</p>
+                        <p className="text-muted mt-2">Everyone realizes why a new common language
+                          would be desirable: one could refuse to pay expensive translators.
+                          To achieve this, it would be necessary to have uniform grammar,
+                          pronunciation and more common words.</p>
+                      </li> 
+                    </ul>
+                  </div>
+                  <div class="tab-pane show active day-2" id="about-me">  
+                    <ul class="list-unstyled timeline-sm">
+                      <li class="timeline-sm-item">
+                        <span class="timeline-sm-date">2015 - 19</span>
+                        <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
+                        <p>websitename.com</p>
+                        <p className="text-muted mt-2">Everyone realizes why a new common language
+                          would be desirable: one could refuse to pay expensive translators.
+                          To achieve this, it would be necessary to have uniform grammar,
+                          pronunciation and more common words.</p>
+                      </li> 
+                    </ul>
+                  </div>
+                  <div class="tab-pane show active" id="about-me">  
+                    <ul class="list-unstyled timeline-sm">
+                      <li class="timeline-sm-item">
+                        <span class="timeline-sm-date">2015 - 19</span>
+                        <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
                         <p>websitename.com</p>
                         <p className="text-muted mt-2">Everyone realizes why a new common language
                           would be desirable: one could refuse to pay expensive translators.

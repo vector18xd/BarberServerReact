@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Header } from '../../layouts/header'
 import { Footer } from '../../layouts/footer'
-import { Perfiles } from '../../layouts/perfiles'
+import { Perfiles } from '../../layouts/PerfilCliente'
 
 export const Perfil = ({logout}) => {
   const [user, setUser]=useState(null)

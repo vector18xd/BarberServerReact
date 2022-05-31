@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
+<<<<<<< HEAD
 export const Perfiles = () => {
   const [NombreC, setNombre]=useState("")
   const [Telefono, setTelefono]=useState("")
@@ -22,6 +23,10 @@ export const Perfiles = () => {
 
    
  }
+=======
+
+export const PerfilCliente = () => {
+>>>>>>> fa946d54090ae6cb59468400e0d6dced032c19f8
   return (
     <div className="container">
       <div className="main-body">

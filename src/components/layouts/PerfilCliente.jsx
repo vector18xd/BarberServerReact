@@ -3,7 +3,9 @@ import "./css/profile.css";
 import "./css/calificacion.css";
 
 export const Perfiles = () => {
-  const [NombreC, setNombre]=useState("")
+  const [NombreC, setNombreC]=useState("")
+  const [nombre, setNombre] = useState("")
+  const [apellido, setApellido] = useState("")
   const [Telefono, setTelefono]=useState("")
   const [Email, setEmail]=useState("")
  useEffect(()=>{
@@ -17,11 +19,11 @@ export const Perfiles = () => {
  },[])
  const añadidos = (data) =>{
     const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
-    setNombre(AñadidoDeNombres)
+    setNombreC(AñadidoDeNombres)
+    setNombre(data.userCliente.Nombres)
+    setApellido(data.userCliente.Apellidos)
     setTelefono(data.userCliente.Telefono)
-    setEmail(data.userCliente.Email)
-
-   
+    setEmail(data.userCliente.Email)  
  }
   return (
     <div className="container">
@@ -114,7 +116,7 @@ export const Perfiles = () => {
                   <div className="col-sm-3">
                     <h6 className="mb-0">Nombre Completo</h6>
                   </div>
-                  <div className="col-sm-9 text-secondary">{NombreC}</div>
+                  <div className="col-sm-9 text-secondary">{nombre}</div>
                 </div>
                 <hr />
                 <div className="row">

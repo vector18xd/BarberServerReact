@@ -1,12 +1,89 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
 import { PerfilCliente } from "./PerfilCliente"
 import "../IU/css/btnEdit.css"
-
+import axios from "axios";
+import Swal from 'sweetalert2';
+import { data } from "autoprefixer";
 
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
+  const [NombreC, setNombreC]=useState("")
+  const [categoria, setCategoria]=useState([])
+  const [id, setId]=useState("")
+ useEffect(()=>{
+  const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
+  if(loggedUserJSON){
+    const users = JSON.parse(loggedUserJSON)
+    añadidos(users)
+  }else{
+    console.log("Mal");
+  }
+ },[])
+ const [dataEdit, setDataEdit]=useState({
+  "Nombres":"",
+  "Apellidos":"",
+  "Telefono":"",
+  "Email":"",
+  "Password":"",
+  "Nom_local":"",
+  "Direccion":""
+ })
+const UpdateTrabajador = ({target})=>{
+  const {name , value} = target
+  setDataEdit({
+            ...dataEdit, 
+            [name]:value
+        })
+  console.log("->",dataEdit);
+}
+const update = (e) =>{
+  e.preventDefault()
+  axios.put('http://localhost:3000/api/trabajador/'+ id ,dataEdit )
+  .then(function (response) {
+      console.log(response);
+  })
+  .catch(function (error) {
+      console.log(error);
+      Swal.fire({
+          title: '¡¡¡Los datos son erroneos!!!',
+          text: '¡Email o Contraseña son incorrectos !',
+          icon: 'error',
+          confirmButtonColor: '#333',
+          background: '#292929',
+          color: '#fff',
+          confirmButtonAriaLabel: 'Ok',
+        })
+  });
+}
+
+ const añadidos = (data) =>{
+    const AñadidoDeNombres = data.userTrabajador.Nombres + " " + data.userTrabajador.Apellidos
+    setNombreC(AñadidoDeNombres)
+    categorias(data.userTrabajador.idCategoria)
+    setId(data.userTrabajador.idTrabajador)
+    setEdit({
+      ...dataEdit.Nombres=data.userTrabajador.Nombres,
+      ...dataEdit.Apellidos=data.userTrabajador.Apellidos,
+      ...dataEdit.Telefono=data.userTrabajador.Telefono,
+      ...dataEdit.Email=data.userTrabajador.Email,
+      ...dataEdit.Password=data.userTrabajador.Password,
+      ...dataEdit.Nom_local=data.userTrabajador.Nom_local,
+      ...dataEdit.Direccion=data.userTrabajador.Direccion
+    })
+ }
+ const categorias = (id) =>{
+  axios({
+    method: 'get',
+    url: 'http://localhost:3000/api/categoria/'+id
+  })
+    .then(function (response) {
+      console.log(response.data.data);
+      setCategoria(response.data.data.Nombre_cat)
+    });
+ }
+  
   function Editar(){
     const chequear=document.getElementById("flexSwitchCheckDefault").checked;
     const info1=document.getElementById("info1")
@@ -62,8 +139,8 @@ export const PerfilTrabajador = () => {
                 <div className="d-flex flex-column align-items-center text-center">
                   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                   <div className="mt-3">
-                    <h4>John Doe</h4>
-                    <p className=" mb-1">Estilista</p>
+                    <h4>{NombreC}</h4>
+                    <p className=" mb-1">{categoria}</p>
                     <p className="font-size-sm ">Bay Area, San Francisco, CA</p>
                     <div className="btnActivateM">
                       <label class="switch">
@@ -79,63 +156,23 @@ export const PerfilTrabajador = () => {
             </div>
             <div className="card mt-3">
               <ul className="list-group list-group-flush" id="cambioCard">{/*Aqui hay algo innecesario   wh*/}
-                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <h6 className="mb-0">
+              <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 className="mb-0 wh">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bibi-whatsapp iconsM" viewBox="0 0 16 16">
                       <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
                     </svg>
                     WhatsApp
                   </h6>
-                  <span className="text-secondary">https://bootdey.com</span>
+                  <span className="text-secondary">{dataEdit.Telefono}</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <h6 className="mb-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-instagram mr-2 icon-inline text-danger iconsM"
-                    >
-                      <rect
-                        x="2"
-                        y="2"
-                        width="20"
-                        height="20"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                    Instagram
+                  <h6 className="mb-0 wh">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope iconsM" viewBox="0 0 16 16">
+                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                  </svg>
+                    Email
                   </h6>
-                  <span className="text-secondary">bootdey</span>
-                </li>
-                <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <h6 className="mb-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-facebook mr-2 icon-inline text-primary iconsM"
-                    >
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                    Facebook
-                  </h6>
-                  <span className="text-secondary">bootdey</span>
+                  <span className="text-secondary">{dataEdit.Email}</span>
                 </li>
                 {/* <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <form className="clasificacionF">
@@ -163,48 +200,48 @@ export const PerfilTrabajador = () => {
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">Jhon Doe</p>
-                    <input type="text" className="form-control" id="infoInput1" placeholder="Jhon Doe" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{dataEdit.Nombres}</p>
+                    <input type="text" className="form-control" id="infoInput1" placeholder={dataEdit.Nombres} name="Nombres" value={dataEdit.Nombres} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Apellido(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">Kenneth Valdez</p>
-                    <input type="text" className="form-control" id="infoInput6" placeholder="Kenneth Valdez" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{dataEdit.Apellidos}</p>
+                    <input type="text" className="form-control" id="infoInput6" value={dataEdit.Apellidos} name="Apellidos" placeholder={dataEdit.Apellidos} onChange={UpdateTrabajador} />
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">fip@jukmuh.al</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder="fip@jukmuh.al" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{dataEdit.Email}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={dataEdit.Email} name="Email" value={dataEdit.Email} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">(239) 816-9029</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder="(239) 816-9029" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{dataEdit.Telefono}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={dataEdit.Telefono} name="Telefono"value={dataEdit.Telefono} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Nombre de local</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info4">Barber Server</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput4" placeholder="Barber Server" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info4">{dataEdit.Nom_local}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput4" placeholder={dataEdit.Nom_local} name="Nom_local" value={dataEdit.Nom_local} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Dirección</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info5">Bay Area, San Francisco, CA</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput5" placeholder="Bay Area, San Francisco, CA" />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info5">{dataEdit.Direccion}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput5" placeholder={dataEdit.Direccion} name="Direccion" value={dataEdit.Direccion} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
@@ -213,9 +250,9 @@ export const PerfilTrabajador = () => {
                     Edit
                   </a> */}
                   {edit &&(
-                     <button className="cssbuttons-io-button">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-                      <span>Edit</span>
+                     <button className="cssbuttons-io-button" onClick={update}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                        <span>Edit</span>
                      </button> 
                   )}
                   <div className="col">

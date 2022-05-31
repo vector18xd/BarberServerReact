@@ -2,6 +2,8 @@ import React,{useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
 import { PerfilCliente } from "./PerfilCliente"
+import "../IU/css/btnEdit.css"
+
 
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
@@ -32,6 +34,7 @@ export const PerfilTrabajador = () => {
       infoInput3.style.display="block"
       infoInput4.style.display="block"
       infoInput5.style.display="block"
+      infoInput6.style.display="block"
       setEdit(true)
     }else{
       info1.style.display="block"
@@ -45,6 +48,7 @@ export const PerfilTrabajador = () => {
       infoInput3.style.display="none"
       infoInput4.style.display="none"
       infoInput5.style.display="none"
+      infoInput6.style.display="none"
       setEdit(false)
     }
   }
@@ -209,7 +213,10 @@ export const PerfilTrabajador = () => {
                     Edit
                   </a> */}
                   {edit &&(
-                      <btnEdit textE="edit"/>
+                     <button className="cssbuttons-io-button">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
+                      <span>Edit</span>
+                     </button> 
                   )}
                   <div className="col">
                     <div className="form-check form-switch">

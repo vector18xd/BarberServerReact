@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 02d1897d12445af4998b861da9b470f3f8f37ac7
 export const Perfiles = () => {
   const [NombreC, setNombre]=useState("")
   const [Telefono, setTelefono]=useState("")

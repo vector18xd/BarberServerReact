@@ -143,10 +143,12 @@ export const PerfilTrabajador = () => {
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
-                    <div className="form-check form-switch">
-                      <input type="checkbox" className="form-check-input" value="" id="check1" />
-                      <label htmlFor="check1" class="form-check-label">Acepta los terminos</label>
+                  <div className="col">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked=""/>
+                      <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>

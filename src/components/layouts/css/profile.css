@@ -63,8 +63,8 @@ hr{
 .timeline-sm-item, .mt-3, .form-check-label{
     color: #fff;
 }
-
 .form-check{ height: 3rem; font-size: 1.4rem;}
+
 .form-check-input{ height: 70%; }
 
 .bg-gray-300 {
@@ -436,4 +436,8 @@ hr{
 }
 .day-2{
     display: flex;
+}
+.row-2{
+    display: flex;
+    align-items: center;
 }

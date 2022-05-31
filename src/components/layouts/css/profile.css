@@ -51,7 +51,7 @@
     color: limegreen;
 }
 
-.timeline-sm-item, .mt-3{
+.timeline-sm-item, .mt-3, .form-check-label{
     color: #fff
 }
 
@@ -86,8 +86,9 @@
     align-items: center;
 }
 
-.wh{
-    margin-right:5px; 
+.alturaTamano{
+    height: 3rem;
+    font-size: 1.2rem;
 }
 .btnM{
     margin-left: 10px;
@@ -108,6 +109,14 @@
     background: linear-gradient(#333, #222);
     border: 0;
     margin: 4px 0;
+}
+
+.infoCampo{
+    visibility: visible;
+}
+
+#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5{
+    display: none;
 }
 
 .avatar-xl {

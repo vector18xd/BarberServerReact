@@ -6,20 +6,31 @@ import { Loginregister } from "./components/pages/loginregister/loginregister.js
 import { Perfil } from "./components/pages/perfil/perfil";
 import { Agendar } from "./components/pages/agendar/agendar";
 import './App.css';
-import {Routes, BrowserRouter, Route} from "react-router-dom"; 
+import {Routes, BrowserRouter, Route, Navigate} from "react-router-dom"; 
+import { useState } from "react";
 
 function App() {
+  const [user, setUser]= useState(null)
   return (
     <div className="App">
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/Contact" element={<Contact/>}/>
-                <Route path="/About" element={<About/>}/>
-                <Route path="/ConsultBarber" element={<ConsultBarber/>}/>
-                <Route path="/Loginregister" element={<Loginregister/>}/>
-                <Route path="/Perfil" element={<Perfil/>}/>
-                <Route path="/Agendar" element={<Agendar/>}/>
+                {!user &&(
+                  <>
+                    <Route path="/Loginregister" element={<Loginregister authenticate={()=>setUser(true)}/>}/>
+                  </>
+                )}
+                {user &&(
+                  <>
+                    <Route path="/Perfil" element={<Perfil logout={()=>setUser(false)}/>}/>
+                  </>
+                )}
+               <Route path="/Agendar" element={<Agendar/>}/>
+               <Route path="/" element={<Home/>}/>
+               <Route path="/Contact" element={<Contact/>}/>
+               <Route path="/About" element={<About/>}/>
+               <Route path="/ConsultBarber" element={<ConsultBarber/>}/>
+               <Route path="*" element={<Navigate to={user ? "/Perfil":"/Loginregister"}/>}/>
             </Routes>
         </BrowserRouter>
     </div>

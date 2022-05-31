@@ -2,7 +2,10 @@ import React from "react"
 import { NavLink} from "react-router-dom"
 import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
 
- export const Header = () =>{
+ export const Header = ({logout}) =>{
+     const salir = ()=>{
+        logout()
+     }
     return(
         <header className="header">
             <div className="imgSlider">
@@ -22,7 +25,7 @@ import logo from "../../../src/components/img/logo/logo-LetrasBlancas.png"
                     <NavLink className="imgP" to="/Perfil"><img className="linkPerfil" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"/></NavLink>
                     <ul className="children">
                             <li><a href="#">CITAS</a></li>
-                            <li><a href="#">CHAT</a></li>
+                            <li><a href="/" onClick={salir}>SALIR</a></li>
                     </ul>
                 </li>
                 <label htmlFor="check" className="esconder-menu">

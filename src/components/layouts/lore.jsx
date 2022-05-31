@@ -1,9 +1,16 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "./css/lore.css"
 import axios from 'axios'
 import Swal from 'sweetalert2';
-export const Lore = () => {
-
+import { useNavigate } from 'react-router';
+export const Lore = ({authenticate}) => {
+    useEffect(()=>{
+        const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
+        if(loggedUserJSON){
+            authenticate()
+        }
+    },[])
+    const navigate = useNavigate()
     const change1 = () =>{
         const container = document.getElementById('container');
         container.classList.remove("right-panel-active");
@@ -13,55 +20,54 @@ export const Lore = () => {
         container.classList.add("right-panel-active");
     }
     const [datasL, setDataL]=useState({
-        form:{
-            "Email":"",
-            "Password":""
-        },
-        error:false,
-        errorMsg:""
+        "Email":"",
+        "Password":""
     })
-    
+    const changeLogin = ({target})=>{
+        const {name , value} = target
+        setDataL({
+            ...datasL, 
+            [name]:value
+        })
+        console.log("->", datasL);
+    }
     const login = (e) =>{
         e.preventDefault()
-        const email = document.getElementById("usname").value
-        const password = document.getElementById("uspassword").value
-        setDataL(
-            datasL.form.Password=password,
-            datasL.form.Email=email
-        )
-        console.log(datasL.form)
-        postL()
-    }
-    const postL = () =>{
-        axios.post('http://localhost:3000/api/login',datasL.form )
+        axios.post('http://localhost:3000/api/login',datasL )
         .then(function (response) {
             console.log(response);
+            window.localStorage.setItem(
+                "loggedNoteAppUser", JSON.stringify(response.data.data)
+            )
+            postL()
         })
         .catch(function (error) {
             console.log(error);
+            Swal.fire({
+                title: '¡¡¡Los datos son erroneos!!!',
+                text: '¡Email o Contraseña son incorrectos !',
+                icon: 'error',
+                confirmButtonColor: '#333',
+                background: '#292929',
+                color: '#fff',
+                confirmButtonAriaLabel: 'Ok',
+              })
         });
     }
+    const postL = () => {
+        authenticate()
+        navigate("Loginregister")
+    }
+    
     const [datasRC, setDataR]=useState({
-        form:{
             "Nombres":"",
             "Apellidos":"",
             "Telefono":"",
             "Email":"",
             "Password":""
-        },
-        error:false,
-        errorMsg:""
     })
     const RegisterCliente = (e) =>{
-        Swal.fire({
-            title: '¡¡¡Usuario Creado!!!',
-            text: '¡Tu cuenta ha sido creada con exito!',
-            icon: 'success',
-            confirmButtonColor: '#333',
-            background: '#292929',
-            color: '#fff',
-            confirmButtonAriaLabel: 'Ok',
-          })
+        
         e.preventDefault()
         const user = document.getElementById("rname").value
         const password = document.getElementById("rpassword").value
@@ -69,20 +75,28 @@ export const Lore = () => {
         const apellido = document.getElementById("rapellido").value
         const email = document.getElementById("remail").value
         setDataR(
-            datasRC.form.Nombres=user,
-            datasRC.form.Password=password,
-            datasRC.form.Telefono=telefono,
-            datasRC.form.Apellidos=apellido,
-            datasRC.form.Email=email
+            datasRC.Nombres=user,
+            datasRC.Password=password,
+            datasRC.Telefono=telefono,
+            datasRC.Apellidos=apellido,
+            datasRC.Email=email
         )
-        console.log(datasRC.form)
         postRC()
     }
     
     const postRC = () =>{
-        axios.post('http://localhost:3000/api/register',datasRC.form )
+        axios.post('http://localhost:3000/api/register',datasRC)
         .then(function (response) {
             console.log(response);
+            Swal.fire({
+                title: '¡¡¡Usuario Creado!!!',
+                text: '¡Tu cuenta ha sido creada con exito!',
+                icon: 'success',
+                confirmButtonColor: '#333',
+                background: '#292929',
+                color: '#fff',
+                confirmButtonAriaLabel: 'Ok',
+              })
         })
         .catch(function (error) {
             console.log(error);
@@ -113,9 +127,9 @@ export const Lore = () => {
                     <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
                     <div className="radiusB">
                         <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover}/>
-                        <label for="trabajador" className="labelRadio">Trabajador</label>
+                        <label htmlFor="trabajador" className="labelRadio">Trabajador</label>
                         <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} />
-                        <label for="cliente" className="labelRadio">Cliente</label>
+                        <label htmlFor="cliente" className="labelRadio">Cliente</label>
                     </div>
                     <button className='buttonform' onClick={RegisterCliente}>Crear Cuenta</button>
                 </form>
@@ -123,8 +137,8 @@ export const Lore = () => {
             <div className="form-container sign-in-container">
                 <form action="#" className='formlr'>
                     <h1 className='h1form'>Iniciar Sesion</h1>
-                    <input type="text" placeholder="Email" id='usname' className='inputform'/>
-                    <input type="password" placeholder="Contraseña" id='uspassword' className='inputform'/>
+                    <input type="text" placeholder="Email" id='usname' className='inputform' value={datasL.Email} onChange={changeLogin} name="Email"/>
+                    <input type="password" placeholder="Contraseña" id='uspassword' className='inputform'  value={datasL.Password} onChange={changeLogin} name="Password"/>
                     <a href="#" className='aform'>¿Olvidaste tu contraseña?</a>
                     <button className='buttonform' onClick={login}>Iniciar Sesion</button>
                 </form>

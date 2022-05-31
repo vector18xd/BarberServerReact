@@ -41,7 +41,9 @@
 	text-decoration: none;
 	margin: 15px 0;
 }
-
+.aform:hover{
+	color: wheat;
+}
 .buttonform {
   --color: #ffd17b;
   font-family: inherit;

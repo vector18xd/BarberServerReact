@@ -4,12 +4,24 @@ import axios from 'axios'
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
 export const Lore = ({authenticate}) => {
+    const [rol, setRol]=useState(null)
+    const [categoria, setCategoria]=useState([])
     useEffect(()=>{
         const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
         if(loggedUserJSON){
             authenticate()
         }
+        getCategoria()
     },[])
+    const getCategoria = ()=>{
+        axios({
+            method: 'get',
+            url: 'http://localhost:3000/api/categoria'
+          })
+            .then(function (response) {
+              setCategoria(response.data.data)
+            });
+    }
     const navigate = useNavigate()
     const change1 = () =>{
         const container = document.getElementById('container');
@@ -64,34 +76,95 @@ export const Lore = ({authenticate}) => {
             "Apellidos":"",
             "Telefono":"",
             "Email":"",
-            "Password":""
+            "Password":"",
+            "Rol":""
     })
-    const RegisterCliente = (e) =>{
-        
-        e.preventDefault()
-        const user = document.getElementById("rname").value
-        const password = document.getElementById("rpassword").value
-        const telefono = document.getElementById("ruser").value
-        const apellido = document.getElementById("rapellido").value
-        const email = document.getElementById("remail").value
-        setDataR(
-            datasRC.Nombres=user,
-            datasRC.Password=password,
-            datasRC.Telefono=telefono,
-            datasRC.Apellidos=apellido,
-            datasRC.Email=email
-        )
-        postRC()
+    const [datasRT,setDataRT]=useState({
+        "Nombres":"",
+        "Apellidos":"",
+        "Telefono":"",
+        "Email":"",
+        "Password":"",
+        "Rol":"",
+        "Nom_local":"",
+        "idCategoria":"",
+        "Direccion":""
+    })
+    const chnageRadio = ()=>{
+        const trabajador = document.getElementById("trabajador").checked
+        const cliente = document.getElementById("cliente").checked
+        if(trabajador){
+            setRol(true)
+        }else{if(cliente){
+            setRol(false)
+            }
+        }
     }
-    
+    console.log(rol);
+    const RegisterCliente = (e) =>{
+        e.preventDefault()
+        
+        if(rol){
+            const userT = document.getElementById("rname").value
+            const passwordT = document.getElementById("rpassword").value
+            const telefonoT = document.getElementById("ruser").value
+            const apellidoT = document.getElementById("rapellido").value
+            const emailT = document.getElementById("remail").value
+            const categoriaT = document.getElementById("seleciona").value
+            const nomLocalT = document.getElementById("nomLocal").value
+            const direccionLocalT = document.getElementById("direccionLocal").value
+            setDataRT({
+                ...datasRT.Nombres=userT,
+                ...datasRT.Password=passwordT,
+                ...datasRT.Telefono=telefonoT,
+                ...datasRT.Apellidos=apellidoT,
+                ...datasRT.Email=emailT,
+                ...datasRT.Nom_local=nomLocalT,
+                ...datasRT.idCategoria=categoriaT,
+                ...datasRT.Direccion=direccionLocalT,
+                ...datasRT.Rol="trabajador"
+        })
+            console.log("dentroTrabajador");
+            postRT()
+        }else{ if(!rol)
+        {   console.log("dentroCLiente");
+            const user = document.getElementById("rname").value
+            const password = document.getElementById("rpassword").value
+            const telefono = document.getElementById("ruser").value
+            const apellido = document.getElementById("rapellido").value
+            const email = document.getElementById("remail").value
+            console.log(typeof user);
+            setDataR({
+                ...datasRC.Nombres=user,
+                ...datasRC.Password=password,
+                ...datasRC.Telefono=telefono,
+                ...datasRC.Apellidos=apellido,
+                ...datasRC.Email=email,
+                ...datasRC.Rol="usuario"
+        })
+            postRC()
+        }else{
+        Swal.fire({
+            title: '¡¡¡Escoge!!!',
+            text: '¿Eres Trabajador o Cliente?',
+            icon: 'question',
+            confirmButtonColor: '#333',
+            background: '#292929',
+            color: '#fff',
+            confirmButtonAriaLabel: 'Ok',
+          })}
+        }
+        
+        
+    }
     const postRC = () =>{
         axios.post('http://localhost:3000/api/register',datasRC)
         .then(function (response) {
             console.log(response);
             Swal.fire({
-                title: '¡¡¡Usuario Creado!!!',
-                text: '¡Tu cuenta ha sido creada con exito!',
-                icon: 'success',
+                title: '¡¡¡Advertencia!!!',
+                text: "!"+response.data.data.user.Email + "!",
+                icon: 'error',
                 confirmButtonColor: '#333',
                 background: '#292929',
                 color: '#fff',
@@ -100,6 +173,24 @@ export const Lore = ({authenticate}) => {
         })
         .catch(function (error) {
             console.log(error);
+        });
+    }
+    const postRT = () =>{
+        axios.post('http://localhost:3000/api/register',datasRT)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+            Swal.fire({
+                title: '¡¡¡Revisa !!!',
+                text: '¡Que no tengas ningun error!',
+                icon: 'error',
+                confirmButtonColor: '#333',
+                background: '#292929',
+                color: '#fff',
+                confirmButtonAriaLabel: 'Ok',
+              })
         });
     }
     function Mover(){
@@ -126,10 +217,10 @@ export const Lore = ({authenticate}) => {
                     <input type="text" placeholder="Telefono" id='ruser' className='inputform'/>
                     <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
                     <div className="radiusB">
-                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover}/>
-                        <label htmlFor="trabajador" className="labelRadio">Trabajador</label>
-                        <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} />
-                        <label htmlFor="cliente" className="labelRadio">Cliente</label>
+                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover} onClick={chnageRadio}/>
+                        <label forHtml="trabajador" className="labelRadio">Trabajador</label>
+                        <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} onClick={chnageRadio}/>
+                        <label forHtml="cliente" className="labelRadio">Cliente</label>
                     </div>
                     <button className='buttonform' onClick={RegisterCliente}>Crear Cuenta</button>
                 </form>
@@ -162,7 +253,13 @@ export const Lore = ({authenticate}) => {
             <h1 className='h1form'>Datos Adicionales</h1>
             <input type="text" placeholder="Nombre del local" id='nomLocal' className='inputform'/>
             <input type="text" placeholder="Dirección del Local" id='direccionLocal' className='inputform'/>
-            <input type="text" placeholder="Categoria" id='categoria' className='inputform'/>
+            <select name="opciones" id="seleciona">
+                {
+                    categoria.map(items=>(
+                        <option value={items.idCategoria}>{items.Nombre_cat}</option>
+                    ))
+                }
+            </select>
         </div>
     </div>
   )

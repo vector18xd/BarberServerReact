@@ -8,17 +8,17 @@ export const Perfiles = () => {
  useEffect(()=>{
   const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
   if(loggedUserJSON){
-    const user = JSON.parse(loggedUserJSON)
-    añadidos(user)
+    const users = JSON.parse(loggedUserJSON)
+    añadidos(users)
   }else{
     console.log("Mal");
   }
  },[])
  const añadidos = (data) =>{
-    const AñadidoDeNombres = data.user.Nombres + " " + data.user.Apellidos
+    const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
     setNombre(AñadidoDeNombres)
-    setTelefono(data.user.Telefono)
-    setEmail(data.user.Email)
+    setTelefono(data.userCliente.Telefono)
+    setEmail(data.userCliente.Email)
 
    
  }

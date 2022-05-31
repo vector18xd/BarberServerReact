@@ -1,7 +1,49 @@
-import React from "react";
+import React,{useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
+import { btnEdit } from "../IU/btnEdit";
 export const PerfilTrabajador = () => {
+  const [edit, setEdit] = useState(null)
+  function Editar(){
+    const chequear=document.getElementById("flexSwitchCheckDefault").checked;
+    const info1=document.getElementById("info1")
+    const info2=document.getElementById("info2")
+    const info3=document.getElementById("info3")
+    const info4=document.getElementById("info4")
+    const info5=document.getElementById("info5")
+    const infoInput1=document.getElementById("infoInput1")
+    const infoInput2=document.getElementById("infoInput2")
+    const infoInput3=document.getElementById("infoInput3")
+    const infoInput4=document.getElementById("infoInput4")
+    const infoInput5=document.getElementById("infoInput5")
+    console.log(chequear)
+    if(chequear){
+      info1.style.display="none"
+      info2.style.display="none"
+      info3.style.display="none"
+      info4.style.display="none"
+      info5.style.display="none"
+      infoInput1.style.display="block"
+      infoInput2.style.display="block"
+      infoInput3.style.display="block"
+      infoInput4.style.display="block"
+      infoInput5.style.display="block"
+      setEdit(true)
+    }else{
+      info1.style.display="block"
+      info2.style.display="block"
+      info3.style.display="block"
+      info4.style.display="block"
+      info5.style.display="block"
+      infoInput1.style.display="none"
+      infoInput2.style.display="none"
+      infoInput3.style.display="none"
+      infoInput4.style.display="none"
+      infoInput5.style.display="none"
+      setEdit(false)
+    }
+  }
+
   return (
     <div className="container">
       <div className="main-body">
@@ -109,67 +151,76 @@ export const PerfilTrabajador = () => {
           <div className="col-md-8">
             <div className="card mb-3">
               <div className="card-body">
-              <div className="row">
-                  <h6 className="col-sm-3 mb-0">Nombre Completo</h6>
-                  <p className="col-sm-9 text-secondary">Kenneth Valdez</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="Kenneth Valdez" /> */}
+                <div className="row">
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre Completo</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">Kenneth Valdez</p>
+                    <input type="text" className="form-control" id="infoInput1" placeholder="Kenneth Valdez" />
+                  </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h6 className="col-sm-3 mb-0">E-mail</h6>
-                  <p className="col-sm-9 text-secondary">fip@jukmuh.al</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="fip@jukmuh.al" /> */}
+                  <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">fip@jukmuh.al</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder="fip@jukmuh.al" />
+                  </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h6 className="col-sm-3 mb-0">Número de Celular</h6>
-                  <p className="col-sm-9 text-secondary">(239) 816-9029</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="(239) 816-9029" /> */}
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">(239) 816-9029</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder="(239) 816-9029" />
+                  </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h6 className="col-sm-3 mb-0">Nombre de local</h6>
-                  <p className="col-sm-9 text-secondary">Barber Server</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="Barber Server" /> */}
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre de local</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info4">Barber Server</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput4" placeholder="Barber Server" />
+                  </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0">Dirección</h4>
-                  <p className="col-sm-9 text-secondary">Bay Area, San Francisco, CA</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="Bay Area, San Francisco, CA" /> */}
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Dirección</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info5">Bay Area, San Francisco, CA</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput5" placeholder="Bay Area, San Francisco, CA" />
+                  </div>
                 </div>
                 <hr />
-                <div className="row-2">
+                <div className="row-2" id="row-2">
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
+                  {edit &&(
+                      <btnEdit textE="edit"/>
+                  )}
                   <div className="col">
-                  <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked=""/>
-      <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
-    </div>
+                    <div className="form-check form-switch">
+                      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
+                      <label className="form-check-label" forHtml="flexSwitchCheckDefault">Editar Informacion</label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-14 col-xl-14">
-              <div class="cardP-box">
-                <div class="tab-content"> {/*Puede no importar*/}
-                  <div class="tab-pane show active" id="about-me">  
-                    <ul class="list-unstyled timeline-sm">
-                      <li class="timeline-sm-item">
-                        <span class="timeline-sm-date">2015 - 19</span>
-                        <h5 class="mt-0 mb-1">Lead designer / Developer</h5>
-                        <p>websitename.com</p>
-                        <p class="text-muted mt-2">Everyone realizes why a new common language
-                          would be desirable: one could refuse to pay expensive translators.
-                          To achieve this, it would be necessary to have uniform grammar,
-                          pronunciation and more common words.</p>
-                      </li> 
-                    </ul>
-                  </div>
+            <div className="col-lg-14 col-xl-14 cardP-box">
+                <div className="tab-pane show active" id="about-me">  
+                  <ul className="list-unstyled timeline-sm">
+                    <li className="timeline-sm-item">
+                      <span className="timeline-sm-date">2015 - 19</span>
+                      <h5 className="mt-0">Lead designer / Developer</h5>
+                      <p>websitename.com</p>
+                      <p className="text-muted mt-2">Everyone realizes why a new common language
+                        would be desirable: one could refuse to pay expensive translators.
+                        To achieve this, it would be necessary to have uniform grammar,
+                        pronunciation and more common words.</p>
+                    </li>
+                  </ul>
                 </div>
-              </div>
             </div>
           </div>
         </div>

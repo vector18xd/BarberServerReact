@@ -1,12 +1,8 @@
 import React,{useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
-<<<<<<< HEAD
-import { btnEdit } from "../IU/btnEdit";
-=======
 import { PerfilCliente } from "./PerfilCliente"
 
->>>>>>> fa946d54090ae6cb59468400e0d6dced032c19f8
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
   function Editar(){
@@ -36,11 +32,7 @@ export const PerfilTrabajador = () => {
       infoInput3.style.display="block"
       infoInput4.style.display="block"
       infoInput5.style.display="block"
-<<<<<<< HEAD
       setEdit(true)
-=======
-      infoInput6.style.display="block"
->>>>>>> fa946d54090ae6cb59468400e0d6dced032c19f8
     }else{
       info1.style.display="block"
       info2.style.display="block"
@@ -53,11 +45,7 @@ export const PerfilTrabajador = () => {
       infoInput3.style.display="none"
       infoInput4.style.display="none"
       infoInput5.style.display="none"
-<<<<<<< HEAD
       setEdit(false)
-=======
-      infoInput6.style.display="none"
->>>>>>> fa946d54090ae6cb59468400e0d6dced032c19f8
     }
   }
 

@@ -88,6 +88,88 @@ header{
     padding: 0 1rem; 
     align-items: center;
 }
+.sect_f{
+    max-width: 1100px;
+    height: 470px;
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    color: whitesmoke;
+    padding: 35px;
+    font-family: 'Open Sans'sans-serif;
+}
+.sect_f1{
+    max-width: 1100px;
+    height: 400px;
+    width: 90%;
+    overflow: hidden;
+    margin: auto;
+    color: whitesmoke;
+    padding: 35px;
+    font-family: 'Open Sans'sans-serif;
+}
+.container-elements{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+}
+.container-elements1{
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+}
+.cont-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.element1{
+    background: url(../../img/young-man-barber.jpg)no-repeat center center;
+    background-size: 100%;
+}
+.element2{
+    background: url(../../img/handsome-man-barbershop.jpg)no-repeat center center;
+    background-size: 100%;
+}
+.secc{
+    background: url(../../img/vintage-chairs.jpg);
+    /* width: 100%;
+    height: 100vh; */
+    width: 100%;
+    height: 62.5em;
+    background-position: center;
+    position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+}
+.secc1{
+    background: url(../../img/client-doing-hair-cut-barber-shop-salon.jpg);
+    /* width: 100%;
+    height: 100vh; */
+    width: 100%;
+    height: 62.5em;
+    background-position: center;
+    position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+}
+.tit{
+    font-size: 35px;
+    text-align: center;
+    padding: 30px;
+    font-weight: 800;
+}
+.parrafo{
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+}
+.row{
+    margin-left: -15px;
+    margin-right: -15px;
+}
 .text{
     width: auto;
     height: auto;

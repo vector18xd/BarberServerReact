@@ -1,7 +1,8 @@
 import React from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
-export const Perfiles = () => {
+
+export const PerfilCliente = () => {
   return (
     <div className="container">
       <div className="main-body">

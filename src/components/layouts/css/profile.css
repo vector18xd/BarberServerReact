@@ -12,6 +12,10 @@
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
+hr{
+    border: 1px solid #444;
+}
+
 .cardP{
     position: relative;
     display: flex;
@@ -47,13 +51,21 @@
     background: linear-gradient(#1b1b1b, #111);
 }
 
+.list-group-item{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
 .bibi-whatsapp{
     color: limegreen;
 }
 
 .timeline-sm-item, .mt-3, .form-check-label{
-    color: #fff
+    color: #fff;
 }
+
+.form-check{ height: 3rem; font-size: 1.4rem;}
+.form-check-input{ height: 70%; }
 
 .bg-gray-300 {
     background-color: #e2e8f0;
@@ -87,8 +99,10 @@
 }
 
 .alturaTamano{
-    height: 3rem;
+    height: 2.7rem;
     font-size: 1.2rem;
+    display: flex;
+    align-items: start;
 }
 .btnM{
     margin-left: 10px;
@@ -105,17 +119,38 @@
     border-radius: .25rem;
 }
 
+.col-lg-14{
+    height: 15rem;
+    overflow:auto;
+}
+
+.col-lg-14::-webkit-scrollbar{
+    width: 12px;
+    background-color: #333;
+}
+.col-lg-14::-webkit-scrollbar-thumb{
+    background-color: #050505;
+    border-radius: 5px;
+}
+
 .form-control{
     background: linear-gradient(#333, #222);
     border: 0;
-    margin: 4px 0;
+    box-shadow: 0;
+    margin: 3px 0;
+    color: #fff !important;
+}
+
+.form-control:active{
+    border: 0;
+    box-shadow: 0;
 }
 
 .infoCampo{
     visibility: visible;
 }
 
-#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5{
+#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5, #infoInput6{
     display: none;
 }
 
@@ -304,25 +339,25 @@
 }
 .timeline-sm {
     padding-left: 110px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     scroll-behavior: smooth;
 }
-.scroll-page {
+/* .scroll-page {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     font-size: 5em;
-  }
+} */
   
-.timeline-sm .timeline-sm-item {
+.list-unstyled .timeline-sm-item {
     position: relative;
     padding-bottom: 20px;
     padding-left: 40px;
     border-left: 2px solid #dee2e6;
     
 }
-.timeline-sm .timeline-sm-item:after {
+.list-unstyled .timeline-sm-item:after {
     content: "";
     display: block;
     position: absolute;
@@ -334,15 +369,12 @@
     background: #fff;
     border: 2px solid #1abc9c;
 }
-.timeline-sm .timeline-sm-item .timeline-sm-date {
+.list-unstyled .timeline-sm-item .timeline-sm-date {
     position: absolute;
     left: -104px;
 }
 @media (max-width: 420px) {
-    .timeline-sm {
-        padding-left: 0;
-    }
-    .timeline-sm .timeline-sm-date {
+    .list-unstyled .timeline-sm-date {
         position: relative !important;
         display: block;
         left: 0 !important;

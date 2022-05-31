@@ -113,9 +113,9 @@ export const Lore = () => {
                     <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
                     <div className="radiusB">
                         <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover}/>
-                        <label for="trabajador" className="labelRadio">Trabajador</label>
+                        <label forHtml="trabajador" className="labelRadio">Trabajador</label>
                         <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} />
-                        <label for="cliente" className="labelRadio">Cliente</label>
+                        <label forHtml="cliente" className="labelRadio">Cliente</label>
                     </div>
                     <button className='buttonform' onClick={RegisterCliente}>Crear Cuenta</button>
                 </form>

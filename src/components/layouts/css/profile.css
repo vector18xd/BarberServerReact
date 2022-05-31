@@ -51,7 +51,7 @@
     color: limegreen;
 }
 
-.timeline-sm-item, .mt-3{
+.timeline-sm-item, .mt-3, .form-check-label{
     color: #fff
 }
 
@@ -83,10 +83,12 @@
     color: #ffd17b;
     /* color: #17a2b8!important; */
     display: flex;
-    align-items: center;    
+    align-items: center;
 }
-.wh{
-    margin-right:5px; 
+
+.alturaTamano{
+    height: 3rem;
+    font-size: 1.2rem;
 }
 .btnM{
     margin-left: 10px;
@@ -102,6 +104,21 @@
     margin-bottom: 24px;
     border-radius: .25rem;
 }
+
+.form-control{
+    background: linear-gradient(#333, #222);
+    border: 0;
+    margin: 4px 0;
+}
+
+.infoCampo{
+    visibility: visible;
+}
+
+#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5{
+    display: none;
+}
+
 .avatar-xl {
     height: 6rem;
     width: 6rem;
@@ -119,9 +136,7 @@
 .mb-4, .my-4 {
     margin-bottom: 2.25rem!important;
 }
-.tab-content {
-    padding: 20px 0 0 0;
-}
+
 .progress-sm {
     height: 5px;
 }

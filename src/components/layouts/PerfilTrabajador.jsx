@@ -2,14 +2,10 @@ import React,{useState, useEffect} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
 import "../IU/css/btnEdit.css"
-<<<<<<< HEAD
-import { Categoria} from "../IU/Categoria";
-
-=======
 import axios from "axios";
 import Swal from 'sweetalert2';
 import { data } from "autoprefixer";
->>>>>>> 91ac5a7a37b3546db9a5f55071f3b648e615d1b5
+import { NavLink } from "react-router-dom"
 
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
@@ -103,7 +99,7 @@ const update = (e) =>{
     const infoInput4=document.getElementById("infoInput4")
     const infoInput5=document.getElementById("infoInput5")
     const infoInput6=document.getElementById("infoInput6")
-    const infoInput7=document.getElementById("infoInput7")
+    const categorias=document.querySelector(".categorias")
 
     if(chequear){
       info1.style.display="none"
@@ -119,7 +115,7 @@ const update = (e) =>{
       infoInput4.style.display="block"
       infoInput5.style.display="block"
       infoInput6.style.display="block"
-      infoInput7.style.display="block"
+      categorias.style.display="block"
       setEdit(true)
     }else{
       info1.style.display="block"
@@ -135,7 +131,7 @@ const update = (e) =>{
       infoInput4.style.display="none"
       infoInput5.style.display="none"
       infoInput6.style.display="none"
-      infoInput7.style.display="none"
+      categorias.style.display="none"
       setEdit(false)
     }
   }
@@ -259,7 +255,20 @@ const update = (e) =>{
                   <h4 className="col-sm-3 mb-0 alturaTamano">Categorias</h4>
                   <div  className="col-sm-9">
                     <p className="col-sm-9 text-secondary alturaTamano" id="info7">Barbero</p>
-                    <Categoria id="infoInput7" />
+                    <div className="col-sm-9 text-white fs-5 categorias">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                        <label class="form-check-label" for="inlineCheckbox1">Barbero</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                        <label class="form-check-label" for="inlineCheckbox2">Peluquero</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
+                        <label class="form-check-label" for="inlineCheckbox3">Estilista</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <hr />
@@ -267,23 +276,17 @@ const update = (e) =>{
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
-                  <div className="col-10 form-check form-switch ">
+                  <div className="col-10 form-check form-switch editar">
                       <input className="col-2 form-check-input align-self-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
                       <label className="col-10 form-check-label align-self-center pt-2" forHtml="flexSwitchCheckDefault">Editar</label>
                   </div>
                   {edit &&(
-<<<<<<< HEAD
                      <button className="col-2 cssbuttons-io-button align-self-end">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                       </svg>
                       Guardar
-=======
-                     <button className="cssbuttons-io-button" onClick={update}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-                        <span>Edit</span>
->>>>>>> 91ac5a7a37b3546db9a5f55071f3b648e615d1b5
                      </button> 
                   )}
                 </div>
@@ -300,6 +303,11 @@ const update = (e) =>{
                         would be desirable: one could refuse to pay expensive translators.
                         To achieve this, it would be necessary to have uniform grammar,
                         pronunciation and more common words.</p>
+                      <div className="verCita">
+                        <NavLink to="/Cita">
+                          <button>Ver Cita</button>
+                        </NavLink>
+                      </div>
                     </li>
                     <li className="timeline-sm-item">
                       <span className="timeline-sm-date">2015 - 19</span>
@@ -309,6 +317,9 @@ const update = (e) =>{
                         would be desirable: one could refuse to pay expensive translators.
                         To achieve this, it would be necessary to have uniform grammar,
                         pronunciation and more common words.</p>
+                        <div className="verCita">
+                          <button>Ver Cita</button>
+                        </div>
                     </li>
                   </ul>
                 {/* </div> */}

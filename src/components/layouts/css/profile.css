@@ -112,7 +112,7 @@ hr{ border: 1px solid #444; }
     box-shadow: 0;
 }
 
-#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5, #infoInput6, #infoInput7{ display: none; }
+#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5, #infoInput6, .categorias{ display: none; }
 
 .rounded-circle { border-radius: 50%!important; }
 

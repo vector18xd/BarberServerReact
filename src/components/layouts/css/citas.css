@@ -1,0 +1,19 @@
+.mainCitaTrabajador{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top:10em;
+}
+
+.contCitaTrabajador{
+    height: 40em;
+    width: 60em;
+    background-color: #111;
+    border: 2px solid black;
+}
+
+/* .citasIzq{
+
+} */

@@ -4,17 +4,21 @@
     color: #fff;
     padding: 5px 8px 5px 5px;
     border-radius: 10px;
-    border: 1px solid wheat;
+    border: 1px solid #ffd17b;
+    /* background: linear-gradient(0deg, #ffd17b 0%, #ffd17b 100%); */
+    border: none;
+    box-shadow: 0 5px 15px 1px #ffd17b;
+    transition: 100ms;
 }
 
 .cssbuttons-io-button:hover{
     background-color: #222;
-    box-shadow: 0 0 5px 2px wheat;
+    box-shadow: 0 0 5px 2px #ffd17b;
 }
 
 .cssbuttons-io-button:active{
     background-color: #222;
-    box-shadow: 0 0 5px 2px wheat inset;
+    box-shadow: 0 0 5px 2px #ffd17b inset;
 }
 
 .bi-pencil-square{ height: 70%;}
@@ -23,11 +27,10 @@
     height: 3rem;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     margin-top: 10px;
 }
 
-.cssbuttons-io-button, .form-check, .categorias{
+.cssbuttons-io-button, .editar{
     height: 100%;
     display: flex;
     align-items: center;
@@ -35,32 +38,31 @@
     font-weight: 600;
 }
 
-.form-check, .form-switch{
+/* .categorias{
+    color: #fff;
+} */
+
+.editar, .form-switch{
     font-size: x-large;
 }
-=======
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 16px;
-    padding: 0.7em 1.4em 0.7em 1.1em;
-    color: white;
-    background: #ad5389;
-    background: linear-gradient(0deg, #ffd17b 0%, #ffd17b 100%);
-    border: none;
-    box-shadow: 0 0.7em 1.5em -0.5em #ffd17b;
-    letter-spacing: 0.05em;
-    border-radius: 20em;
-   }
-   
-   .cssbuttons-io-button svg {
-    margin-right: 6px;
-   }
-   
-   .cssbuttons-io-button:hover {
-    box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
-   }
-   
-   .cssbuttons-io-button:active {
-    box-shadow: 0 0.3em 1em -0.5em #14a73e98;
-   }
->>>>>>> 91ac5a7a37b3546db9a5f55071f3b648e615d1b5
+.derechaBoton{
+    display: flex;
+    right: 0;
+}
+.timeline-sm-item .verCita{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.timeline-sm-item .verCita button{
+    background-color: #050505;
+    border-radius: 10px;
+    height: 3rem;
+    width: 5rem;
+    border: 1px solid #0d6efd;
+}
+
+.timeline-sm-item .verCita button:hover{
+    box-shadow: 0 0 10px 2px #0d6efd inset;
+}

@@ -204,57 +204,57 @@ const update = (e) =>{
             <div className="card mb-3">
               <div className="card-body">
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Nombre(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{dataEdit.Nombres}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info1">{dataEdit.Nombres}</p>
                     <input type="text" className="form-control" id="infoInput1" placeholder={dataEdit.Nombres} name="Nombres" value={dataEdit.Nombres} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Apellido(s)</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Apellido(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{dataEdit.Apellidos}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info6">{dataEdit.Apellidos}</p>
                     <input type="text" className="form-control" id="infoInput6" value={dataEdit.Apellidos} name="Apellidos" placeholder={dataEdit.Apellidos} onChange={UpdateTrabajador} />
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">E-mail</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{dataEdit.Email}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info2">{dataEdit.Email}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={dataEdit.Email} name="Email" value={dataEdit.Email} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Número de Celular</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{dataEdit.Telefono}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info3">{dataEdit.Telefono}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={dataEdit.Telefono} name="Telefono"value={dataEdit.Telefono} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre de local</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Nombre de local</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info4">{dataEdit.Nom_local}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info4">{dataEdit.Nom_local}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput4" placeholder={dataEdit.Nom_local} name="Nom_local" value={dataEdit.Nom_local} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Dirección</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Dirección</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info5">{dataEdit.Direccion}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info5">{dataEdit.Direccion}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput5" placeholder={dataEdit.Direccion} name="Direccion" value={dataEdit.Direccion} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Categorias</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Categorias</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info7">Barbero</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info7">Barbero</p>
                     <div className="col-sm-9 text-white fs-5 categorias">
                       <div class="form-check form-check-inline">
                         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />

@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
+import axios  from "axios";
+import Swal from "sweetalert2";
 export const Perfiles = () => {
+  const [edit, setEdit] = useState(null)
   const [NombreC, setNombreC]=useState("")
-  const [nombre, setNombre] = useState("")
-  const [apellido, setApellido] = useState("")
-  const [Telefono, setTelefono]=useState("")
-  const [Email, setEmail]=useState("")
+  const [id,setId]=useState("")
  useEffect(()=>{
   const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
   if(loggedUserJSON){
@@ -16,14 +16,86 @@ export const Perfiles = () => {
     console.log("Mal");
   }
  },[])
+ const UpdateCliente = ({target})=>{
+  const {name , value} = target
+  setDataEdit({
+            ...dataEdit, 
+            [name]:value
+        })
+  console.log("->",dataEdit);
+}
+ const update = (e) =>{
+  e.preventDefault()
+  axios.put('http://localhost:3000/api/trabajador/'+ id ,dataEdit )
+  .then(function (response) {
+      console.log(response);
+  })
+  .catch(function (error) {
+      console.log(error);
+      Swal.fire({
+          title: '¡¡¡Los datos son erroneos!!!',
+          text: '¡Email o Contraseña son incorrectos !',
+          icon: 'error',
+          confirmButtonColor: '#333',
+          background: '#292929',
+          color: '#fff',
+          confirmButtonAriaLabel: 'Ok',
+        })
+  });
+}
+ const [dataEdit, setDataEdit]=useState({
+  "Nombres":"",
+  "Apellidos":"",
+  "Telefono":"",
+  "Email":"",
+  "Rol":""
+ })
  const añadidos = (data) =>{
-    const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
-    setNombreC(AñadidoDeNombres)
-    setNombre(data.userCliente.Nombres)
-    setApellido(data.userCliente.Apellidos)
-    setTelefono(data.userCliente.Telefono)
-    setEmail(data.userCliente.Email)  
- }
+   console.log(data);
+  const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
+  setNombreC(AñadidoDeNombres)
+  setId(data.userCliente.idCliente)
+  setDataEdit({
+    ...dataEdit.Nombres=data.userCliente.Nombres,
+    ...dataEdit.Apellidos=data.userCliente.Apellidos,
+    ...dataEdit.Telefono=data.userCliente.Telefono,
+    ...dataEdit.Email=data.userCliente.Email,
+    ...dataEdit.Rol=data.userCliente.Rol
+  })
+}
+function Editar(){
+  const chequear=document.getElementById("flexSwitchCheckDefault").checked;
+  const info1=document.getElementById("info1")
+  const info2=document.getElementById("info2")
+  const info3=document.getElementById("info3")
+  const info6=document.getElementById("info6")
+  const infoInput1=document.getElementById("infoInput1")
+  const infoInput2=document.getElementById("infoInput2")
+  const infoInput3=document.getElementById("infoInput3")
+  const infoInput6=document.getElementById("infoInput6")
+  if(chequear){
+    info1.style.display="none"
+    info2.style.display="none"
+    info3.style.display="none"
+    info6.style.display="none"
+    infoInput1.style.display="block"
+    infoInput2.style.display="block"
+    infoInput3.style.display="block"
+    infoInput6.style.display="block"
+    setEdit(true)
+  }else{
+    info1.style.display="block"
+    info2.style.display="block"
+    info3.style.display="block"
+    info6.style.display="block"
+    infoInput1.style.display="none"
+    infoInput2.style.display="none"
+    infoInput3.style.display="none"
+    infoInput6.style.display="none"
+    setEdit(false)
+  }
+}
+console.log(dataEdit);
   return (
     <div className="container">
       <div className="main-body">
@@ -34,7 +106,7 @@ export const Perfiles = () => {
                   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                   <div className="mt-3">
                     <h4>{NombreC}</h4>
-                    <p className="text-secondary mb-1">Estilista</p>
+                    <p className="text-secondary mb-1">{dataEdit.Rol}</p>
                     <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                     <div className="btnActivateM">
                       <label class="switch">
@@ -57,7 +129,7 @@ export const Perfiles = () => {
                     </svg>
                     WhatsApp
                   </h6>
-                  <span className="text-secondary">{Telefono}</span>
+                  <span className="text-secondary">{dataEdit.Telefono}</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0 wh">
@@ -66,7 +138,7 @@ export const Perfiles = () => {
                   </svg>
                     Email
                   </h6>
-                  <span className="text-secondary">{Email}</span>
+                  <span className="text-secondary">{dataEdit.Email}</span>
                 </li>
                 {/* <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0">
@@ -111,50 +183,55 @@ export const Perfiles = () => {
           <div className="col-md-8">
             <div className="card mb-3">
               <div className="card-body">
-                <div className="row">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Nombre Completo</h6>
+                
+              <div className="row">
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{dataEdit.Nombres}</p>
+                    <input type="text" className="form-control" id="infoInput1" placeholder={dataEdit.Nombres} name="Nombres" value={dataEdit.Nombres} onChange={UpdateCliente}/>
                   </div>
-                  <div className="col-sm-9 text-secondary">{nombre}</div>
                 </div>
                 <hr />
                 <div className="row">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">E-mail</h6>
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Apellido(s)</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{dataEdit.Apellidos}</p>
+                    <input type="text" className="form-control" id="infoInput6" value={dataEdit.Apellidos} name="Apellidos" placeholder={dataEdit.Apellidos} onChange={UpdateCliente} />
                   </div>
-                  <div className="col-sm-9 text-secondary">{Email}</div>
                 </div>
                 <hr />
                 <div className="row">
-                  <div className="col-sm-3">
-                    <h6 className="mb-0">Número de Celular</h6>
+                  <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{dataEdit.Email}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={dataEdit.Email} name="Email" value={dataEdit.Email} onChange={UpdateCliente}/>
                   </div>
-                  <div className="col-sm-9 text-secondary">{Telefono}</div>
-                </div>
-                <hr />
-                {}
-                <div className="row">
-                  <h6 className="col-sm-3 mb-0">Nombre de local</h6>
-                  <p className="col-sm-9 text-secondary">Barber Server</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="Barber Server" /> */}
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0">Dirección</h4>
-                  <p className="col-sm-9 text-secondary">Bay Area, San Francisco, CA</p>
-                  {/* <input type="text" className="form-control col-sm-9" placeholder="Bay Area, San Francisco, CA" /> */}
-                </div>
-                <hr />
-                <div className="row">
-                  <div className="col-sm-12">
-                    <a
-                      className="btn btn-info "
-                      target="__blank"
-                      href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills"
-                    >
-                      Edit
-                    </a>
+                  <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
+                  <div  className="col-sm-9">
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{dataEdit.Telefono}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={dataEdit.Telefono} name="Telefono"value={dataEdit.Telefono} onChange={UpdateCliente}/>
                   </div>
+                </div>
+                <div className="row-2 filaEditar" id="row-2">
+                  {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
+                    Edit
+                  </a> */}
+                  <div className="col-10 form-check form-switch ">
+                      <input className="col-2 form-check-input align-self-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
+                      <label className="col-10 form-check-label align-self-center pt-2" forHtml="flexSwitchCheckDefault">Editar</label>
+                  </div>
+                  {edit &&(
+                     <button className="col-2 cssbuttons-io-button align-self-end" onClick={update}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                      </svg>
+                      Guardar
+                     </button> 
+                  )}
                 </div>
               </div>
             </div>

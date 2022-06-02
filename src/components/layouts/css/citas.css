@@ -32,7 +32,6 @@
     font-weight: bolder;
     font-size: 3rem;
     color: #fff;
-    /* font-family: 'Playfair Display', serif; */
     font-family: 'Vidaloka', serif;
 }
 
@@ -53,6 +52,7 @@
     padding: 5px 10px;
     margin-bottom: 20px;
     cursor: pointer;
+    /* font-family: 'Playfair Display', serif; */
 }
 
 /* .cardCita:active{
@@ -80,7 +80,6 @@
     width: 14rem;
     height: 3rem;
     border-radius: 10px;
-    background: linear-gradient(#333, #222);
     font-size: 1.8rem;
     font-weight: bolder;
 }
@@ -89,9 +88,22 @@
 
 svg{ width: 32px; height: 32px; margin-right: 10px;}
 
-#btnAceptarCita{ border: 1px solid ;} 
-#btnEditarCita{ border: 1px solid; }
-#btnRechazarCita{ border: 1px solid; }
+.bi-x-square{
+    margin: 0;
+}
+
+#btnAceptarCita{ 
+    border: 1px solid ;
+    background: linear-gradient(#008f39, #222);
+}
+
+#btnEditarCita{ 
+    border: 1px solid; 
+}
+
+#btnRechazarCita{ 
+    border: 1px solid; 
+}
 
 #chulo{ color: #008f39;}
 #editar{ color: #0d6efd;}

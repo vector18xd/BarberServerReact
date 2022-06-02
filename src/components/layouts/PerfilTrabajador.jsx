@@ -317,8 +317,10 @@ const update = (e) =>{
                         To achieve this, it would be necessary to have uniform grammar,
                         pronunciation and more common words.</p>
                         <div className="verCita">
+                        <NavLink to="/Cita">
                           <button>Ver Cita</button>
-                        </div>
+                        </NavLink>
+                      </div>
                     </li>
                   </ul>
                 {/* </div> */}

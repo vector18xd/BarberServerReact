@@ -45,27 +45,3 @@
 .editar, .form-switch{
     font-size: x-large;
 }
-<<<<<<< HEAD
-=======
-.derechaBoton{
-    display: flex;
-    right: 0;
-}
-.timeline-sm-item .verCita{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.timeline-sm-item .verCita button{
-    background-color: #050505;
-    border-radius: 10px;
-    height: 3rem;
-    width: 5rem;
-    border: 1px solid #0d6efd;
-}
-
-.timeline-sm-item .verCita button:hover{
-    box-shadow: 0 0 10px 2px #0d6efd inset;
-}
->>>>>>> 3ab95c830d10fced1f447143eb48c4274f81b4a0

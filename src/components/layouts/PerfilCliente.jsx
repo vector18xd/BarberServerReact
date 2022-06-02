@@ -7,10 +7,19 @@ export const Perfiles = () => {
   const [edit, setEdit] = useState(null)
   const [NombreC, setNombreC]=useState("")
   const [id,setId]=useState("")
+  const [Token, setToken]=useState("")
+  const [datasEdit, setDatasEdit]=useState({
+    "Nombres":"", 
+    "Apellidos":"",
+    "Telefono":"",
+    "Email":"",
+    "Password":"",
+    "Rol":""})
  useEffect(()=>{
   const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
   if(loggedUserJSON){
     const users = JSON.parse(loggedUserJSON)
+    console.log(users);
     añadidos(users)
   }else{
     console.log("Mal");
@@ -18,15 +27,19 @@ export const Perfiles = () => {
  },[])
  const UpdateCliente = ({target})=>{
   const {name , value} = target
-  setDataEdit({
-            ...dataEdit, 
+  setDatasEdit({
+            ...datasEdit, 
             [name]:value
         })
-  console.log("->",dataEdit);
+  console.log("->",datasEdit);
 }
  const update = (e) =>{
   e.preventDefault()
-  axios.put('http://localhost:3000/api/trabajador/'+ id ,dataEdit )
+  axios.put('http://localhost:3000/api/cliente/'+ id ,datasEdit,{
+    headers : {
+      "Authorization":`token ${Token}`
+    }
+  } )
   .then(function (response) {
       console.log(response);
   })
@@ -43,25 +56,16 @@ export const Perfiles = () => {
         })
   });
 }
- const [dataEdit, setDataEdit]=useState({
-  "Nombres":"",
-  "Apellidos":"",
-  "Telefono":"",
-  "Email":"",
-  "Rol":""
- })
  const añadidos = (data) =>{
-   console.log(data);
+  console.log("1");
   const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
+  const nombre =  data.userCliente.Nombres
+  const datos = data.userCliente
+  setToken(data.token)
   setNombreC(AñadidoDeNombres)
   setId(data.userCliente.idCliente)
-  setDataEdit({
-    ...dataEdit.Nombres=data.userCliente.Nombres,
-    ...dataEdit.Apellidos=data.userCliente.Apellidos,
-    ...dataEdit.Telefono=data.userCliente.Telefono,
-    ...dataEdit.Email=data.userCliente.Email,
-    ...dataEdit.Rol=data.userCliente.Rol
-  })
+  setDatasEdit({Nombres:datos.Nombres, Apellidos:datos.Apellidos, Telefono:datos.Telefono,  Password:datos.Password, Rol:datos.Rol, Email:datos.Email})
+  console.log(typeof nombre);
 }
 function Editar(){
   const chequear=document.getElementById("flexSwitchCheckDefault").checked;
@@ -83,9 +87,13 @@ function Editar(){
     infoInput3.style.display="block"
     infoInput6.style.display="block"
     setEdit(true)
+    
   }else{
+    
     info1.style.display="block"
+    
     info2.style.display="block"
+    
     info3.style.display="block"
     info6.style.display="block"
     infoInput1.style.display="none"
@@ -95,7 +103,7 @@ function Editar(){
     setEdit(false)
   }
 }
-console.log(dataEdit);
+console.log(datasEdit);
   return (
     <div className="container">
       <div className="main-body">
@@ -106,7 +114,7 @@ console.log(dataEdit);
                   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                   <div className="mt-3">
                     <h4>{NombreC}</h4>
-                    <p className="text-secondary mb-1">{dataEdit.Rol}</p>
+                    <p className="text-secondary mb-1">{datasEdit.Rol}</p>
                     <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                     <div className="btnActivateM">
                       <label class="switch">
@@ -129,7 +137,7 @@ console.log(dataEdit);
                     </svg>
                     WhatsApp
                   </h6>
-                  <span className="text-secondary">{dataEdit.Telefono}</span>
+                  <span className="text-secondary">{datasEdit.Telefono}</span>
                 </li>
                 <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0 wh">
@@ -138,7 +146,7 @@ console.log(dataEdit);
                   </svg>
                     Email
                   </h6>
-                  <span className="text-secondary">{dataEdit.Email}</span>
+                  <span className="text-secondary">{datasEdit.Email}</span>
                 </li>
                 {/* <li className="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <h6 className="mb-0">
@@ -187,32 +195,32 @@ console.log(dataEdit);
               <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{dataEdit.Nombres}</p>
-                    <input type="text" className="form-control" id="infoInput1" placeholder={dataEdit.Nombres} name="Nombres" value={dataEdit.Nombres} onChange={UpdateCliente}/>
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{datasEdit.Nombres}</p>
+                    <input type="text" className="form-control" id="infoInput1" placeholder={datasEdit.Nombres} name="Nombres" value={datasEdit.Nombres} onChange={UpdateCliente}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Apellido(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{dataEdit.Apellidos}</p>
-                    <input type="text" className="form-control" id="infoInput6" value={dataEdit.Apellidos} name="Apellidos" placeholder={dataEdit.Apellidos} onChange={UpdateCliente} />
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{datasEdit.Apellidos}</p>
+                    <input type="text" className="form-control" id="infoInput6" value={datasEdit.Apellidos} name="Apellidos" placeholder={datasEdit.Apellidos} onChange={UpdateCliente} />
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{dataEdit.Email}</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={dataEdit.Email} name="Email" value={dataEdit.Email} onChange={UpdateCliente}/>
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{datasEdit.Email}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={datasEdit.Email} name="Email" value={datasEdit.Email} onChange={UpdateCliente}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
                   <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{dataEdit.Telefono}</p>
-                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={dataEdit.Telefono} name="Telefono"value={dataEdit.Telefono} onChange={UpdateCliente}/>
+                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{datasEdit.Telefono}</p>
+                    <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={datasEdit.Telefono} name="Telefono"value={datasEdit.Telefono} onChange={UpdateCliente}/>
                   </div>
                 </div>
                 <div className="row-2 filaEditar" id="row-2">

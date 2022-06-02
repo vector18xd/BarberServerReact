@@ -3,44 +3,27 @@ import { Header } from '../../layouts/header'
 import { Footer } from '../../layouts/footer'
 import { Perfiles } from '../../layouts/PerfilCliente'
 import { PerfilTrabajador } from '../../layouts/PerfilTrabajador'
-
 export const Perfil = ({logout}) => {
   const [user, setUser]=useState(null)
-  const [rolTF, setrolTF]=useState(null)
-  useEffect(()=>{
-    const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
-    if(loggedUserJSON){
-      const rolesD = JSON.parse(loggedUserJSON)
-      console.log("->",rolesD);
-      console.log("dentrar");
-       Greating(rolesD)
-      
-    }else{
-      console.log("Mal");
-    }
-  },[])
   if(user){
     logout()
     window.localStorage.removeItem("loggedNoteAppUser")
   }
-  const Greating = (rolesD)=>{
+  const Greating = ()=>{
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
+    const rolesD = JSON.parse(loggedUserJSON)
     let rolT = rolesD.userTrabajador
     let rolC = rolesD.userCliente
-    console.log(rolesD);
+    console.log("hola ",rolesD);
     if(typeof rolT === "undefined"){
-      console.log("Firts");
-      if(rolC.Rol === "usuario"){
-        console.log("cliente");
-        <Perfiles/>
-      }else{
-        <PerfilTrabajador/>
-      }
+      console.log("cliente");
+      return(<Perfiles/>)
+
     ;}else{
-      <PerfilTrabajador/>
+      return(<PerfilTrabajador/>)
     };
   }
   
-  console.log(rolTF);
   return (
       <div>
         <Header logout={()=>setUser(true)}/>

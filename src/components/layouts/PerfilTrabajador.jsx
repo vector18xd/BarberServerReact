@@ -2,14 +2,10 @@ import React,{useState, useEffect} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
 import "../IU/css/btnEdit.css"
-<<<<<<< HEAD
 import { Categoria} from "../IU/Categoria";
-
-=======
 import axios from "axios";
 import Swal from 'sweetalert2';
 import { data } from "autoprefixer";
->>>>>>> 91ac5a7a37b3546db9a5f55071f3b648e615d1b5
 
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
@@ -272,18 +268,12 @@ const update = (e) =>{
                       <label className="col-10 form-check-label align-self-center pt-2" forHtml="flexSwitchCheckDefault">Editar</label>
                   </div>
                   {edit &&(
-<<<<<<< HEAD
-                     <button className="col-2 cssbuttons-io-button align-self-end">
+                     <button className="col-2 cssbuttons-io-button align-self-end" onClick={update}>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                       </svg>
                       Guardar
-=======
-                     <button className="cssbuttons-io-button" onClick={update}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg>
-                        <span>Edit</span>
->>>>>>> 91ac5a7a37b3546db9a5f55071f3b648e615d1b5
                      </button> 
                   )}
                 </div>

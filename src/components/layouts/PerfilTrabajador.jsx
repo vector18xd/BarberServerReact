@@ -2,10 +2,9 @@ import React,{useState, useEffect} from "react";
 import "./css/profile.css";
 import "./css/calificacion.css";
 import "../IU/css/btnEdit.css"
-import { Categoria} from "../IU/Categoria";
 import axios from "axios";
 import Swal from 'sweetalert2';
-import { data } from "autoprefixer";
+import { NavLink } from "react-router-dom"
 
 export const PerfilTrabajador = () => {
   const [edit, setEdit] = useState(null)
@@ -26,7 +25,6 @@ export const PerfilTrabajador = () => {
   "Apellidos":"",
   "Telefono":"",
   "Email":"",
-  "Password":"",
   "Nom_local":"",
   "Direccion":""
  })
@@ -99,7 +97,7 @@ const update = (e) =>{
     const infoInput4=document.getElementById("infoInput4")
     const infoInput5=document.getElementById("infoInput5")
     const infoInput6=document.getElementById("infoInput6")
-    const infoInput7=document.getElementById("infoInput7")
+    const categorias=document.querySelector(".categorias")
 
     if(chequear){
       info1.style.display="none"
@@ -115,7 +113,7 @@ const update = (e) =>{
       infoInput4.style.display="block"
       infoInput5.style.display="block"
       infoInput6.style.display="block"
-      infoInput7.style.display="block"
+      categorias.style.display="block"
       setEdit(true)
     }else{
       info1.style.display="block"
@@ -131,7 +129,7 @@ const update = (e) =>{
       infoInput4.style.display="none"
       infoInput5.style.display="none"
       infoInput6.style.display="none"
-      infoInput7.style.display="none"
+      categorias.style.display="none"
       setEdit(false)
     }
   }
@@ -204,58 +202,71 @@ const update = (e) =>{
             <div className="card mb-3">
               <div className="card-body">
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre(s)</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Nombre(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info1">{dataEdit.Nombres}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info1">{dataEdit.Nombres}</p>
                     <input type="text" className="form-control" id="infoInput1" placeholder={dataEdit.Nombres} name="Nombres" value={dataEdit.Nombres} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Apellido(s)</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Apellido(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info6">{dataEdit.Apellidos}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info6">{dataEdit.Apellidos}</p>
                     <input type="text" className="form-control" id="infoInput6" value={dataEdit.Apellidos} name="Apellidos" placeholder={dataEdit.Apellidos} onChange={UpdateTrabajador} />
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">E-mail</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">E-mail</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info2">{dataEdit.Email}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info2">{dataEdit.Email}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput2" placeholder={dataEdit.Email} name="Email" value={dataEdit.Email} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Número de Celular</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Número de Celular</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info3">{dataEdit.Telefono}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info3">{dataEdit.Telefono}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput3" placeholder={dataEdit.Telefono} name="Telefono"value={dataEdit.Telefono} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Nombre de local</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Nombre de local</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info4">{dataEdit.Nom_local}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info4">{dataEdit.Nom_local}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput4" placeholder={dataEdit.Nom_local} name="Nom_local" value={dataEdit.Nom_local} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Dirección</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Dirección</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info5">{dataEdit.Direccion}</p>
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info5">{dataEdit.Direccion}</p>
                     <input type="text" className="form-control col-sm-9" id="infoInput5" placeholder={dataEdit.Direccion} name="Direccion" value={dataEdit.Direccion} onChange={UpdateTrabajador}/>
                   </div>
                 </div>
                 <hr />
                 <div className="row">
-                  <h4 className="col-sm-3 mb-0 alturaTamano">Categorias</h4>
+                  <h4 className="col-sm-3 mb-0 alturaTamaño">Categoria(s)</h4>
                   <div  className="col-sm-9">
-                    <p className="col-sm-9 text-secondary alturaTamano" id="info7">Barbero</p>
-                    <Categoria id="infoInput7" />
+                    <p className="col-sm-9 text-secondary alturaTamaño" id="info7">Barbero</p>
+                    <div className="col-sm-9 text-white fs-5 categorias">
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                        <label class="form-check-label" for="inlineCheckbox1">Barbero</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                        <label class="form-check-label" for="inlineCheckbox2">Peluquero</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
+                        <label class="form-check-label" for="inlineCheckbox3">Estilista</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <hr />
@@ -263,7 +274,7 @@ const update = (e) =>{
                   {/* <a className="col-sm-1 btn btn-info" target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">
                     Edit
                   </a> */}
-                  <div className="col-10 form-check form-switch ">
+                  <div className="col-10 form-check form-switch editar">
                       <input className="col-2 form-check-input align-self-center" type="checkbox" role="switch" id="flexSwitchCheckDefault" onChange={Editar} />
                       <label className="col-10 form-check-label align-self-center pt-2" forHtml="flexSwitchCheckDefault">Editar</label>
                   </div>
@@ -290,6 +301,11 @@ const update = (e) =>{
                         would be desirable: one could refuse to pay expensive translators.
                         To achieve this, it would be necessary to have uniform grammar,
                         pronunciation and more common words.</p>
+                      <div className="verCita">
+                        <NavLink to="/Cita">
+                          <button>Ver Cita</button>
+                        </NavLink>
+                      </div>
                     </li>
                     <li className="timeline-sm-item">
                       <span className="timeline-sm-date">2015 - 19</span>
@@ -299,6 +315,11 @@ const update = (e) =>{
                         would be desirable: one could refuse to pay expensive translators.
                         To achieve this, it would be necessary to have uniform grammar,
                         pronunciation and more common words.</p>
+                        <div className="verCita">
+                        <NavLink to="/Cita">
+                          <button>Ver Cita</button>
+                        </NavLink>
+                      </div>
                     </li>
                   </ul>
                 {/* </div> */}

@@ -48,6 +48,7 @@ export const Lore = ({authenticate}) => {
         axios.post('http://localhost:3000/api/login',datasL )
         .then(function (response) {
             console.log(response);
+            usuarioFinal(response)
             window.localStorage.setItem(
                 "loggedNoteAppUser", JSON.stringify(response.data.data)
             )
@@ -65,6 +66,9 @@ export const Lore = ({authenticate}) => {
                 confirmButtonAriaLabel: 'Ok',
               })
         });
+    }
+    const usuarioFinal = (dataTC) =>{
+      
     }
     const postL = () => {
         authenticate()

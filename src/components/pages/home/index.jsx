@@ -3,7 +3,6 @@ import '../../IU//css/style.css'
 import { Header} from "../../layouts/header"
 import { Slider} from "../../layouts/slider"
 import { Footer } from "../../layouts/footer";
-import { Aboutus } from "../../layouts/aboutus";
 import { MainHome } from "../../layouts/MainHome";
 export const Home = () => {
     return(
@@ -12,7 +11,6 @@ export const Home = () => {
             <Slider className="md=w-16 justify-center" classT="slider" text="EL SITIO WEB DE LOS BARBEROS"/>
             <Footer/>
             <MainHome/>
-            {/* <Aboutus/> */}
         </div>
     )
 }

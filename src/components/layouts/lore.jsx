@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react'
 import "./css/lore.css"
 import axios from 'axios'
 import Swal from 'sweetalert2';
+import { Alert } from 'bootstrap';
 import { useNavigate } from 'react-router';
 export const Lore = ({authenticate}) => {
-    const [rol, setRol]=useState(null)
     const [categoria, setCategoria]=useState([])
+    const [Mostrar, setMostrar] = useState(null)
     useEffect(()=>{
         const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
         if(loggedUserJSON){
@@ -24,8 +25,11 @@ export const Lore = ({authenticate}) => {
     }
     const navigate = useNavigate()
     const change1 = () =>{
+        const nuevoForm= document.querySelector(".nuevoForm")
         const container = document.getElementById('container');
         container.classList.remove("right-panel-active");
+        nuevoForm.classList.remove("mostrarFormulario");
+        nuevoForm.classList.add("regresarFormulario");
     }
     const change2 = ()=>{
         const container = document.getElementById('container');
@@ -90,21 +94,22 @@ export const Lore = ({authenticate}) => {
         "idCategoria":"",
         "Direccion":""
     })
-    const chnageRadio = ()=>{
+    const  RegisterCliente= (e)=>{
+        e.preventDefault()
         const trabajador = document.getElementById("trabajador").checked
         const cliente = document.getElementById("cliente").checked
         if(trabajador){
-            setRol(true)
+            validacionRol(true)
         }else{if(cliente){
-            setRol(false)
-            }
+            console.log("esta aca");
+            validacionRol(false)
+            }else{validacionRol(null)}
         }
     }
-    console.log(rol);
-    const RegisterCliente = (e) =>{
-        e.preventDefault()
-        
-        if(rol){
+    
+    const validacionRol = (rolesUs) =>{
+        console.log(rolesUs);
+        if(rolesUs){
             const userT = document.getElementById("rname").value
             const passwordT = document.getElementById("rpassword").value
             const telefonoT = document.getElementById("ruser").value
@@ -114,19 +119,19 @@ export const Lore = ({authenticate}) => {
             const nomLocalT = document.getElementById("nomLocal").value
             const direccionLocalT = document.getElementById("direccionLocal").value
             setDataRT({
-                ...datasRT.Nombres=userT,
-                ...datasRT.Password=passwordT,
-                ...datasRT.Telefono=telefonoT,
-                ...datasRT.Apellidos=apellidoT,
-                ...datasRT.Email=emailT,
-                ...datasRT.Nom_local=nomLocalT,
-                ...datasRT.idCategoria=categoriaT,
-                ...datasRT.Direccion=direccionLocalT,
-                ...datasRT.Rol="trabajador"
+                Nombres:userT,
+                Password:passwordT,
+                Telefono:telefonoT,
+                Apellidos:apellidoT,
+                Email:emailT,
+                Nom_local:nomLocalT,
+                idCategoria:categoriaT,
+                Direccion:direccionLocalT,
+                Rol:"trabajador"
         })
             console.log("dentroTrabajador");
-            postRT()
-        }else{ if(!rol)
+            verficacion(passwordT, telefonoT, 2)
+        }else{ if(rolesUs=== false)
         {   console.log("dentroCLiente");
             const user = document.getElementById("rname").value
             const password = document.getElementById("rpassword").value
@@ -135,14 +140,16 @@ export const Lore = ({authenticate}) => {
             const email = document.getElementById("remail").value
             console.log(typeof user);
             setDataR({
-                ...datasRC.Nombres=user,
-                ...datasRC.Password=password,
-                ...datasRC.Telefono=telefono,
-                ...datasRC.Apellidos=apellido,
-                ...datasRC.Email=email,
-                ...datasRC.Rol="usuario"
+                Nombres:user,
+                Password:password,
+                Telefono:telefono,
+                Apellidos:apellido,
+                Email:email,
+                Rol:"usuario"
         })
-            postRC()
+        console.log(password.length);
+        verficacion(password, telefono, 1)
+            
         }else{
         Swal.fire({
             title: '¡¡¡Escoge!!!',
@@ -157,34 +164,119 @@ export const Lore = ({authenticate}) => {
         
         
     }
+    const verficacion =(password, telefono, rolUser)=>{
+        console.log("->",telefono.length , "" , telefono);
+        switch(rolUser){
+            case 1:
+                
+                if(password.length >= 5 && password.length <= 10 && telefono.length === 10) {
+                    postRC()
+                }else{
+                    if(password.length < 5 || password.length >10){
+                        Swal.fire({
+                            title: '¡¡¡Ten Cuidado!!!',
+                            text: "! La Contresañe debe tener minimo 5 careteres y maximo 10 !",
+                            icon: 'info',
+                            confirmButtonColor: '#333',
+                            background: '#292929',
+                            color: '#fff',
+                            confirmButtonAriaLabel: 'Ok',
+                          })
+                    }else{
+                        if( telefono.length < 10){
+                            Swal.fire({
+                                title: '¡¡¡Ten Cuidado!!!',
+                                text: "! El telefono no es valido por que tiene menos de 10 caracteres !",
+                                icon: 'info',
+                                confirmButtonColor: '#333',
+                                background: '#292929',
+                                color: '#fff',
+                                confirmButtonAriaLabel: 'Ok',
+                              })
+                        }
+                    }
+                }
+                break;
+            case 2:
+                console.log("esta aca");
+                if(password.length >= 5 && password.length <= 10 && telefono.length === 10) {
+                    postRT()
+                }else{
+                    if(password.length < 5 || password.length >10){
+                        Swal.fire({
+                            title: '¡¡¡Ten Cuidado!!!',
+                            text: "! La Contresañe debe tener minimo 5 careteres y maximo 10 !",
+                            icon: 'info',
+                            confirmButtonColor: '#333',
+                            background: '#292929',
+                            color: '#fff',
+                            confirmButtonAriaLabel: 'Ok',
+                          })
+                    }else{
+                        if( telefono.length < 10){
+                            Swal.fire({
+                                title: '¡¡¡Ten Cuidado!!!',
+                                text: "! El telefono no es valido por que tiene menos de 10 caracteres !",
+                                icon: 'info',
+                                confirmButtonColor: '#333',
+                                background: '#292929',
+                                color: '#fff',
+                                confirmButtonAriaLabel: 'Ok',
+                              })
+                        }
+                    }
+                }
+                break;
+        }
+        
+    }
     const postRC = () =>{
         axios.post('http://localhost:3000/api/register',datasRC)
         .then(function (response) {
             console.log(response);
+            alertRegistro()
+            setTimeout(cargarP(),2000)
+        })
+        .catch(function (error) {
+            console.log(error);
             Swal.fire({
                 title: '¡¡¡Advertencia!!!',
-                text: "!"+response.data.data.user.Email + "!",
+                text: "!Este correo no esta disponible: " + datasRC.Email+ "!",
                 icon: 'error',
                 confirmButtonColor: '#333',
                 background: '#292929',
                 color: '#fff',
                 confirmButtonAriaLabel: 'Ok',
               })
-        })
-        .catch(function (error) {
-            console.log(error);
         });
+    }
+    const alertRegistro = () =>{
+        Swal.fire({
+            title: '¡¡¡Felicitaciones!!!',
+            text: "!Te has registrado con exito!",
+            icon: 'success',
+            confirmButtonColor: '#333',
+            background: '#292929',
+            color: '#fff',
+            confirmButtonAriaLabel: 'Ok',
+        })
+    }
+    const cargarP = ()=>{
+        (window.location.reload(true))
     }
     const postRT = () =>{
         axios.post('http://localhost:3000/api/register',datasRT)
         .then(function (response) {
             console.log(response);
+            alertRegistro()
+            setTimeout(cargarP(),3000)
         })
+        
         .catch(function (error) {
             console.log(error);
             Swal.fire({
-                title: '¡¡¡Revisa !!!',
-                text: '¡Que no tengas ningun error!',
+                title: '¡¡¡Advertencia!!!',
+                text: "!Este correo no esta disponible: " + datasRC.Email+ "!",
                 icon: 'error',
                 confirmButtonColor: '#333',
                 background: '#292929',
@@ -193,16 +285,25 @@ export const Lore = ({authenticate}) => {
               })
         });
     }
+
     function Mover(){
         const nuevoForm= document.querySelector(".nuevoForm")
         nuevoForm.classList.add("mostrarFormulario");
         nuevoForm.classList.remove("regresarFormulario");
+        setMostrar(true)
     }
 
     function Regresar(){
-        const nuevoForm= document.querySelector(".nuevoForm")
-        nuevoForm.classList.remove("mostrarFormulario");
-        nuevoForm.classList.add("regresarFormulario");
+        console.log(Mostrar);
+        if(Mostrar){
+            const nuevoForm= document.querySelector(".nuevoForm")
+            nuevoForm.classList.remove("mostrarFormulario");
+            nuevoForm.classList.add("regresarFormulario");
+            setMostrar(false)
+        }else{
+            console.log("No esta");
+        }
+        
     }
     
   return (
@@ -217,9 +318,9 @@ export const Lore = ({authenticate}) => {
                     <input type="text" placeholder="Telefono" id='ruser' className='inputform'/>
                     <input type="password" placeholder="Contraseña" id='rpassword' className='inputform'/>
                     <div className="radiusB">
-                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover} onClick={chnageRadio}/>
+                        <input type="radio" name='decision' value="trabajador" id='trabajador' onChange={Mover} />
                         <label forHtml="trabajador" className="labelRadio">Trabajador</label>
-                        <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} onClick={chnageRadio}/>
+                        <input type="radio" name='decision' value="cliente" id='cliente' onChange={Regresar} />
                         <label forHtml="cliente" className="labelRadio">Cliente</label>
                     </div>
                     <button className='buttonform' onClick={RegisterCliente}>Crear Cuenta</button>

@@ -3,12 +3,15 @@ import "./css/profile.css";
 import "./css/calificacion.css";
 import axios  from "axios";
 import Swal from "sweetalert2";
+import { ModalConfirm } from "../IU/modalConfirm";
+import emailjs from '@emailjs/browser';
 export const Perfiles = () => {
   const [confirmM, setConfirmM] = useState(null)
   const [edit, setEdit] = useState(null)
   const [NombreC, setNombreC]=useState("")
   const [id,setId]=useState("")
   const [Token, setToken]=useState("")
+  const [rol, setRol]=useState("")
   const [datasEdit, setDatasEdit]=useState({
     "Nombres":"", 
     "Apellidos":"",
@@ -20,8 +23,9 @@ export const Perfiles = () => {
   const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser")
   if(loggedUserJSON){
     const users = JSON.parse(loggedUserJSON)
+    llamadaDatos(users.userCliente.idCliente, users.token)
     console.log(users);
-    añadidos(users)
+    setToken(users.token)
   }else{
     console.log("Mal");
   }
@@ -38,8 +42,18 @@ const previoUpdate = (e) => {
   e.preventDefault()
   setConfirmM(true)
 }
- const update = (e) =>{
-  e.preventDefault()
+const llamadaDatos = (ids, token) =>{
+  console.log(token);
+    axios.get('http://localhost:3000/api/cliente/' + ids, {headers : {
+      "Authorization":`token ${token}`
+    }
+  })
+    .then(function (response) {
+      console.log(response);
+      añadidos(response.data.data)
+    });
+}
+ const update = () =>{
   axios.put('http://localhost:3000/api/cliente/'+ id ,datasEdit,{
     headers : {
       "Authorization":`token ${Token}`
@@ -47,20 +61,45 @@ const previoUpdate = (e) => {
   } )
   .then(function (response) {
       console.log(response);
+      Swal.fire({
+        title: '¡¡¡Felicitaciones!!!',
+        text: '¡ Tus datos se han subido correctamente !',
+        icon: 'success',
+        confirmButtonColor: '#333',
+        background: '#292929',
+        color: '#fff',
+        confirmButtonAriaLabel: 'Ok',
+      })
+      enviarEdit()
   })
   .catch(function (error) {
       console.log(error);
+      Swal.fire({
+        title: '¡¡¡No se!!!',
+        text: '¡ A sucedido un error intenta mas tarde !',
+        icon: 'error',
+        confirmButtonColor: '#333',
+        background: '#292929',
+        color: '#fff',
+        confirmButtonAriaLabel: 'Ok',
+      })
   });
+  setConfirmM(false)
+}
+const enviarEdit = () =>{
+  let dataMensaje = {"name":datasEdit.Nombres, "email":datasEdit.Email, "id":id, "rol":rol}
+  emailjs.send("service_3ttevpo", "template_saf20yp",dataMensaje,"OZyZikHyRdk3lV1Zx")
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
 }
  const añadidos = (data) =>{
   console.log("1");
-  const AñadidoDeNombres = data.userCliente.Nombres + " " + data.userCliente.Apellidos
-  const nombre =  data.userCliente.Nombres
-  const datos = data.userCliente
-  setToken(data.token)
+  const AñadidoDeNombres = data.Nombres + " " + data.Apellidos
+  const nombre =  data.Nombres
+  setRol(data.Rol)
   setNombreC(AñadidoDeNombres)
-  setId(data.userCliente.idCliente)
-  setDatasEdit({Nombres:datos.Nombres, Apellidos:datos.Apellidos, Telefono:datos.Telefono,  Password:datos.Password, Rol:datos.Rol, Email:datos.Email})
+  setId(data.idCliente)
+  setDatasEdit({Nombres:data.Nombres, Apellidos:data.Apellidos, Telefono:data.Telefono,  Password:data.Password, Rol:data.Rol, Email:data.Email})
   console.log(typeof nombre);
 }
 function Editar(){
@@ -184,6 +223,11 @@ console.log(datasEdit);
               </ul>
             </div>
           </div>
+          {
+            confirmM && (
+              <ModalConfirm salir={() => setConfirmM(false)} guardar={update} />
+            )
+          }
           <div className="col-md-8">
             <div className="card mb-3">
               <div className="card-body">

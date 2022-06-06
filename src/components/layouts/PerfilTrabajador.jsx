@@ -91,7 +91,7 @@ export const PerfilTrabajador = () => {
   }
   const enviarEdit = () =>{
     let dataMensaje = {"name":dataEdit.Nombres, "email":dataEdit.Email, "id":id, "rol":rol}
-    emailjs.send("service_3ttevpo", "template_sla5daj",dataMensaje,"OZyZikHyRdk3lV1Zx")
+    emailjs.send("service_3ttevpo", "template_saf20yp",dataMensaje,"OZyZikHyRdk3lV1Zx")
         .then(response => console.log(response))
         .catch(error => console.log(error))
   }

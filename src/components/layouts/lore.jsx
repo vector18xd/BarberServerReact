@@ -76,25 +76,6 @@ export const Lore = ({authenticate}) => {
         navigate("Loginregister")
     }
     
-    const [datasRC, setDataR]=useState({
-            "Nombres":"",
-            "Apellidos":"",
-            "Telefono":"",
-            "Email":"",
-            "Password":"",
-            "Rol":""
-    })
-    const [datasRT,setDataRT]=useState({
-        "Nombres":"",
-        "Apellidos":"",
-        "Telefono":"",
-        "Email":"",
-        "Password":"",
-        "Rol":"",
-        "Nom_local":"",
-        "idCategoria":"",
-        "Direccion":""
-    })
     const  RegisterCliente= (e)=>{
         e.preventDefault()
         const trabajador = document.getElementById("trabajador").checked
@@ -119,19 +100,19 @@ export const Lore = ({authenticate}) => {
             const categoriaT = document.getElementById("seleciona").value
             const nomLocalT = document.getElementById("nomLocal").value
             const direccionLocalT = document.getElementById("direccionLocal").value
-            setDataRT({
-                Nombres:userT,
-                Password:passwordT,
-                Telefono:telefonoT,
-                Apellidos:apellidoT,
-                Email:emailT,
-                Nom_local:nomLocalT,
-                idCategoria:categoriaT,
-                Direccion:direccionLocalT,
-                Rol:"trabajador"
-        })
+            let dataR= {
+                "Nombres":userT,
+                "Password":passwordT,
+                "Telefono":telefonoT,
+                "Apellidos":apellidoT,
+                "Email":emailT,
+                "Nom_local":nomLocalT,
+                "idCategoria":categoriaT,
+                "Direccion":direccionLocalT,
+                "Rol":"trabajador"
+            }
             console.log("dentroTrabajador");
-            verficacion(passwordT, telefonoT, 2)
+            verficacion(passwordT, telefonoT, 2, dataR)
         }else{ if(rolesUs=== false)
         {   console.log("dentroCLiente");
             const user = document.getElementById("rname").value
@@ -140,16 +121,16 @@ export const Lore = ({authenticate}) => {
             const apellido = document.getElementById("rapellido").value
             const email = document.getElementById("remail").value
             console.log(typeof user);
-            setDataR({
-                Nombres:user,
-                Password:password,
-                Telefono:telefono,
-                Apellidos:apellido,
-                Email:email,
-                Rol:"usuario"
-        })
+            const dataRc = {
+                "Nombres":user,
+                "Password":password,
+                "Telefono":telefono,
+                "Apellidos":apellido,
+                "Email":email,
+                "Rol":"usuario"
+        }
         console.log(password.length);
-        verficacion(password, telefono, 1)
+        verficacion(password, telefono, 1, dataRc)
             
         }else{
         Swal.fire({
@@ -165,13 +146,15 @@ export const Lore = ({authenticate}) => {
         
         
     }
-    const verficacion =(password, telefono, rolUser)=>{
+    const verficacion =(password, telefono, rolUser, dataR)=>{
         console.log("->",telefono.length , "" , telefono);
+        console.log(rolUser);
         switch(rolUser){
             case 1:
-                
+                console.log("Cliente");
                 if(password.length >= 5 && password.length <= 10 && telefono.length === 10) {
-                    postRC()
+                    console.log("Hola");
+                    postRC(dataR)
                 }else{
                     if(password.length < 5 || password.length >10){
                         Swal.fire({
@@ -184,7 +167,7 @@ export const Lore = ({authenticate}) => {
                             confirmButtonAriaLabel: 'Ok',
                           })
                     }else{
-                        if( telefono.length < 10){
+                        if( telefono.length === 10){
                             Swal.fire({
                                 title: '¡¡¡Ten Cuidado!!!',
                                 text: "! El telefono no es valido por que tiene menos de 10 caracteres !",
@@ -201,9 +184,9 @@ export const Lore = ({authenticate}) => {
             case 2:
                 console.log("esta aca");
                 if(password.length >= 5 && password.length <= 10 && telefono.length === 10) {
-                    postRT()
+                    postRT(dataR)
                 }else{
-                    if(password.length < 5 || password.length >10){
+                    if(password.length < 5 || password.length === 10){
                         Swal.fire({
                             title: '¡¡¡Ten Cuidado!!!',
                             text: "! La Contresañe debe tener minimo 5 careteres y maximo 10 !",
@@ -231,8 +214,9 @@ export const Lore = ({authenticate}) => {
         }
         
     }
-    const postRC = () =>{
-        axios.post('http://localhost:3000/api/register',datasRC)
+    const postRC = (dataR) =>{
+        console.log(dataR);
+        axios.post('http://localhost:3000/api/register',dataR)
         .then(function (response) {
             console.log(response);
             alertRegistro()
@@ -242,7 +226,7 @@ export const Lore = ({authenticate}) => {
             console.log(error);
             Swal.fire({
                 title: '¡¡¡Advertencia!!!',
-                text: "!Este correo no esta disponible: " + datasRC.Email+ "!",
+                text: "!Este correo no esta disponible: " + dataR.Email+ "!",
                 icon: 'error',
                 confirmButtonColor: '#333',
                 background: '#292929',
@@ -265,8 +249,8 @@ export const Lore = ({authenticate}) => {
     const cargarP = ()=>{
         (window.location.reload(true))
     }
-    const postRT = () =>{
-        axios.post('http://localhost:3000/api/register',datasRT)
+    const postRT = (dataR) =>{
+        axios.post('http://localhost:3000/api/register',dataR)
         .then(function (response) {
             console.log(response);
             alertRegistro()
@@ -277,7 +261,7 @@ export const Lore = ({authenticate}) => {
             console.log(error);
             Swal.fire({
                 title: '¡¡¡Advertencia!!!',
-                text: "!Este correo no esta disponible: " + datasRC.Email+ "!",
+                text: "!Este correo no esta disponible: " + dataR.Email+ "!",
                 icon: 'error',
                 confirmButtonColor: '#333',
                 background: '#292929',

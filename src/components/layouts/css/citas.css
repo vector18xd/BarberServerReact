@@ -39,15 +39,18 @@
     font-weight: bolder;
     font-size: 3rem;
     color: #fff;
-    font-family: 'Vidaloka', serif;
+    /* font-family: 'Vidaloka', serif; */
+    font-family: 'Rye', cursive;
     margin-bottom: 1.5rem;
     background-color: #f8f8f80e;
+    border-radius: 20px;
 }
 
 .cardsCitas{
     width: 100%;
     height: 90%;
     overflow:auto;
+    
 }
 
 .cardCita{

@@ -39,22 +39,27 @@ export const MainCitasTrabajador = () => {
             </div>
           </section>
           <section className="citasFiltro">
-            <article className="filtros">
-              <h3>Busqueda por fechas: </h3>
-              <select>
-                <option value="hoy">Hoy</option>
-                <option value="ayer">Ayer</option>
-                <option value="estaSemana">Esta Semana</option>
-                <option value="estaSemana">Este Mes</option>
-              </select>
-              <h3>Busqueda por estado: </h3>
-              <select>
-                <option value="hoy">Aceptadas</option>
-                <option value="ayer">Editadas</option>
-                <option value="estaSemana">Eliminadas</option>
-                <option value="estaSemana">En Espera</option>
-              </select>
-            </article>
+            <ul>
+                <li>
+                <h3>Busqueda por fechas: </h3>
+                <select className="select">
+                  <option value="hoy">Hoy</option>
+                  <option value="ayer">Ayer</option>
+                  <option value="estaSemana">Esta Semana</option>
+                  <option value="estaSemana">Este Mes</option>
+                </select>
+                </li>
+                <li>
+                  <h3>Busqueda por estado: </h3>
+                  <select className="select">
+                    <option value="hoy">Aceptadas</option>
+                    <option value="ayer">Editadas</option>
+                    <option value="estaSemana">Eliminadas</option>
+                    <option value="estaSemana">En Espera</option>
+                  </select>
+                </li>
+            </ul>
+            <hr />
             <article className="campoCalendario">
               <Calendario className="calendario" />
             </article>

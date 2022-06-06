@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import "./css/lore.css"
 import axios from 'axios'
 import Swal from 'sweetalert2';
-import { Alert } from 'bootstrap';
 import { useNavigate } from 'react-router';
 export const Lore = ({authenticate}) => {
     const [categoria, setCategoria]=useState([])
@@ -59,15 +58,17 @@ export const Lore = ({authenticate}) => {
         })
         .catch(function (error) {
             console.log(error);
-            Swal.fire({
-                title: '¡¡¡Los datos son erroneos!!!',
-                text: '¡Email o Contraseña son incorrectos !',
-                icon: 'error',
-                confirmButtonColor: '#333',
-                background: '#292929',
-                color: '#fff',
-                confirmButtonAriaLabel: 'Ok',
-              })
+            if(error){
+                Swal.fire({
+                    title: '¡¡¡Los datos son erroneos!!!',
+                    text: '¡Email o Contraseña son incorrectos !',
+                    icon: 'error',
+                    confirmButtonColor: '#333',
+                    background: '#292929',
+                    color: '#fff',
+                    confirmButtonAriaLabel: 'Ok',
+                  })
+            }
         });
     }
     const postL = () => {

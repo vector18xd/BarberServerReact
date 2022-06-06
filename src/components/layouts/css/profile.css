@@ -49,7 +49,7 @@ hr{ border: 1px solid #444; }
 
 .bibi-whatsapp{ color: limegreen; }
 
-.timeline-sm-item, .mt-3, .form-check-label, .categorias{ color: #fff; }
+.timeline-sm-item, .mt-3, .form-check-label{ color: #fff; }
 /* .form-check, .form-switch{ font-size: 1.6rem; display: flex; align-items: center;}
 
 .form-check-input{ 
@@ -112,8 +112,7 @@ hr{ border: 1px solid #444; }
     box-shadow: 0;
 }
 
-#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5, #infoInput6, .categorias{ display: none; }
-
+#infoInput1, #infoInput2, #infoInput3, #infoInput4, #infoInput5, #infoInput6{ display: none; }
 .rounded-circle { border-radius: 50%!important; }
 
 /* .timeline {
@@ -231,7 +230,7 @@ hr{ border: 1px solid #444; }
     height: 12px;
     border-radius: 50%;
     background: #fff;
-    border: 2px solid #1abc9c;
+    border: 2px solid #ffd17b;
 }
 .list-unstyled .timeline-sm-item .timeline-sm-date {
     position: absolute;
@@ -313,4 +312,14 @@ hr{ border: 1px solid #444; }
     height: 29px;
     background-color: #ffffff2b;
     box-shadow: rgb(0 0 0 / 62%) 0px 0px 5px inset, rgb(0 0 0 / 21%) 0px 0px 0px 24px inset, #22cc3f 0px 0px 0px 0px inset, rgb(224 224 224 / 45%) 0px 1px 0px 0px
+  }
+  .modalC{
+      display: flex;
+  } 
+  .modal-content {
+      color: white;
+      background: linear-gradient(#1b1b1b, #111);
+  }
+  .modal-body {
+    justify-content: center;
   }

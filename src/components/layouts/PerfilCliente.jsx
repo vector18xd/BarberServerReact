@@ -5,6 +5,7 @@ import axios  from "axios";
 import Swal from "sweetalert2";
 import { ModalConfirm } from "../IU/modalConfirm";
 import emailjs from '@emailjs/browser';
+import { ModalSubirImagen } from "../IU/modalSubirImagen";
 export const Perfiles = () => {
   const [confirmM, setConfirmM] = useState(null)
   const [edit, setEdit] = useState(null)
@@ -12,6 +13,7 @@ export const Perfiles = () => {
   const [id,setId]=useState("")
   const [Token, setToken]=useState("")
   const [rol, setRol]=useState("")
+  const [inputImagen,setInputImagen]=useState(null)
   const [datasEdit, setDatasEdit]=useState({
     "Nombres":"", 
     "Apellidos":"",
@@ -138,6 +140,60 @@ function Editar(){
     setEdit(false)
   }
 }
+const subirImagen = ()=>{
+  setInputImagen(true)
+}
+
+const files = (file) =>{
+  if(!file){
+      Swal.fire({
+          title: '¡¡¡No se!!!',
+          text: '¡ A sucedido un error intenta mas tarde !',
+          icon: 'error',
+          confirmButtonColor: '#333',
+          background: '#292929',
+          color: '#fff',
+          confirmButtonAriaLabel: 'Ok',
+        })
+  }else{
+  Array.from(file).forEach(files=>{
+    var reader=new FileReader()
+    reader.readAsDataURL(files)
+    reader.onload=function(){
+      var base64 = reader.result;
+      putImagen(base64)
+    }
+  })}  
+  
+}
+const putImagen = (file)=>{
+  axios.put('http://localhost:3000/api/trabajador/' + id, {"Foto":file})
+    .then(function (response) {
+      console.log(response);
+      Swal.fire({
+        title: '¡¡¡Felicitaciones!!!',
+        text: '¡ Tus datos se han subido correctamente !',
+        icon: 'success',
+        confirmButtonColor: '#333',
+        background: '#292929',
+        color: '#fff',
+        confirmButtonAriaLabel: 'Ok',
+      })
+      enviarEdit()
+    })
+    .catch(function (error) {
+      console.log(error);
+      Swal.fire({
+        title: '¡¡¡No se!!!',
+        text: '¡ A sucedido un error intenta mas tarde !',
+        icon: 'error',
+        confirmButtonColor: '#333',
+        background: '#292929',
+        color: '#fff',
+        confirmButtonAriaLabel: 'Ok',
+      })
+    });
+}
 console.log(datasEdit);
   return (
     <div className="container">
@@ -146,6 +202,11 @@ console.log(datasEdit);
           <div className="col-md-4 mb-3">
             <div className="cardP cardP-body">
                 <div className="d-flex flex-column align-items-center text-center">
+                  {
+                    inputImagen &&(
+                      <ModalSubirImagen salir={() => setConfirmM(false)} files={files}/>
+                      )
+                  }
                   <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                   <div className="mt-3">
                     <h4>{NombreC}</h4>

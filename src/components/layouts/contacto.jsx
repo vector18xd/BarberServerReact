@@ -8,7 +8,7 @@ export const Contacto = () => {
         const emails = document.getElementById("Email").value
 		const numeroT = document.getElementById("phone").value
         const messages = document.getElementById("message").value
-        let data =({
+        let  data =({
            	user_name:user,
            	email:emails,
         	message:messages,

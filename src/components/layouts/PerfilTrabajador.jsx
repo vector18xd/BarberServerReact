@@ -5,8 +5,9 @@ import "../IU/css/btnEdit.css"
 import axios from "axios";
 import Swal from 'sweetalert2';
 import { NavLink } from "react-router-dom"
-import { ModalConfirm } from "../IU/modalConfirm";
+import { ModalConfirm} from "../IU/modalConfirm";
 import emailjs from '@emailjs/browser';
+import { ModalSubirImagen } from "../IU/modalSubirImagen";
 
 export const PerfilTrabajador = () => {
   const [confirmM, setConfirmM] = useState(null)
@@ -15,6 +16,8 @@ export const PerfilTrabajador = () => {
   const [categoria, setCategoria] = useState([])
   const [id, setId] = useState("")
   const [rol, setRol]=useState("")
+  const [fotoPerfil, setfotoPerfil]=useState("")
+  const [inputImagen,setInputImagen]=useState(null)
   // const [idCategoria, setIdCategoria]=useState("")
   // const [categoriasC, setCategoriasC]=useState([])
   useEffect(() => {
@@ -49,7 +52,6 @@ export const PerfilTrabajador = () => {
     setConfirmM(true)
   }
   const llamadaDatos = (ids, token) =>{
-    console.log(token);
       axios.get('http://localhost:3000/api/trabajador/' + ids, {headers : {
         "Authorization":`token ${token}`
       }
@@ -99,6 +101,11 @@ export const PerfilTrabajador = () => {
     const AñadidoDeNombres = data.Nombres + " " + data.Apellidos
     setNombreC(AñadidoDeNombres)
     categorias(data.idCategoria)
+    // console.log("foto->", data.Foto);
+    // console.log(decodeURIComponent(atob(data.Foto.data).split("").map(function(c){
+    //   return "%"+("00" + c.charCodeAt(0).toString(16).slice(-2))
+    // }).join("")));
+    // setfotoPerfil(decodeURIComponent(escape(window.atob(data.Foto))))
     // setIdCategoria(data.userTrabajador.idCategoria)
     setId(data.idTrabajador)
     setDataEdit({
@@ -121,6 +128,61 @@ export const PerfilTrabajador = () => {
         setCategoria(response.data.data.Nombre_cat)
       });
   }
+  const subirImagen = ()=>{
+    setInputImagen(true)
+  }
+
+  const files = (file) =>{
+    if(!file){
+        Swal.fire({
+            title: '¡¡¡No se!!!',
+            text: '¡ A sucedido un error intenta mas tarde !',
+            icon: 'error',
+            confirmButtonColor: '#333',
+            background: '#292929',
+            color: '#fff',
+            confirmButtonAriaLabel: 'Ok',
+          })
+    }else{
+    Array.from(file).forEach(files=>{
+      var reader=new FileReader()
+      reader.readAsDataURL(files)
+      reader.onload=function(){
+        var base64 = reader.result;
+        putImagen(base64)
+      }
+    })}  
+    
+  }
+  const putImagen = (file)=>{
+    axios.put('http://localhost:3000/api/trabajador/' + id, {"Foto":file})
+      .then(function (response) {
+        console.log(response);
+        Swal.fire({
+          title: '¡¡¡Felicitaciones!!!',
+          text: '¡ Tus datos se han subido correctamente !',
+          icon: 'success',
+          confirmButtonColor: '#333',
+          background: '#292929',
+          color: '#fff',
+          confirmButtonAriaLabel: 'Ok',
+        })
+        enviarEdit()
+      })
+      .catch(function (error) {
+        console.log(error);
+        Swal.fire({
+          title: '¡¡¡No se!!!',
+          text: '¡ A sucedido un error intenta mas tarde !',
+          icon: 'error',
+          confirmButtonColor: '#333',
+          background: '#292929',
+          color: '#fff',
+          confirmButtonAriaLabel: 'Ok',
+        })
+      });
+  }
+
   // const categoriasCompletas  = ()=>{
   //     axios({
   //         method: 'get',
@@ -182,15 +244,19 @@ export const PerfilTrabajador = () => {
       setEdit(false)
     }
   }
-  console.log(edit);
   return (
     <div className="container">
       <div className="main-body">
         <div className="row cardsP gutters-sm">
           <div className="col-md-4 mb-3">
             <div className="cardP cardP-body">
-              <div className="d-flex flex-column align-items-center text-center">
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
+              <div className="d-flex flex-column align-items-center text-center imagenPerfil">
+                {
+                  inputImagen &&(
+                    <ModalSubirImagen salir={() => setConfirmM(false)} files={files}/>
+                    )
+                }
+                <button className="subirImagen"><img src={fotoPerfil} alt="Admin" className="rounded-circle" width="150" onClick={subirImagen}/></button>
                 <div className="mt-3">
                   <h4>{NombreC}</h4>
                   <p className=" mb-1">{categoria}</p>

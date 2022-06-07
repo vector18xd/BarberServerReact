@@ -214,7 +214,7 @@ console.log(datasEdit);
                     <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                     <div className="btnActivateM">
                       <label class="switch">
-                        <input type="checkbox"/>
+                        <input type="checkbox" checked/>
                         <span className="sliderP"></span>
                       </label>
                       <button className="btn btnM btn-outline-primary">
